@@ -6,7 +6,7 @@ draft = true
 description = ""
 Image = ""
 ImageBig = ""
-categories = []
+categories = ["Uncategorized"]
 authors = "Khalilullah Al Faath"
 mediumLink = ""
 +++
