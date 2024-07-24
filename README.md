@@ -4,4 +4,4 @@ This is a simple portofolio website to store my blogs, portfolios, and contacts.
 
 This web is created with [Hugo](https://gohugo.io/)
 
-[link](khalilullahalfaath.github.io)
+[Check this](khalilullahalfaath.github.io)
