@@ -1,8 +1,8 @@
 +++
-title = 'My Five Post'
+title = 'End to end Machine Learning Project Journey'
 date = 2024-07-23T20:35:17+07:00
 lastmod = 2024-07-23T20:35:17+07:00
-draft = true
+draft = false
 description = "This is a placeholder desc"
 Image = ""
 ImageBig = ""
