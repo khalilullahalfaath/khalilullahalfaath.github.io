@@ -6,7 +6,7 @@ draft = false
 description = "This is a placeholder desc"
 Image = ""
 ImageBig = ""
-categories = ["Music","Sport", "General"]
+categories = ["Machine Learning","Regression"]
 authors = "Khalilullah Al Faath"
 mediumLink = ""
 +++
