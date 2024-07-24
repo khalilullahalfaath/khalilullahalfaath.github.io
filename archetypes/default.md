@@ -1,5 +1,12 @@
 +++
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 date = {{ .Date }}
-draft = false
+lastmod = {{ .Date }}
+draft = true
+description = ""
+Image = ""
+ImageBig = ""
+categories = []
+authors = "Khalilullah Al Faath"
+mediumLink = ""
 +++
