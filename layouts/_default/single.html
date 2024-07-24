@@ -12,7 +12,14 @@
           {{end}}
         </span>
       </div>
-      <time>{{dateFormat .Site.Params.dateFormat .Date}}</time>
+      <div class="singleHeadTimes">
+        <time>Created: {{dateFormat .Site.Params.dateFormat .Date}}</time>
+        {{ if ne .Lastmod .Date }}
+        <time
+          >Last updated: {{dateFormat .Site.Params.dateFormat .Lastmod}}</time
+        >
+        {{ end }}
+      </div>
     </div>
   </div>
   <div class="singleBottom">

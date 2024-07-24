@@ -179,4 +179,4 @@ The data we used on this project is a scraped data from website <www.rumah123.co
 
 #### 3. Explore and visualize the data to gain insights
 
-Then we visualize the data. For the full exploration and visualization. I've
+Then we visualize the data. For the full exploration and visualization. I've created

@@ -181,6 +181,18 @@ footer{
     margin-bottom: 20px;
 }
 
+.singleHeadTimes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+    color: var(--textsoft);
+  }
+  
+.createdTime, .updatedTime {
+    font-style: italic;
+  }
+
 .singleCategory{
     padding: 5px;
     border-radius: 5px;
