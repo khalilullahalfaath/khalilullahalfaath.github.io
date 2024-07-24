@@ -15,7 +15,9 @@
       <time>{{dateFormat .Site.Params.dateFormat .Date}}</time>
     </div>
   </div>
-  <div class="singleBottom"></div>
+  <div class="singleBottom">
+    <div class="singleContent">{{.Content}}</div>
+  </div>
 </div>
 
 {{end}}

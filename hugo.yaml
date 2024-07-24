@@ -1,0 +1,19 @@
+baseURL: "https://khalilullahalfaath.github.io/"
+languageCode: "en-us"
+title: "My New Hugo Site"
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ['\[', '\]']
+            - ["$$", "$$"]
+          inline:
+            - ['\(', '\)']
+
+params:
+  dateFormat: "Jan 2, 2006"
+  math: true
