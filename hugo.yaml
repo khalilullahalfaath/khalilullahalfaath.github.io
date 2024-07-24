@@ -4,7 +4,7 @@ title: "Aleel blog"
 enableGitInfo: true
 
 pagination:
-  pagerSize: 4
+  pagerSize: 3
 
 markup:
   goldmark:
@@ -38,5 +38,3 @@ menu:
     - name: "About"
       url: "/about/"
       weight: 30
-
-paginate: 10

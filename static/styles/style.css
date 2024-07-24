@@ -43,6 +43,10 @@ hr{
     margin-bottom: 15px !important;
 }
 
+main h1{
+    margin-bottom: 20px;
+}
+
 .container{
     max-width: 1366px;
     padding-left: 50px;
@@ -54,6 +58,37 @@ hr{
     flex-direction: column;
     justify-content: space-between;
 }
+
+/* ONBOARDING START */
+.onboardingTitle{
+    font-size: 70px;
+    margin-bottom: 30px;
+}
+
+.onboardingDesc{
+    margin-bottom: 30px;
+}
+
+.dividerOnboarding{
+    margin: 0px;
+}
+
+.recentPosts{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.postPreview{
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--primary);
+    margin-bottom: 10px;
+}
+/* ONBOARDING END */
+
+
 
 /* NAVBAR START */
 .navbar{
@@ -92,7 +127,6 @@ hr{
     position: absolute;
     left: 0;
     background-color: var(--textsoft);
-
 }
 
 .light .ball{
@@ -126,21 +160,35 @@ hr{
 /* FOOTER START */
 
 footer{
+    margin-top: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 100px;
+    flex-direction: column;
+    height: auto;
     font-size: 14px;
 }
 
-.footerLink{
-    display: flex;
-    gap: 20px;
+.footerCopy{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
-.social{
+.footerContent{
+    width: 100%;
     display: flex;
-    gap: 10px;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footerLink, .social {
+    display: flex;
+    gap: 20px;
+    /* align-items: center; */
+    justify-content: space-around; 
+    margin-bottom: 10px; /
 }
 
 /* FOOTER END */
@@ -358,6 +406,18 @@ footer{
     .searchButton span{
         display: none;
     }
+
+    .recentPosts{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .onboardingTitle{
+        font-size: 50px;
+    }
+
+
 }
 @media (max-width: 640px){
     .container{

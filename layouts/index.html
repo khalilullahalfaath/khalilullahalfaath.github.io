@@ -1,12 +1,22 @@
 {{ define "main" }}
 <div class="onboarding">
-  <h1>Welcome to {{ .Site.Title }} website!</h1>
-  <p>Explore our latest content:</p>
-  <div class="recent-posts">
-    {{ range first 5 (where .Site.RegularPages "Type" "in"
+  <h1 class="onboardingTitle">
+    Welcome to <br />
+    {{ .Site.Title }} website!
+  </h1>
+  <hr class="dividerOnboarding" />
+  <p class="onboardingDesc">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nesciunt
+    dolore quisquam quia quaerat. Quis debitis animi praesentium? Alias possimus
+    sed adipisci iste cumque officiis itaque, debitis voluptatum commodi
+    blanditiis?
+  </p>
+  <div class="recentPosts">
+    <h2>Check my latest writings:</h2>
+    {{ range first 3 (where .Site.RegularPages "Type" "in"
     .Site.Params.mainSections) }}
-    <div class="post-preview">
-      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <div class="postPreview">
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       <p>{{ .Params.description | truncate 100 }}</p>
     </div>
     {{ end }}
