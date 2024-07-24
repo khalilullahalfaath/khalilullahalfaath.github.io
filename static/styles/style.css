@@ -298,6 +298,11 @@ footer{
     background-color: var(--bgsoft);
 }
 
+.single.about-page img{
+    width: 25%;
+    margin: auto;
+}
+
 .singleHead{
     display: flex;
     align-items: center;
@@ -369,7 +374,7 @@ footer{
 }
 
 .singleContent img{
-    width: 100%;
+    width: 50%;
     object-fit: cover;
 }
 
