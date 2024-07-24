@@ -1,13 +1,12 @@
-{{ define "main"}}
-
+{{ define "main" }}
 <div class="single">
   <div class="singleHead">
     <div class="singleHeadText">
       <h1 class="singleHeadTitle">{{.Title}}</h1>
       <p class="singleHeadDesc">{{.Params.description}}</p>
       <div class="singleHeadDetail">
-        <span
-          >{{range (.GetTerms "categories")}}
+        <span>
+          {{range (.GetTerms "categories")}}
           <a href="{{.Permalink}}" class="singleCategory">{{.Name}}</a>
           {{end}}
         </span>
@@ -26,5 +25,4 @@
     <div class="singleContent">{{.Content}}</div>
   </div>
 </div>
-
-{{end}}
+{{ end }}

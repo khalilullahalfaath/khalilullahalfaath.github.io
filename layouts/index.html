@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="onboarding">
+  <h1>Welcome to {{ .Site.Title }} website!</h1>
+  <p>Explore our latest content:</p>
+  <div class="recent-posts">
+    {{ range first 5 (where .Site.RegularPages "Type" "in"
+    .Site.Params.mainSections) }}
+    <div class="post-preview">
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <p>{{ .Params.description | truncate 100 }}</p>
+    </div>
+    {{ end }}
+  </div>
+  <a href="{{ .Site.BaseURL }}posts/">See all posts</a>
+</div>
+{{ end }}

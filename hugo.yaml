@@ -22,3 +22,21 @@ params:
   description: "You can find anything here"
   dateFormat: "Jan 2, 2006"
   math: true
+  mainSections: ["posts"]
+
+outputs:
+  home: ["HTML", "RSS"]
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 10
+    - name: "Posts"
+      url: "/posts/"
+      weight: 20
+    - name: "About"
+      url: "/about/"
+      weight: 30
+
+paginate: 10
