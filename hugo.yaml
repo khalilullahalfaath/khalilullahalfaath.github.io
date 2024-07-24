@@ -1,7 +1,10 @@
 baseURL: "https://khalilullahalfaath.github.io/"
 languageCode: "en-us"
-title: "My New Hugo Site"
+title: "Aleel blog"
 enableGitInfo: true
+
+pagination:
+  pagerSize: 4
 
 markup:
   goldmark:
@@ -16,5 +19,6 @@ markup:
             - ['\(', '\)']
 
 params:
+  description: "You can find anything here"
   dateFormat: "Jan 2, 2006"
   math: true
