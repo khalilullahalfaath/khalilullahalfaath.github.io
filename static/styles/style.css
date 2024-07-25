@@ -446,18 +446,32 @@ footer{
     }
 }
 @media (max-width: 768px){
+    .links{
+        width: 75%;
+        height: 25%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 5px;
+        font-size: 16px;
+    }
     .container{
         max-width: 640px;
         padding-left: 45px;
         padding-right: 45px;
     }
 
-    .links{
-        font-size: 14px;
+    .singleContent{
+        font-size: 16px;
     }
 
     .searchButton{
         display: none;
+    }
+
+    .mjx-container{
+        max-width: fit-content;
     }
 
     .recentPosts{
@@ -471,7 +485,7 @@ footer{
     }
 
     .logo{
-        /* display: none; */
+        display: none;
         font-size: 15px;
     }
 
@@ -489,6 +503,10 @@ footer{
         position: relative;
     }
 
+    .listItemCategories{
+        flex-wrap: wrap;
+    }
+
     .ball{
         width: 20px;
         height: 17px;
@@ -498,11 +516,17 @@ footer{
         background-color: var(--textsoft);
     }
 
-    .links{
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 12px;
+    .footerLink{
+        display: none;
+    }
+
+    .footerCopy{
+        text-align: center;
+    }
+
+    .footerContent{
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
 
