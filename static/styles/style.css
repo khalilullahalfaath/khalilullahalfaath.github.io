@@ -43,6 +43,11 @@ hr{
     margin-bottom: 15px !important;
 }
 
+main{
+    display: flex;
+    justify-content: center;
+}
+
 main h1{
     margin-bottom: 20px;
 }
@@ -293,6 +298,7 @@ footer{
 /* Single Start*/
 
 .single{
+    width: 65%;
     border-radius: 25px;
     padding: 50px;
     background-color: var(--bgsoft);
@@ -308,6 +314,11 @@ footer{
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+}
+
+.singleContent h1::before{
+    content: "⏩ ";
+    font-size: 20px;
 }
 
 .singleHeadTexts{
@@ -448,6 +459,7 @@ footer{
 @media (max-width: 768px){
     .single{
         padding: 25px;
+        width: 80%;
     }
     .single h1, h2, h3, h4, h5, h6, .singleHeadDesc, p, li{
         font-size: smaller;
@@ -555,5 +567,14 @@ footer{
 @media (max-width: 640px){
     .container{
         max-width: 475px;
+    }
+
+    .single h1, h2, h3, h4, h5, h6, .singleHeadDesc, p, li{
+        font-size: smaller;
+    }
+
+    .single{
+        padding: 25px;
+        width: 90%;
     }
 }
