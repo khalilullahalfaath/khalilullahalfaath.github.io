@@ -588,6 +588,10 @@ main .single, .list, .onboarding, .journalCategories{
         font-size: 16px;
     }
 
+    .onboardingTitle{
+        font-size: 26px;
+    }
+
 }
 @media (max-width: 640px){
     .container{
