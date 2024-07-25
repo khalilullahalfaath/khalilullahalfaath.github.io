@@ -6,6 +6,10 @@ enableGitInfo: true
 pagination:
   pagerSize: 3
 
+taxonomies:
+  category: categories
+  tag: tags
+
 markup:
   goldmark:
     extensions:
@@ -27,14 +31,38 @@ params:
 outputs:
   home: ["HTML", "RSS"]
 
+# Menu configuration
 menu:
   main:
     - name: "Home"
       url: "/"
-      weight: 10
-    - name: "Posts"
-      url: "/posts/"
-      weight: 20
+      weight: 1
     - name: "About"
       url: "/about/"
-      weight: 30
+      weight: 2
+    - name: "Posts"
+      url: "/posts/"
+      weight: 3
+    - name: "Journals"
+      url: "/journals/"
+      weight: 4
+    - name: "Gratitudes"
+      url: "/journals/gratitudes/"
+      parent: "Journals"
+      weight: 1
+    - name: "IELTS Prep"
+      url: "/journals/ielts-preparation/"
+      parent: "Journals"
+      weight: 2
+    - name: "ML Learning"
+      url: "/journals/ml-fundamentals/"
+      parent: "Journals"
+      weight: 3
+    - name: "Schedules"
+      url: "/journals/schedules/"
+      parent: "Journals"
+      weight: 4
+    - name: "Reviews"
+      url: "/journals/reviews/"
+      parent: "Journals"
+      weight: 5

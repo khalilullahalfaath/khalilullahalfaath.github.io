@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="single {{ if eq .Title "About Me" }}about-page{{ else if eq .Title "Now" }}now-page{{ end }}">
+    <div class="singleHead">
+    <div class="singleHeadText">
+      <h1 class="singleHeadTitle">{{.Title}}</h1>
+      <p class="singleHeadDesc">{{.Params.description}}</p>
+      <div class="singleHeadDetail">
+        <span>
+          {{range (.GetTerms "categories")}}
+          <a href="{{.Permalink}}" class="singleCategory">{{.Name}}</a>
+          {{end}}
+        </span>
+      </div>
+      <div class="singleHeadTimes">
+        <time>Created: {{dateFormat .Site.Params.dateFormat .Date}}</time>
+        {{ if ne .Lastmod .Date }}
+        <time
+          >Last updated: {{dateFormat .Site.Params.dateFormat .Lastmod}}</time
+        >
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  <div class="singleBottom">
+    <div class="singleContent">{{.Content}}</div>
+  </div>
+</div>
+{{ end }}

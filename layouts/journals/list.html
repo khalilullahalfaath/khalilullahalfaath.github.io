@@ -1,0 +1,64 @@
+{{ define "main"}}
+<h1>{{ .Title }}</h1>
+<p>{{.Description}}</p>
+
+<!-- Display the content of _index.md -->
+{{ .Content }}
+
+<!-- Check if this is the main journals page or a category page -->
+{{ if eq .RelPermalink "/journals/" }}
+<!-- Main journals page -->
+<div class="journalCategories">
+  {{ range .Pages }}
+  <div class="journalCategory">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p>{{ .Description }}</p>
+  </div>
+  {{ end }}
+</div>
+{{ else }}
+<!-- Individual category page -->
+{{ $isList := or (eq .RelPermalink "/journals/reviews/") (eq .RelPermalink
+"/journals/gratitudes/") }} {{ if $isList }}
+<!-- For list-based categories (reviews, gratitudes) -->
+<div class="list">
+  {{ $paginator := .Paginate (where .Pages "Type" "ne" "page") }} {{ range
+  $paginator.Pages }}
+  <div class="listItem">
+    <div class="listItemTexts">
+      <h2 class="listItemTitle">
+        <a href="{{.Permalink}}">{{ .Title }}</a>
+      </h2>
+      {{ if .Params.description }}
+      <p class="listItemDesc">{{.Params.description}}</p>
+      {{ end }}
+      <div class="listItemDetail">
+        <time>{{dateFormat .Site.Params.dateFormat .Date}}</time>
+      </div>
+      {{ if .Params.tags }}
+      <div class="listItemTags">
+        {{range (.GetTerms "tags")}}
+        <a href="{{.Permalink}}" class="listItemTag">{{.Name}}</a>
+        {{end}}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  <!-- Pagination -->
+  {{ template "_internal/pagination.html" . }}
+</div>
+{{ else }}
+<!-- For single-page categories (ml, ielts journey) -->
+{{ $firstPage := index .Pages 0 }} {{ with $firstPage }}
+<article>
+  <h2>{{ .Title }}</h2>
+  <div class="articleMeta">
+    <time>Last updated: {{dateFormat $.Site.Params.dateFormat .Lastmod}}</time>
+  </div>
+  {{ .Content }}
+</article>
+{{ else }}
+<p>No content found for this category.</p>
+{{ end }} {{ end }} {{ end }} {{ end }}
