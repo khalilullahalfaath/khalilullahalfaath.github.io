@@ -206,11 +206,13 @@ footer{
 
 /* LIST START */
 
-.list{
-    border-radius: 25px;
-    padding: 50px;
-    background-color: var(--bgsoft);
-}
+/* main .list{ */
+    /* width: 80%; */
+    /* border-radius: 25px; */
+    /* padding: 50px; */
+    /* background-color: var(--bgsoft); */
+/* } */
+
 
 .listItem{
     display: flex;
@@ -299,7 +301,7 @@ footer{
 
 /* Single Start*/
 
-.single{
+main .single, .list, .onboarding, .journalCategories{
     width: 65%;
     border-radius: 25px;
     padding: 50px;
@@ -399,6 +401,19 @@ footer{
 
 /* Single end*/
 
+/* Journal start */
+
+.journalCategories .journalCategory{
+    /* background-color: var(--primary); */
+    border: solid 1px var(--primary);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+/* Journal end */
+
+
 @media (max-width: 1536px){
     .container{
         max-width: 1366px;
@@ -463,9 +478,7 @@ footer{
         padding: 25px;
         width: 80%;
     }
-    .single h1, h2, h3, h4, h5, h6, .singleHeadDesc, p, li{
-        font-size: smaller;
-    }
+
     .links{
         width: 75%;
         height: 25%;
@@ -564,15 +577,21 @@ footer{
         justify-content: center;
     }
 
+    main .single, .list, .onboarding, .journalCategories{
+        width: 90%;
+        border-radius: 25px;
+        padding: 30px;
+        background-color: var(--bgsoft);
+    }
+
+    .single h1, h2, h3, h4, h5, h6, .singleHeadDesc, p, li{
+        font-size: 16px;
+    }
 
 }
 @media (max-width: 640px){
     .container{
         max-width: 475px;
-    }
-
-    .single h1, h2, h3, h4, h5, h6, .singleHeadDesc, p, li{
-        font-size: smaller;
     }
 
     .single{

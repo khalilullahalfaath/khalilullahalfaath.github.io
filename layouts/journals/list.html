@@ -1,9 +1,9 @@
 {{ define "main"}}
 <h1>{{ .Title }}</h1>
-<p>{{.Description}}</p>
+{{/*  <p>{{.Description}}</p>  */}}
 
 <!-- Display the content of _index.md -->
-{{ .Content }}
+{{/* {{ .Content }} */}}
 
 <!-- Check if this is the main journals page or a category page -->
 {{ if eq .RelPermalink "/journals/" }}
