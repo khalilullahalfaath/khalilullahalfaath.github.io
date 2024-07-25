@@ -446,6 +446,12 @@ footer{
     }
 }
 @media (max-width: 768px){
+    .single{
+        padding: 25px;
+    }
+    .single h1, h2, h3, h4, h5, h6, .singleHeadDesc, p, li{
+        font-size: smaller;
+    }
     .links{
         width: 75%;
         height: 25%;
@@ -462,8 +468,23 @@ footer{
         padding-right: 45px;
     }
 
+    .singleHeadDetail {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
     .singleContent{
         font-size: 16px;
+    }
+
+    .singleContent pre{
+        width: 100%;
+        overflow-x:scroll;
+        padding: 20px;
+    }
+
+    .singleContent pre span{
+        font-size: smaller;
     }
 
     .searchButton{
