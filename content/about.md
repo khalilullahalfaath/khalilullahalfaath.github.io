@@ -2,6 +2,7 @@
 title= "About Me"
 description= "My summary"
 date = 2024-07-23T20:35:17+07:00
+layout = "about"
 +++
 
 ## Khalilullah Al Faath
