@@ -1,8 +1,45 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 <div class="single">
-  <div class="singlePage">
-    <div class="singlePageContent">{{ .Content }}</div>
+  <div class="about">
+    <div class="aboutImg">
+      <img src="/images/myself.jpg" alt="halo" />
+      <figcaption>My portrait</figcaption>
+    </div>
+    <div class="singlePage">
+      <div class="singlePageContent">{{ .Content }}</div>
+    </div>
+  </div>
+  <hr class="dividerAbout"/>
+  <div class="aboutWebsite">
+    <h3>About this website</h3>
+    <p>
+      This website is inspired by a fictional character named
+      <a href="https://bigbangtheory.fandom.com/wiki/Sheldon_Cooper"
+        >Sheldon Cooper</a
+      >. It is created to share insights through blog posts, where I also share
+      my learning experiences, schedules, reviews, and weekly journals from my
+      real-world activities. The website is built using
+      <a href="https://gohugo.io/">Hugo</a>.
+    </p>
+
+    <h4>Please notice me</h4>
+    <p>
+      If you find any errors on this website, please report them through the
+      designated channels.
+    </p>
+    <ul>
+      <li>Send me an email at khalilullah.alfaath21@gmail.com</li>
+      <li>Send me a message on Twitter or Instagram</li>
+      <li>Open an issue on GitHub</li>
+    </ul>
+    <p>I appreciate any help in making this website better.</p>
+
+    <h4>Language</h4>
+    <p>
+      This website is primarily written in English, but I also write articles in
+      Indonesian (Bahasa Indonesia).
+    </p>
   </div>
 </div>
 {{ end }}

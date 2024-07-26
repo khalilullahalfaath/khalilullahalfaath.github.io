@@ -5,12 +5,23 @@ date = 2024-07-23T20:35:17+07:00
 layout = "about"
 +++
 
-## Khalilullah Al Faath
+### About Me
 
 Hi! Khalilullah Al Faath's here. What I mostly do is AI Engineering,  but sometimes I procrastinate in software engineering in general. I am interested in AI research and its applications in the real-world.
 
-<!-- ![Khalilullah Al Faath](/images/myself.jpg) -->
+#### Experience
 
-### About this website
+* Researcher and Engineer @Braincore (2024 - now)
+* Software Engineer Intern @PT. Len  Industry (2023)
+* Lecturer and Practicum Assistant @Telkom University (2022-2023)
 
-This website is inspired from a fictional character named Sheldon Cooper.
+#### Education
+
+* SMAN 2 Makassar (2017 - 2020)
+* Bachelors Degree in CS @Telkom University (2020-2024)
+
+#### Resources
+
+[e-Mail](mailto:khalilullah.alfaath21@gmail.com) / [Github](https://github.com/khalilullahalfaath) / [LinkedIn](https://www.linkedin.com/in/khalilullah-al-faath-4a684021a/)
+[X (Twitter)](https://x.com/khaleeelll)
+[Instagram](https://www.instagram.com/khalilullahalfaath/)

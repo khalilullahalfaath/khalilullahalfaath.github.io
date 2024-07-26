@@ -76,8 +76,45 @@ main h1{
     margin-bottom: 30px;
 }
 
-.onboardingDesc{
+.onboardingPic{
+    display: flex;
+    flex-direction: column;
     margin-bottom: 30px;
+}
+
+.onboardingPic img{
+    align-self: center;
+    width: 60%;
+    object-fit: cover;
+}
+
+.attribution {
+    font-size: 0.8rem;
+    color: var(--textsoft);
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+  .attribution a {
+    color: var(--textsoft);
+    font-weight: 750;
+    text-decoration: none;
+  }
+  
+  .attribution a:hover {
+    text-decoration: underline;
+  }
+
+.onboardingDesc{
+    line-height: 30px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.onboardingDesc a{
+    font-weight: 750;
+    color: var(--primary);
+    text-decoration: underline;
 }
 
 .dividerOnboarding{
@@ -85,7 +122,7 @@ main h1{
 }
 
 .recentPosts{
-    margin-top: 80px;
+    margin-top: 40px;
     display: flex;
     flex-direction: row;
     gap: 40px;
@@ -308,11 +345,6 @@ main .single, .list, .onboarding, .journalCategories{
     background-color: var(--bgsoft);
 }
 
-.single.about-page img{
-    width: 25%;
-    margin: auto;
-}
-
 .singleHead{
     display: flex;
     align-items: center;
@@ -413,6 +445,62 @@ main .single, .list, .onboarding, .journalCategories{
 
 /* Journal end */
 
+/* about start */
+
+.about{
+    display: flex;
+    flex-direction: row;
+}
+
+.aboutImg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 25px;
+    object-fit: cover;
+    gap: 15px;
+}
+
+.aboutImg img{
+    border-radius: 25px;
+}
+
+.about .singlePage{
+    align-self: center;
+}
+
+.about h3, 
+.aboutWebsite h3 {
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.about h4, .aboutWebsite h4{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.about a, .aboutWebsite a{
+    /* margin-right: 20px;
+     */
+    padding: 5px;
+    border-radius: 5px;
+    /* background-color: var(--primary); */
+    color: var(--textsoft);
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.dividerAbout{
+display: none;
+}
+
+
+/* about end */
+
 
 @media (max-width: 1536px){
     .container{
@@ -471,6 +559,29 @@ main .single, .list, .onboarding, .journalCategories{
         align-items: center;
         gap: 5px;
         font-size: 15px;
+    }
+
+    .about{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aboutImg{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        /* margin: 25px; */
+        object-fit: cover;
+        gap: 15px;
+    }
+
+    .aboutImg img{
+        border-radius: 25px;
+    }
+
+    .single .dividerAbout{
+        display: block;
     }
 }
 @media (max-width: 768px){
@@ -592,6 +703,8 @@ main .single, .list, .onboarding, .journalCategories{
         font-size: 26px;
     }
 
+
+
 }
 @media (max-width: 640px){
     .container{
@@ -602,4 +715,28 @@ main .single, .list, .onboarding, .journalCategories{
         padding: 25px;
         width: 90%;
     }
+
+    .onboardingDesc{
+        line-height: 30px;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+
+    .postPreview p{
+        /* background-color: red; */
+        margin-top: 10px;
+        font-size: 10px;
+    }
+
+    .links a{
+        font-size: 14px;
+    }
+
+    footer p{
+        font-size: 14px;
+    }
+
+
+
 }
