@@ -72,7 +72,7 @@ main h1{
 }
 
 .onboardingTitle{
-    font-size: 70px;
+    font-size: 55px;
     margin-bottom: 30px;
 }
 
@@ -471,10 +471,14 @@ main .single, .list, .onboarding, .journalCategories{
 }
 
 .about h3, 
-.aboutWebsite h3 {
+.aboutWebsite h3, .now h3 {
     font-size: 30px;
     margin-top: 0px;
     margin-bottom: 20px;
+}
+
+.now h3{
+    margin-top: 20px;
 }
 
 .about h4, .aboutWebsite h4{
@@ -526,9 +530,19 @@ display: none;
         display: none;
     }
 
+    .onboardingTitle{
+        font-size: 30px;
+    }  
+
     .logo{
         /* display: none; */
         font-size: 20px;
+    }
+
+    .recentPosts{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .toggle{
@@ -633,15 +647,9 @@ display: none;
         max-width: fit-content;
     }
 
-    .recentPosts{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
 
-    .onboardingTitle{
-        font-size: 50px;
-    }
+
+
 
     .logo{
         display: none;
