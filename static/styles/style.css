@@ -69,6 +69,8 @@ main h1{
 /* ONBOARDING START */
 .onboarding{
     margin-top: 20px !important;
+    flex-direction: column;
+    display: flex;
 }
 
 .onboardingTitle{
@@ -78,8 +80,11 @@ main h1{
 
 .onboardingPic{
     display: flex;
+    /* justify-content: center; */
     flex-direction: column;
+    align-self: center;
     margin-bottom: 30px;
+    max-width: 75%;
 }
 
 .onboardingPic img{
@@ -108,7 +113,7 @@ main h1{
 .onboardingDesc{
     line-height: 30px;
     margin-bottom: 20px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .onboardingDesc a{
