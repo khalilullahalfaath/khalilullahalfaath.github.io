@@ -66,3 +66,7 @@ menu:
       url: "/journals/reviews/"
       parent: "Journals"
       weight: 5
+    - name: "Log books"
+      url: "/journals/logbooks/"
+      parent: "Journals"
+      weight: 6

@@ -1,6 +1,8 @@
 {{ define "main"}}
 <h1>{{ .Title }}</h1>
-{{/*  <p>{{.Description}}</p>  */}}
+{{/*
+<p>{{.Description}}</p>
+*/}}
 
 <!-- Display the content of _index.md -->
 {{/* {{ .Content }} */}}
@@ -19,7 +21,8 @@
 {{ else }}
 <!-- Individual category page -->
 {{ $isList := or (eq .RelPermalink "/journals/reviews/") (eq .RelPermalink
-"/journals/gratitudes/") }} {{ if $isList }}
+"/journals/gratitudes/") (eq .RelPermalink "/journals/logbooks/")}} {{ if
+$isList }}
 <!-- For list-based categories (reviews, gratitudes) -->
 <div class="list">
   {{ $paginator := .Paginate (where .Pages "Type" "ne" "page") }} {{ range
