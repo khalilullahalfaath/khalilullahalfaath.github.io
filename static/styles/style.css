@@ -23,7 +23,7 @@ body.light{
     --textsoft: #1f3050;
     --secondary: #0b1529;
     --primary: #00ADB5;
-    --bg: #dee4eb;
+    --bg: #FFFFEC;
     --bgsoft: #cbd2d9;
 }
 
@@ -50,9 +50,6 @@ main{
     /* justify-content: center; */
 }
 
-main h1{
-    margin-bottom: 20px;
-}
 
 .container{
     max-width: 1366px;
@@ -74,7 +71,7 @@ main h1{
 }
 
 .onboardingTitle{
-    font-size: 55px;
+    font-size: 70px;
     margin-bottom: 30px;
 }
 
@@ -207,6 +204,14 @@ main h1{
     color: var(--textsoft);
     padding: 10px 20px;
     border-radius: 20px;
+    display: none;
+}
+
+.icon{
+    width: 100%;
+    height: 100%;
+    max-height: 40px;
+    object-fit: contain;
 }
 /* NAVBAR END */
 
@@ -254,6 +259,10 @@ footer{
     /* padding: 50px; */
     /* background-color: var(--bgsoft); */
 /* } */
+
+.list{
+    padding: 30px;
+}
 
 
 .listItem{
@@ -344,10 +353,13 @@ footer{
 /* Single Start*/
 
 main .single, .list, .onboarding, .journalCategories{
-    width: 65%;
+    width: 90%;
+    padding-top: 30px;
     border-radius: 25px;
-    padding: 50px;
-    background-color: var(--bgsoft);
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    /* background-color: var(--bgsoft); */
 }
 
 .singleHead{
@@ -661,7 +673,7 @@ display: none;
         font-size: 15px;
     }
 
-    .toggle{
+    /* .toggle{
         width: 40px;
         height: 20px;
         padding: 10px 10px;
@@ -672,21 +684,21 @@ display: none;
         gap: 5px;
         background-color: var(--bgsoft);
         /* border: 0.5px solid var(--textsoft); */
-        position: relative;
-    }
+        /* position: relative; */
+    /* } */ 
 
     .listItemCategories{
         flex-wrap: wrap;
     }
 
-    .ball{
+    /* .ball{
         width: 20px;
         height: 17px;
         border-radius: 50%;
         position: absolute;
         left: 0;
         background-color: var(--textsoft);
-    }
+    } */
 
     .footerLink{
         display: none;
@@ -705,7 +717,6 @@ display: none;
         width: 90%;
         border-radius: 25px;
         padding: 30px;
-        background-color: var(--bgsoft);
     }
 
     .single h1, h2, h3, h4, h5, h6, .singleHeadDesc, p, li{
