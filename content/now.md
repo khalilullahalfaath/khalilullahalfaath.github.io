@@ -4,17 +4,12 @@ date = 2024-07-23T20:35:17+07:00
 layout = "now"
 +++
 
-### Working
+## Working
 
-* Working on a part-time job as an engineer and researcher at [@braincore](https://braincore.id/)
-* Learning English
+* Studying a Master's degree in Computer Science at Gadjah Mada University, Yogyakarta
+* Building some projects
 
-### Reading
+## 2025's Life update
 
-* How to sleep
-* Dunia Sophie
-
-### Learning
-
-* ML Fundamentals
-* IELTS
+* NT LPDP and University of Birmingham 🥲
+* Welcome UGM!
