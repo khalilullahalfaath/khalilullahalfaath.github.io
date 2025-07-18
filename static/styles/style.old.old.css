@@ -1,0 +1,32 @@
+:root{
+    --bg: #F1E4C3;
+    --bgsoft: #FFFFEC;
+    --primary: #C6A969;
+    --secondary: #597E52;
+    --text: #484e4e;
+    --textsoft: #7d9498;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--text);
+    color: var(--bgsoft);
+    font-family: "Rubik", sans-serif;
+}
+
+body.light{
+    --text: #0b1529;
+    --textsoft: #1f3050;
+    --secondary: #0b1529;
+    --primary: #00ADB5;
+    --bg: #dee4eb;
+    --bgsoft: #cbd2d9;
+}
+
+.container{
+
+}
