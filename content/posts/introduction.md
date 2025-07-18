@@ -26,4 +26,3 @@ After convincing myself to build a web, I immediately browsed what tech stacks I
 Then I tried NextJS, the result was the same. I didn't believe that I would finish this web if I didn't know how to work it. Checked? ❌
 
 Finally, when I was searching for videos on YouTube, there was a video recommendation from Fireship. He suggested that I could try Hugo. There is also a brief tutorial, and it was very easy to read. Not only, do I love the simplicity, but also the pace that it needed to ship it. Checked? ✅
-
