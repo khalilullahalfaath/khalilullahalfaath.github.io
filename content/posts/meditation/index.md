@@ -6,7 +6,12 @@ tags:
   - Essay
   - Reflection
 ---
+## \
+This long essay is mainly inspired by Marcus Aurelius Meditation. I am trying to make this essay more 
+
 ## Book 1
+
+> This book records the virtues I have inherited from those who came before I am, from what I heard and told, those who I have lived beside, from what I experienced and learnt, and also those who I have never met, whose works nonetheless have shaped the person who I am.
 
 From my mother: I learnt discipline, patience, and hard work; to have always put education first, and be grateful, whatever the result is, good or bad; She rarely displayed affection in the way others might expect. But in time, I understood that every sacrifice, every silent act, every order and yelling, was her way of saying *I care*. 
 
