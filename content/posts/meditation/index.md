@@ -6,13 +6,17 @@ tags:
   - Essay
   - Reflection
 ---
-This long essay is mainly inspired by Marcus Aurelius Meditation. I am trying to make this essay more poetic, to challenge myself in writing in English. I did mot write this essay to be admired, nor to teach others how to live, but to remind myself. Of who I am, of who I must strive to be, and of the people whose virtues I hope to reflect.
+This long essay is mainly inspired by Marcus Aurelius’s Meditation. I am trying to make this essay more poetic, to challenge myself in writing in English. 
+
+I did not write this essay to be admired, nor to teach others how to live, but to remind myself. Of who I am, of who I must strive to be, and of the people whose virtues I hope to reflect.
 
 ## Book 1
 
 > This book records the virtues I have inherited from those who came before I am, from what I heard and told, and those who I have lived beside, from what I experienced and learnt, and also those who I have never met, whose works nonetheless have shaped the person who I am.
 
-From my mother: I learnt discipline, patience, and hard work; to have always put education first, and be grateful, whatever the result is, good or bad; She rarely displayed affection in the way others might expect. But in time, I understood that every sacrifice, every silent act, every order and yelling, was her way of saying *I care*. 
+From my mother: I learnt discipline, patience, and hard work; to have always put my education first, and be grateful, whatever the result is, good or bad; She rarely displayed affection in the way others might expect. But in time, I understood that every sacrifice, every silent act, every order and yelling, was her way of saying *I care*. 
+
+Further, to always put my best in my works, my colleagues, and my family; to be responsible with my work, and not relying on others; to not procrastinate, and always come early; to avoid any wrongdoings, especially corruption, nepotism, selfishness, and greed, even in thought.
 
 From my father: responsibility, love of family, and generosity; to always make contact, and always believe that “you reap what you sow”; He taught me to endure suffering in silence, but to remain kind; Though his years were few, everyone still remember his goodness; 
 
