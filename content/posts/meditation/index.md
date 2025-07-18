@@ -56,4 +56,4 @@ In my high school years in SMAN 2 Makassar, I once again entered the Advanced Cl
 
 That in my university years in Telkom University, I was able to meet and friend with Hilman, Naufal, Harvian, Mirai, Gilang, Farida, Anisa, Rahil and Asfa, especially Ubur (Hilman, Farida, Anisa) who helped me endure the life of a computer science student; that I lived in my Aunt’s House, who was very kind to me always, and never once treated me differently from her own children; that I lived in Bandung, a city of full memories, especially for me who have been living in the outskirts of my hometown; that I was able to graduate with a final GPA of 3.94 and was honoured with cum laude. 
 
-After graduation, that I am able to get my desired IELTS Score and TPA, admitted to UGM as a Master’s student; that I spend my time learning something new, playing game with family and friends in Roblox.
+After graduation, that I was able to get my desired IELTS Score and TPA, admitted to UGM as a Master’s student; that I spend my time learning something new, playing game with family and friends in Roblox.
