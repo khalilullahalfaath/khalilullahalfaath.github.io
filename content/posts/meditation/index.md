@@ -10,11 +10,11 @@ This long essay is mainly inspired by Marcus Aurelius Meditation. I am trying to
 
 ## Book 1
 
-> This book records the virtues I have inherited from those who came before I am, from what I heard and told, those who I have lived beside, from what I experienced and learnt, and also those who I have never met, whose works nonetheless have shaped the person who I am.
+> This book records the virtues I have inherited from those who came before I am, from what I heard and told, and those who I have lived beside, from what I experienced and learnt, and also those who I have never met, whose works nonetheless have shaped the person who I am.
 
 From my mother: I learnt discipline, patience, and hard work; to have always put education first, and be grateful, whatever the result is, good or bad; She rarely displayed affection in the way others might expect. But in time, I understood that every sacrifice, every silent act, every order and yelling, was her way of saying *I care*. 
 
-From my father: responsibility, love, and generosity; to be always there for your family; to always make contact, and always believe that “you reap what you sow”; He taught me to endure suffering in silence, but to remain kind; Though his years were few, everyone still remember him.
+From my father: responsibility, love of family, and generosity; to always make contact, and always believe that “you reap what you sow”; He taught me to endure suffering in silence, but to remain kind; Though his years were few, everyone still remember his goodness; 
 
 From my aunt: social interactions, loyalty, and generosity. It is not important who I am helping but always try to help whoever they are. 
 
