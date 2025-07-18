@@ -34,4 +34,6 @@ From my closest friend from childhood: to keep trying, even when the door closes
 
 From my best friend in high school: to always put my family first, and try hard for them, even if I have to move to new places; to bring laughter to my friends, but always with care, so my words don’t wound.
 
-From my neighbor: I learnt how to be a heart of gold, a kind neighbor, and a faithful person; she was a woman of deep devotion, early to the mosque, kind to all, generous beyond measure; her final years wasn’t easy, she had to suffer with illness, yet she didn’t curse it. She bore it with patience, her faith unshaken. She never complaint, only quiet strength she shined;
+From my neighbor: I learnt how to be a heart of gold, a kind neighbor, and a faithful person; she was a woman of deep devotion, early to the mosque, kind to all, generous beyond measure; her final years wasn’t easy, she had to suffer with illness, yet she didn’t curse it. She bore it with patience, her faith unshaken. She never complaint, only quiet strength she shined.
+
+From Allah: to have had good grandparents, good parents, a good sister, good teachers, good family, relatives, and friends, almost everyone; That I have had an amazing childhood, experiencing my late father’s prime.
