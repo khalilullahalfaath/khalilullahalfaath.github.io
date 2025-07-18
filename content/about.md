@@ -23,4 +23,4 @@ I'm especially interested in machine learning theory, evolutionary algorithms, N
 [Instagram](https://www.instagram.com/khalilullahalfaath/)
 
 ### Fun fact
-This website was mainly inspired by Sheldon Cooper's website from the Big Bang Theory. I love how he managed to publish everything what came into his mind, even his enemy lists and his bathroom schedule😂. Unfortunately, you wont find that in this website. At some point, I stumbled upon <ghora.net>, which gave me a new perspective on how to publish a website as a research scientist (future me, Aaamiin). 
+This website was mainly inspired by Sheldon Cooper's website from the Big Bang Theory. I love how he managed to publish everything what came into his mind, even his enemy lists and his bathroom schedule😂. Unfortunately, you wont find that in this website. At some point, I stumbled upon [@ghora](ghora.net), which gave me a new perspective on how to publish a website as a research scientist (future me, Aaamiin). 
