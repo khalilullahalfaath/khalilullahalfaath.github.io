@@ -6,8 +6,7 @@ tags:
   - Essay
   - Reflection
 ---
-## \
-This long essay is mainly inspired by Marcus Aurelius Meditation. I am trying to make this essay more 
+This long essay is mainly inspired by Marcus Aurelius Meditation. I am trying to make this essay more poetic, to challenge myself in writing in English. I did mot write this essay to be admired, nor to teach others how to live, but to remind myself. Of who I am, of who I must strive to be, and of the people whose virtues I hope to reflect.
 
 ## Book 1
 
