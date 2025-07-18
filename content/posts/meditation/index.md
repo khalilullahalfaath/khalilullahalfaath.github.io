@@ -20,7 +20,7 @@ Further, to always put my best in my works, my colleagues, and my family; to be 
 
 From my father: responsibility, love of family, and generosity; to always make contact, and always believe that “you reap what you sow”; He taught me to endure suffering in silence, but to remain kind; Though his years were few, everyone still remember his goodness; 
 
-From my aunt: social interactions, loyalty, and generosity. It is not important who I am helping but always try to help whoever they are. 
+From my aunt: social interactions, loyalty, and generosity. It is not important who I am helping but always try to help whoever they are; to always help and care my parents, and to be a devoted children.
 
 From my sister: not to put loyalty to friends above loyalty to family. 
 
