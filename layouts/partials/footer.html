@@ -1,6 +1,8 @@
 <footer>
   <div class="footerCopy">
-    <p>&copy; 2024 Khalilullah Al Faath. All Rights Reserved.</p>
+    <p>
+      &copy; <span id="year"></span> Khalilullah Al Faath. All Rights Reserved.
+    </p>
   </div>
   <div class="footerContent">
     <div class="footerLink">
@@ -54,3 +56,6 @@
     </div>
   </div>
 </footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
