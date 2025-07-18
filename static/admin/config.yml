@@ -19,7 +19,7 @@ collections:
           label: "Featured Image",
           name: "image",
           widget: "image",
-          required: "false",
+          required: false,
         }
       - {
           label: "Tags",
