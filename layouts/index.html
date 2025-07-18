@@ -1,16 +1,6 @@
 {{ define "main" }}
 <div class="onboarding">
   <h1 class="onboardingTitle">Welcome!</h1>
-  <div class="onboardingPic">
-    <img src="images/robot.png" alt="Robot illustration" />
-    <figcaption class="attribution">
-      Illustration by
-      <a href="https://icons8.com/illustrations/author/Go8GMpKPAq1W"
-        >Polina M.</a
-      >
-      from <a href="https://icons8.com/illustrations">Ouch!</a>
-    </figcaption>
-  </div>
   <p class="onboardingDesc">
     Explore <a href="/posts">my insights</a>,
     <a href="/journals/schedules">my schedules</a> throughout the weeks, and
@@ -27,6 +17,6 @@
     </div>
     {{ end }}
   </div>
-  <a href="{{ .Site.BaseURL }}posts/">See all posts</a>
+  <a href="{{ .Site.BaseURL }}posts/"><u>See all posts</u></a>
 </div>
 {{ end }}
