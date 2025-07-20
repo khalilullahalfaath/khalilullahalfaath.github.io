@@ -11,7 +11,7 @@ Setelah berkali-kali terjatuh dan berkali-kali gagal, hari ini, 20 Juli 2025, ak
 
 Aku memulai perjalanan ini sendirian. Tidak ada pemandu, tidak ada tim, hanya aku dan tekad yang tak bisa digadaikan. Menelusuri geyser yang panjang, menggigil mendaki gunung es yang sunyi dan kejam, hingga melintasi jembatan sempit yang menggantung bagai neraka kecil di langit, tetapi aku tak pernah gentar.
 
-Di sepanjang jalan, aku melihat banyak grup yang kompak, pasangan yang saling menyemangati, dan sekumpulan sahabat yang tertawa ringan. Aku tidak iri. Tidak butuh keramaian untuk membuktikan siapa diriku. Hanya langkah kaki dan kehendakku lah yang terus membara.
+Aku melihat banyak grup yang kompak, pasangan yang saling menyemangati, dan sekumpulan sahabat yang tertawa di sepanjang jalan. Aku tidak iri. Tidak butuh keramaian untuk membuktikan siapa diriku. Hanya langkah kaki dan kehendakku-lah yang terus membara.
 
 Tangki oksigenku terus menipis, embusan napas terasa semakin berat. Setiap detik adalah duel antara hidup dan mati. Tapi aku belajar: panik tak menyelamatkan nyawa. Ketelitian dan observasi lah yang menyelamatkanku.
 
