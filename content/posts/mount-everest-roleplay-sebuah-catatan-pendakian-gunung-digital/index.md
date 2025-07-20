@@ -2,6 +2,7 @@
 title: "Mount Everest Roleplay: Sebuah Catatan Pendakian Gunung Digital"
 date: 2025-07-20T21:45:00.000+08:00
 draft: true
+image: 52899502-a480-403d-8017-74cc20df3aaf.jpeg
 tags:
   - Reflection
 ---
@@ -22,3 +23,7 @@ Dan kini aku di sini.
 Di titik tertinggi Mount Everest. Bukan sekadar menaklukkan medan, tapi menaklukkan rasa takut, kesepian, dan keraguan. Ini adalah kemenangan untuk mereka yang terus melangkah saat semua orang memilih menyerah.
 
 Hari ini, aku menaklukkan Everest. Bukan karena kuat, tapi karena aku menolak untuk berhenti.
+
+![Potret Summit Everest 2025](52899502-a480-403d-8017-74cc20df3aaf.jpeg "Potret Summit Everest 2025")
+
+![Foto dengan sesama pendaki](7ad17cf1-d98c-458b-bd2b-15c4cdceb2b8.jpeg "Foto-ku dengan sesama pendaki")
