@@ -11,5 +11,4 @@ layout = "now"
 
 ## 2025's Life update
 
-* NT LPDP and University of Birmingham 🥲
 * Welcome UGM!
