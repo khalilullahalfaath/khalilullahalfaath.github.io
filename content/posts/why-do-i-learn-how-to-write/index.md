@@ -8,5 +8,9 @@ description: "I had always considered myself a good writer since I was a kid. I
   debating with long arguments online! However, after studying for my IELTS
   preparation, specifically learning how to write to fulfil the IELTS
   requirements, it was clear that I was not. "
+categories:
+  - Essay
+  - Reflection
+  - Tutorials
 ---
 Placeholder
