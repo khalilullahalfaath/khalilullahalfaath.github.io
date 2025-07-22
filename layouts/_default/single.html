@@ -3,12 +3,9 @@
   <div class="singleHead">
     <div class="singleHeadText">
       <h1 class="singleHeadTitle">{{.Title}}</h1>
-      <p class="singleHeadDesc">{{.Params.description}}</p>
-      <div class="singleHeadDetail">
-        {{range (.GetTerms "categories")}}
-        <a href="{{.Permalink}}" class="singleCategory">{{.Name}}</a>
-        {{end}}
-      </div>
+      {{ with .Params.description }}
+      <p class="singleHeadDesc">{{ . }}</p>
+      {{ end }}
       <div class="singleHeadTimes">
         {{/*
         <time>Created: {{dateFormat .Site.Params.dateFormat .Date}}</time> */}}
@@ -18,10 +15,22 @@
         >
         {{ end }}
       </div>
+      <div class="singleHeadDetail">
+        {{range (.GetTerms "categories")}}
+        <a href="{{.Permalink}}" class="singleCategory">{{.Name}}</a>
+        {{end}}
+      </div>
     </div>
   </div>
   <div class="singleBottom">
     <div class="singleContent">{{.Content}}</div>
+
+    {{ with .Params.mediumLink }} {{ $link := partial "sanitize-link.html" . }}
+    <div class="mediumNote" style="margin-top: 2rem; font-style: italic">
+      This article is also uploaded on Medium. Please check
+      <a href="{{ $link }}" target="_blank" rel="noopener">this link</a>.
+    </div>
+    {{ end }}
   </div>
 </div>
 {{ end }}

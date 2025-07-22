@@ -2,11 +2,12 @@
 title: Meditation
 date: 2025-07-19T01:07:00.000+08:00
 draft: false
-tags:
+categories:
   - Essay
   - Reflection
+mediumLink: www.google.com
 ---
-This long essay is mainly inspired by Marcus Aurelius’s Meditation. I am trying to make this essay more poetic, to challenge myself in writing in English. 
+This long essay is mainly inspired by Marcus Aurelius’s Meditation. I am trying to make this essay more poetic, to challenge myself in writing in English.
 
 I did not write this essay to be admired, nor to teach others how to live, but to remind myself. Of who I am, of who I must strive to be, and of the people whose virtues I hope to reflect.
 

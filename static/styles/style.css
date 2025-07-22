@@ -9,6 +9,13 @@
   --bs-bg-opacity: 1;
     --bs-navbar-brand-color: #000;
 
+  /* Category Badges */
+  --category-bg: #f0f0f0;
+  --category-text: #222;
+  --category-hover-bg: var(--accent);
+  --category-hover-text: #fff;
+  --category-border: var(--border);
+
   /* Typography */
   --font-body: 'Georgia', serif;
   --font-ui: 'Inter', sans-serif;
@@ -45,6 +52,12 @@
   --border: #333333;
   --bs-tertiary-bg-rgb: 18, 18, 18; /* dark gray */
   --bs-bg-opacity: 1;
+
+  --category-bg: #1e1e1e;
+  --category-text: #eee;
+  --category-hover-bg: var(--accent);
+  --category-hover-text: #000;
+  --category-border: #444;
 }
 
 body {
@@ -154,11 +167,83 @@ footer{
   color: var(--accent);
 }
 
+/* single page */
+.singleHeadTitle{
+  margin-bottom: 0px !important;
+}
 
+
+.singleHeadTimes{
+  font-size: x-small;
+  margin-bottom: 10px;
+}
+
+.singleHeadDetail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.singleCategory {
+  background-color: var(--category-bg);
+  color: var(--category-text);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: var(--text-xs);
+  text-decoration: none;
+  border: 1px solid var(--category-border);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.singleCategory:hover {
+  background-color: var(--category-hover-bg);
+  color: var(--category-hover-text);
+  border-color: transparent;
+}
+
+
+.imageBlock {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.imageBlock img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px !important;
+}
+
+.imageBlock figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.singleContent img {
+  display: block;
+  margin: 2rem auto;
+  object-fit: cover;
+  height: auto;
+
+  /* Default for landscape */
+  width: 70%;
+  max-width: 700px;
+}
+
+.mediumNote {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.mediumNote a {
+  color: var(--accent);
+  text-decoration: underline;
+}
 
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   main {
     padding: var(--space-md) var(--space-xs);
   }

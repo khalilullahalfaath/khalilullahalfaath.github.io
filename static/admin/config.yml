@@ -11,26 +11,46 @@ collections:
     media_folder: "" # Save images in the post's own folder instead of the static folder
     public_folder: ""
     create: true # Allow users to create new documents in this collection
+    format: "toml"
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Last Modified",
+          name: "lastmod",
+          widget: "datetime",
+          required: false,
+        }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
       - {
-          label: "Featured Image",
-          name: "image",
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - { label: "Image", name: "Image", widget: "image", required: false }
+      - {
+          label: "Image Big",
+          name: "ImageBig",
           widget: "image",
           required: false,
         }
       - {
-          label: "Tags",
-          name: "tags",
+          label: "Categories",
+          name: "categories",
           widget: "list",
-          summary: "{{fields.tag}}",
-          field: { label: "Tag", name: "tag", widget: "string" },
-        } # https://github.com/decaporg/decap-cms/issues/4646
+          summary: "{{fields.category}}",
+          field: { label: "Category", name: "category", widget: "string" },
+        }
+      - {
+          label: "Medium Link",
+          name: "mediumLink",
+          widget: "string",
+          required: false,
+        }
       - {
           label: "Body",
           name: "body",
           widget: "markdown",
-          hint: "Make sure to name added image as thumbnail",
+          hint: "write your article here",
         }

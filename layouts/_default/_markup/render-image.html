@@ -1,0 +1,10 @@
+<figure class="imageBlock">
+  <img
+    src="{{ .Destination | safeURL }}"
+    alt="{{ .Text }}"
+    title="{{ .Title }}"
+  />
+  {{ with .Title }}
+  <figcaption>{{ . }}</figcaption>
+  {{ end }}
+</figure>
