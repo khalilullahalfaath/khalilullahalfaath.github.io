@@ -2,7 +2,7 @@
 title: Lorem Ipsum 2
 date: 2025-07-22T22:43:00.000+08:00
 lastmod: 2025-07-22T22:43:00.000+08:00
-draft: true
+draft: false
 description: Lorem ipsum dolor sit amet consectetur adipiscing elit.
 categories:
   - cat1
