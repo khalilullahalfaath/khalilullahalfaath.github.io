@@ -465,18 +465,35 @@ footer .footerCopy{
   color: var(--text);
 }
 
+.postPreviewWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.postCardWrapper {
+  /* optional: add styles if needed around each card */
+}
+
 .postPreview {
-  padding: var(--space-sm);
-  border: var(--border-thin);
-  border-radius: var(--radius);
-  margin-bottom: var(--space-sm);
-  background-color: var(--category-bg);
-  transition: background-color 0.3s;
+  display: block;
+  padding: var(--space-md);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
 .postPreview:hover {
-  background-color: var(--category-hover-bg);
+  background-color: var(--surface-hover);
+  transform: translateY(-2px);
 }
+
+
 
 .postPreview h3 {
   margin: 0 0 var(--space-xs);
