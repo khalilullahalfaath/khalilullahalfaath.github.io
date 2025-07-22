@@ -1,15 +1,54 @@
-<nav class="navbar">
-  <div class="logo">
-    <a href="/about">Khalil-lab</a>
-  </div>
-  <div class="links">
-    <a href="/">Home</a> / <a href="/now">Now</a> /
-    <a href="/categories">Categories</a> / <a href="/posts">Writings</a> /<a
-      href="/journals"
-      >Journals</a
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Khalil-lab</a>
+
+    <button
+      id="theme-toggle"
+      class="theme-toggle"
+      aria-label="Toggle dark mode"
     >
-    /
-    <a href="/about">About</a>
+      🌙
+    </button>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse justify-content-center"
+      id="navbarNavAltMarkup"
+    >
+      <!-- Desktop navbar (centered with slashes) -->
+      <div class="navbar-nav nav-desktop d-none d-lg-flex">
+        <a class="nav-link" href="/">Home</a>
+        <span class="nav-separator">/</span>
+        <a class="nav-link" href="/now">Now</a>
+        <span class="nav-separator">/</span>
+        <a class="nav-link" href="/categories">Categories</a>
+        <span class="nav-separator">/</span>
+        <a class="nav-link" href="/posts">Writings</a>
+        <span class="nav-separator">/</span>
+        <a class="nav-link" href="/journals">Journals</a>
+        <span class="nav-separator">/</span>
+        <a class="nav-link" href="/about">About</a>
+      </div>
+
+      <!-- Mobile navbar (left-aligned, no slashes) -->
+      <div class="navbar-nav d-lg-none flex-column text-start ps-3">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/now">Now</a>
+        <a class="nav-link" href="/categories">Categories</a>
+        <a class="nav-link" href="/posts">Writings</a>
+        <a class="nav-link" href="/journals">Journals</a>
+        <a class="nav-link" href="/about">About</a>
+      </div>
+    </div>
   </div>
-  <div class="navRight"></div>
 </nav>
