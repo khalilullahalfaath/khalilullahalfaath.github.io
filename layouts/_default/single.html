@@ -3,9 +3,6 @@
   <div class="singleHead">
     <div class="singleHeadText">
       <h1 class="singleHeadTitle">{{.Title}}</h1>
-      {{ with .Params.description }}
-      <p class="singleHeadDesc">{{ . }}</p>
-      {{ end }}
       <div class="singleHeadTimes">
         {{/*
         <time>Created: {{dateFormat .Site.Params.dateFormat .Date}}</time> */}}
@@ -20,6 +17,9 @@
         <a href="{{.Permalink}}" class="singleCategory">{{.Name}}</a>
         {{end}}
       </div>
+      {{ with .Params.description }}
+      <div class="singleHeadDesc">{{ . | markdownify }}</div>
+      {{ end }}
     </div>
   </div>
   <div class="singleBottom">

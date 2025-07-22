@@ -1,0 +1,15 @@
+{{ define "main" }}
+<h1>Categories</h1>
+<div class="categoryGrid">
+  {{ range .Data.Terms }}
+  <a href="{{ .Page.Permalink }}" class="categoryCard">
+    <div class="categoryCardInner">
+      <h2 class="categoryTitle">{{ .Page.Title }}</h2>
+      <span class="categoryCount"
+        >{{ .Count }} post{{ if ne .Count 1 }}s{{ end }}</span
+      >
+    </div>
+  </a>
+  {{ end }}
+</div>
+{{ end }}

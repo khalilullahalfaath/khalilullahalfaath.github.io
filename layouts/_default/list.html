@@ -10,6 +10,11 @@
       <p class="listItemDesc">{{.Params.description}}</p>
       <div class="listItemDetail">
         <time>{{dateFormat .Site.Params.dateFormat .Date}}</time>
+        <div class="listItemCategories">
+          {{ range (.GetTerms "categories") }}
+          <a href="{{ .Permalink }}" class="categoryBox">{{ .LinkTitle }}</a>
+          {{ end }}
+        </div>
       </div>
     </div>
   </div>
