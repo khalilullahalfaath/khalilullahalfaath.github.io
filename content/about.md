@@ -21,9 +21,7 @@ I'm especially interested in machine learning theory, evolutionary algorithms, N
 <br/>
 
 ### 🤝 Let's connect
-[e-Mail](mailto:khalilullah.alfaath21@gmail.com) / [Github](https://github.com/khalilullahalfaath) / [LinkedIn](https://www.linkedin.com/in/khalilullah-al-faath-4a684021a/)
-[X (Twitter)](https://x.com/khaleeelll)
-[Instagram](https://www.instagram.com/khalilullahalfaath/)
+[e-Mail](mailto:khalilullah.alfaath21@gmail.com) / [Github](https://github.com/khalilullahalfaath) / [LinkedIn](https://www.linkedin.com/in/khalilullah-al-faath-4a684021a/) / [X (Twitter)](https://x.com/khaleeelll) / [Instagram](https://www.instagram.com/khalilullahalfaath/)
 
 <br/>
 
