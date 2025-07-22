@@ -1,17 +1,15 @@
-backend:
-  name: git-gateway
-  branch: main
-media_folder: "static/images" # Folder where user uploaded files should go
-public_folder: "images"
 collections:
-  - name: "posts" # Used in routes, e.g., /admin/collections/post
-    label: "Posts" # Used in the UI
-    folder: "content/posts" # The path to the folder where the documents are stored
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
     path: "{{slug}}/index"
-    media_folder: "" # Save images in the post's own folder instead of the static folder
+    create: true
+    extension: "md" 
+    frontmatter_format: "yaml" 
+    media_folder: ""
     public_folder: ""
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields for each document, usually in front matter
+    format: "yaml"
+    fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - {
@@ -27,10 +25,10 @@ collections:
           widget: "text",
           required: false,
         }
-      - { label: "Image", name: "Image", widget: "image", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
       - {
           label: "Image Big",
-          name: "ImageBig",
+          name: "imageBig",
           widget: "image",
           required: false,
         }
@@ -47,9 +45,4 @@ collections:
           widget: "string",
           required: false,
         }
-      - {
-          label: "Body",
-          name: "body",
-          widget: "markdown",
-          hint: "write your article here",
-        }
+      - { label: "Body", name: "body", widget: "markdown" }
