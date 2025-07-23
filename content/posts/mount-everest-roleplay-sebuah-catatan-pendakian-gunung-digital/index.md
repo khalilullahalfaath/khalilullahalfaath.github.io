@@ -5,6 +5,8 @@ draft: false
 image: 52899502-a480-403d-8017-74cc20df3aaf.jpeg
 tags:
   - Reflection
+categories:
+  - Jokes
 ---
 Setelah berkali-kali terjatuh dan berkali-kali gagal, hari ini, 20 Juli 2025, aku berdiri di puncak dunia, Mount Everest di Roblox yang telah kutaklukkan. 
 
