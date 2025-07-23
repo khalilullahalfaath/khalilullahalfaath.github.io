@@ -28,8 +28,13 @@ params:
   math: true
   mainSections: ["posts"]
 
+sitemap:
+  priority: 0.5
+  changefreq: monthly
+  filename: sitemap.xml
+
 outputs:
-  home: ["HTML", "RSS"]
+  home: ["HTML", "RSS", "Sitemap"]
 
 # Menu configuration
 menu:
