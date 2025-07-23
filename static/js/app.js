@@ -1,8 +1,7 @@
-// app.js
 const toggleButton = document.getElementById("theme-toggle");
 
 function setTheme(mode) {
-  document.body.classList.toggle("dark", mode === "dark");
+  document.documentElement.classList.toggle("dark", mode === "dark");
   localStorage.setItem("theme", mode);
   toggleButton.textContent = mode === "dark" ? "☀️" : "🌙";
 }
@@ -16,6 +15,6 @@ if (savedTheme) {
 }
 
 toggleButton.addEventListener("click", () => {
-  const isDark = document.body.classList.contains("dark");
+  const isDark = document.documentElement.classList.contains("dark");
   setTheme(isDark ? "light" : "dark");
 });
