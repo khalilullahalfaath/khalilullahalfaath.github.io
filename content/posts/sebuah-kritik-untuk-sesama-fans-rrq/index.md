@@ -9,6 +9,7 @@ categories:
   - Opinion
   - Critics
   - Reflection
+  - Bahasa Indonesia
 ---
 Outline
 
