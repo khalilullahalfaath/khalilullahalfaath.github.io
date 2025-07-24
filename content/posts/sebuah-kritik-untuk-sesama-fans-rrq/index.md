@@ -13,6 +13,8 @@ categories:
 ---
 Outline
 
+\- Toksik
+
 \- Terlalu jumawa
 
 \- Anti kritik
@@ -24,3 +26,9 @@ Outline
 \- Melihat ke Fans Evos (Fams)
 
 \- Perbedaan persepsi
+
+Di saat RRQ  mulai muncul di panggung skena esports global, contohnya Valorant, seharusnya kita sebagai Kingdom mulai berbenah.
+
+# Toxic
+
+Tidak dipungkiri bahwa pasti di setiap fan base memiliki fans yang toxic. Statistically speaking, kalau kita simplifikasikan bahwa jumlah fans RRQ dihitung berdasarkan jumlah followers di akun official RRQ di Instagram, yaitu sebesar 5 juta orang, dan kita umpamakan bahwa jumlah persentase orang yang toxic sebesar 0.001%, kita mendapatkan angka sebanyak 5000 orang.
