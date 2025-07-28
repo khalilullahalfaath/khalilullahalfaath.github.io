@@ -50,3 +50,4 @@ Update 29th July 2025
 1. Add a search engine dedicated for the blog\
    Maybe just put it at the end of the page. 
 2. Try again to make this blog available on google search engine using google search console
+3. Add indexing based on months
