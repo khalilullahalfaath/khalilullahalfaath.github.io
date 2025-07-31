@@ -71,6 +71,7 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+
 h1, h2, h3 {
   line-height: var(--line-heading);
   font-family: var(--font-ui);
@@ -108,15 +109,6 @@ main {
   color: var(--text);
   min-height: 100vh;
   transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-footer{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: var(--border-thin);
-  padding: var(--space-sm) 0;
-  font-family: var(--font-ui);
 }
 
 .container {
@@ -177,9 +169,14 @@ footer{
   box-shadow: none;
 }
 
+.hamburger-wrapper {
+  background-color: var(--bg);
+  border-radius: 10%;
+}
 
-body.dark .navbar-toggler-icon {
-  filter: invert(1);
+.dark .hamburger-wrapper {
+  background-color: var(--text);
+  border-radius: 10%;
 }
 
 
@@ -287,17 +284,29 @@ body.dark .navbar-toggler-icon {
   text-decoration: underline;
 }
 
-footer .footerCopy{
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: var(--border-thin);
+  padding: var(--space-sm) 0;
+  font-family: var(--font-ui);
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 1rem;
+}
+
+footer .footerCopy {
   font-size: var(--text-xs);
   color: var(--muted);
 }
 
-.footerLink, .social {
-    display: flex;
-    gap: 20px;
-    /* align-items: center; */
-    justify-content: space-around; 
-    margin-bottom: 20px; 
+.footerLink,
+.social {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 /* LIST */
@@ -472,10 +481,6 @@ footer .footerCopy{
   margin-top: var(--space-md);
 }
 
-.postCardWrapper {
-  /* optional: add styles if needed around each card */
-}
-
 .postPreview {
   display: block;
   padding: var(--space-md);
@@ -623,6 +628,27 @@ footer .footerCopy{
   }
 }
 
+@media (max-width: 729px) {
+    footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer .footerCopy,
+  .footer-search-btn,
+  .social {
+    width: 100%;
+    justify-content: center;
+  }
+
+  footer p,
+  footer a {
+    font-size: var(--text-xs);
+    margin: 0.25rem 0;
+  }
+}
+
 @media (max-width: 480px) {
   .container {
     padding: var(--space-xs);
@@ -638,11 +664,5 @@ footer .footerCopy{
 
   nav a{
     font-size: var(--text-xs);
-  }
-
-  footer p, footer a{
-    color: var(--muted);
-    font-size: var(--text-xs);
-    margin: 0.25rem 0;
   }
 }

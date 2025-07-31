@@ -1,10 +1,43 @@
+<style>
+  .footer-search-btn {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    border: 2px solid var(--btn-border, #007bff);
+    color: var(--btn-color, #007bff);
+    background-color: transparent;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .footer-search-btn:hover,
+  .footer-search-btn:focus {
+    background-color: var(--btn-hover-bg, #007bff);
+    color: var(--btn-hover-color, #fff);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+  }
+
+  /* Dark mode override if needed */
+  @media (prefers-color-scheme: dark) {
+    .footer-search-btn {
+      --btn-border: #006699;
+      --btn-color: #006699;
+      --btn-hover-bg: #90c006699df4;
+      --btn-hover-color: #000;
+    }
+  }
+</style>
+
 <footer>
   <div class="footerCopy">
     <p>
       &copy; <span id="year"></span> Khalilullah Al Faath. All Rights Reserved.
     </p>
   </div>
-  <a href="/search/" class="btn btn-outline-primary">Search</a>
+  <div>
+    <a href="/search/" class="footer-search-btn">🔍 Search</a>
+  </div>
   <div class="footerContent">
     <div class="social">
       <a href="/" aria-label="GitHub"
