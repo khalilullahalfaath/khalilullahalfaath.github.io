@@ -1,0 +1,60 @@
+{{ define "main" }}
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script src="/pagefind/pagefind-ui.js"></script>
+<style>
+  html.dark .pagefind-ui {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  html.dark .pagefind-ui * {
+    color: #e0e0e0 !important;
+  }
+
+  html.dark .pagefind-ui__search-input {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+    border: 1px solid #444 !important;
+  }
+
+  html.dark .pagefind-ui__result {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+  }
+
+  html.dark .pagefind-ui__result-link {
+    color: #90cdf4 !important;
+    text-decoration: none;
+  }
+
+  html.dark .pagefind-ui__result-title a:hover {
+    color: #63b3ed !important;
+  }
+
+  html.dark .pagefind-ui__message {
+    color: #ccc !important;
+  }
+
+  html.dark .pagefind-ui__drawer {
+    background-color: #121212 !important;
+  }
+
+  html.dark .pagefind-ui mark {
+    background-color: #555 !important;
+    color: #fff !important;
+  }
+</style>
+
+<div class="container py-5">
+  <h1>Search</h1>
+  <div id="search"></div>
+</div>
+
+<h1>This is the search layout</h1>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    new PagefindUI({ element: "#search", showSubResults: true });
+  });
+</script>
+{{ end }}
