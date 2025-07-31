@@ -2,13 +2,17 @@
 title: Meditation
 date: 2025-07-19T01:07:00.000+08:00
 draft: false
+math: true
+description: >
+  This long essay is mainly inspired by Marcus Aurelius’s **Meditation**. I am
+  trying to make this essay more poetic, to challenge myself in writing in
+  English.
+
+
+  I did not write this essay to be admired, nor to teach others how to live, but to remind myself. Of who I am, of who I must strive to be, and of the people whose virtues I hope to reflect.
 categories:
   - Essay
   - Reflection
-description: |
-  This long essay is mainly inspired by Marcus Aurelius’s **Meditation**. I am trying to make this essay more poetic, to challenge myself in writing in English.
-
-  I did not write this essay to be admired, nor to teach others how to live, but to remind myself. Of who I am, of who I must strive to be, and of the people whose virtues I hope to reflect.
 mediumLink: https://www.google.com
 ---
 
@@ -16,15 +20,15 @@ mediumLink: https://www.google.com
 
 ## Book 1
 
-> This book records the virtues I have inherited from those who came before I am, from what I heard and told, and those who I have lived beside, from what I experienced and learnt, and also those who I have never met, whose works nonetheless have shaped the person who I am.
+> This book records the virtues I have inherited from those who came before I am, from what I heard and told, and those whom I have lived beside, from what I experienced and learnt, and also those whom I have never met, whose works nonetheless have shaped the person I am.
 
-From my mother: I learnt discipline, patience, and hard work; to have always put my education first, and be grateful, whatever the result is, good or bad; She rarely displayed affection in the way others might expect. But in time, I understood that every sacrifice, every silent act, every order and yelling, was her way of saying *I care*. 
+From my mother: I learn discipline, patience, and hard work; to have always put my education first, and be grateful, whatever the result is, good or bad; She rarely display affection in the way others might expect. But in time, I understood that every sacrifice, every silent act, every order and yell, is her way of saying *I care*.
 
-Further, to always put my best in my works, my colleagues, and my family; to be responsible with my work, and not relying on others; to not procrastinate, and always come early; to avoid any wrongdoings, especially corruption, nepotism, selfishness, and greed, even in thought.
+Further, to always put my best in my work, my colleagues, and my family; to be responsible with my work, and not rely on others; to not procrastinate, and always come early; to avoid any wrongdoings, especially corruption, nepotism, selfishness, and greed, even in thought; From her I also learnt to delay my cravings for things, because I may find it unnecessary later.
 
-From my father: responsibility, love of family, and generosity; to always make contact, and always believe that “you reap what you sow”; He taught me to endure suffering in silence, but to remain kind; Though his years were few, everyone still remember his goodness; 
+From what they say and I remember of my late father: responsibility, love to my family, and generosity; to always make contact, and always believe that “you reap what you sow”; He taught me to endure suffering in silence, but to remain kind because though his years were few, everyone still remembers his goodness; also to always be a devoted child and brother for my siblings.
 
-From my Bunda: social interactions, loyalty, and generosity. It is not important who I am helping but always trying to help whoever they are; to always help and care for my parents, and to be a devoted child.
+From my Bunda: social interactions, loyalty, and generosity. It is not important who I am helping, but to always try to help whoever they are; to always help and care for my parents, and to be a devoted child; to be someone who is always reliable and trustworthy when given a position.
 
 From my sister: not to put loyalty to friends above loyalty to family. 
 
@@ -32,9 +36,9 @@ From my maternal grandmother: to lead with kindness, but always be prepared for 
 
 From my paternal grandmother: that death in the family is inevitable; to grieve silently, and always show my stronger self to my children; to always maintain good health by exercising and eating healthy food. 
 
-From my aunts and uncles: to always treat others kindly and generously; to always attend family gatherings; to always help each other in the family;
+From my aunts and uncles: to always treat others kindly and generously; to always attend family gatherings; to always help each other in the family.
 
-From my professors at University: to be endlessly curious and reflect on everything; always look for answers differently, even though there are already different solutions; to always help my pupils, and not see them differently; 
+From my thesis professor and my academic advisor at Telkom University: to be endlessly curious and reflect on everything; always look for answers differently, even though there are already different solutions; to always help my pupils, and not see them differently. 
 
 From my closest friend from childhood: to keep trying, even when the door closes, another one will open, to trust myself, but not isolate myself from others; to always stand for myself, and to respect my need and condition.
 
