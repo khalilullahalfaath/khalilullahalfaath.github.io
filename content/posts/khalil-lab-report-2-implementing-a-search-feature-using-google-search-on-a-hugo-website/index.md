@@ -37,12 +37,12 @@ content/
 
 Create a file at `content/search.md`:
 
-\`\`\`markdown
+```markdown
 ---
 title: "Search"
 layout: "search"
 ---
-\`\`\`
+```
 
 This file tells Hugo to use a custom layout named `search.html`.
 
@@ -51,7 +51,7 @@ This file tells Hugo to use a custom layout named `search.html`.
 
 In `layouts/_default/search.html`, add:
 
-\`\`\`html
+```html
 {{ define "main" }}
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/pagefind/pagefind-ui.js"></script>
@@ -67,11 +67,11 @@ In `layouts/_default/search.html`, add:
     });
   </script>
 {{ end }}
-\`\`\`
+```
 
 One reason why Pagefind is so powerful is that they have already implemented the UI. So I do not bother to create a new one. But you can implement a different one. On this occasion, I only made minor changes to the UI so that it would work with my dark mode. Remember that you can check the element selector in Chrome Dev Tools.
 
-\`\`\`css
+```css
   html.dark .pagefind-ui {
     background-color: #121212;
     color: #e0e0e0;
@@ -113,8 +113,7 @@ One reason why Pagefind is so powerful is that they have already implemented the
     background-color: #555 !important;
     color: #fff !important;
   }
-\`\`\`
----
+```
 
 ### 3. Implement a search button
 
@@ -125,9 +124,9 @@ I think it would be easier if I separate the search page from the page I am curr
 
 Then I built my Hugo site so that the HTML files are generated:
 
-\`\`\`bash
+```bash
 hugo
-\`\`\`
+```
 
 This will populate the `public/` directory.
 
@@ -136,9 +135,9 @@ This will populate the `public/` directory.
 
 From the root of your site, run:
 
-\`\`\`bash
+```bash
 npx -y pagefind --site public --serve
-\`\`\`
+```
 
 - This indexes all HTML content inside `public/`.
 - Pagefind will also serve your site on `localhost:1414`.
@@ -151,10 +150,10 @@ Since I deploy this site on Netlify, Netlify needs to run Pagefind *after* Hugo 
 
 #### `netlify.toml`
 
-\`\`\`toml
+```toml
 [build]
   publish = "public"
   command = "hugo && npx pagefind --site public"
-\`\`\`
+```
 
 This ensures Pagefind runs after the build.
