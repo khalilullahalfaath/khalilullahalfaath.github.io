@@ -1,5 +1,6 @@
 [build]
-command = "hugo"
+command = "hugo && npx pagefind --site public"
 publish = "public"
+
 [build.environment]
 HUGO_VERSION = "0.129.0"
