@@ -3,7 +3,7 @@ title: "Khalil-lab Report 2: Implementing a Search Feature using Google Search
   on a Hugo Website"
 date: 2025-07-29T02:56:00.000+08:00
 lastmod: 2025-07-31T23:49:00.000+08:00
-draft: true
+draft: false
 math: true
 description: This is a small tutorial on how I implemented the search button on this site
 ---
