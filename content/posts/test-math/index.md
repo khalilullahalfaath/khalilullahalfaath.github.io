@@ -3,6 +3,7 @@ title: Test math
 date: 2025-07-31T20:44:00.000+08:00
 lastmod: 2025-07-31T20:44:00.000+08:00
 draft: false
+math: true
 ---
 This is an inline \(a^*=x-b^*\) equation.
 
