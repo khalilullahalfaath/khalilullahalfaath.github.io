@@ -1,10 +1,11 @@
 ---
 title: Meditation
 date: 2025-07-19T01:07:00.000+08:00
+lastmod: 2025-08-01T01:13:00.000+08:00
 draft: false
 math: true
 description: >
-  This long essay is mainly inspired by Marcus Aurelius’s **Meditation**. I am
+  This long essay is mainly inspired by Marcus Aurelius’s Meditation. I am
   trying to make this essay more poetic, to challenge myself in writing in
   English.
 
@@ -13,12 +14,9 @@ description: >
 categories:
   - Essay
   - Reflection
-mediumLink: https://www.google.com
+mediumLink: ""
 ---
-
-
-
-## Book 1
+# Book 1
 
 > This book records the virtues I have inherited from those who came before I am, from what I heard and told, and those whom I have lived beside, from what I experienced and learnt, and also those whom I have never met, whose works nonetheless have shaped the person I am.
 
@@ -40,15 +38,15 @@ From my aunts and uncles: to always treat others kindly and generously; to alway
 
 From my thesis professor and my academic advisor at Telkom University: to be endlessly curious and reflect on everything; always look for answers differently, even though there are already different solutions; to always help my pupils, and not see them differently. 
 
-From my closest friend from childhood: to keep trying, even when the door closes, another one will open, to trust myself, but not isolate myself from others; to always stand for myself, and to respect my need and condition.
+From my closest friend from childhood: to keep trying, even when the door closes, another one will open, to trust myself, but not isolate myself from others; to always stand for myself, and to respect my needs and condition.
 
 From my best friend in high school: to always put my family first, and try hard for them, even if I have to move to new places; to bring laughter to my friends, but always with care, so my words don’t wound.
 
-From my neighbor: I learnt how to be a heart of gold, a kind neighbor, and a faithful person; she was a woman of deep devotion, early to the mosque, kind to all, generous beyond measure; her final years wasn’t easy, she had to suffer with illness, yet she didn’t curse it. She bore it with patience, her faith unshaken. She never complained, only quiet strength she shined.
+From my neighbor: I learnt how to be a heart of gold, a kind neighbor, and a faithful person; she was a woman of deep devotion, early to the mosque, kind to all, generous beyond measure; her final years wasn’t easy, she had to suffer with illness, yet she didn’t curse it. She bore it with patience, her faith unshaken. She never complained, only quiet strength she shone.
 
 From Allah: that I have good grandparents, good parents, good family, good teachers, good relatives and friends, almost everyone; that I had a joyful childhood, with the privilege of experiencing my late father’s prime, and being loved by him deeply, and so by my grandmother; 
 
-Furthermore, that I have been blessed with a balanced fortune, not in excess, nor in deprivation. Even though my father died young, he left me under the care of relatives whose help never failed; that I have been blessed with knowledge and sharp thinking, makes it easy to understand my lessons in my school eras. 
+Furthermore, that I have been blessed with a balanced fortune, not in excess, nor in deprivation. Even though my father died young, he left me under the care of relatives whose help never failed; that I have been blessed with knowledge and sharp thinking, makes it easy to understand my lessons in my school years. 
 
 That in my preschool days, I was blessed with friends that were my family, who always defended me; that I had my school in front of my grandmother’s house who I would always go after school; and that I was able to survive from an illness in my head.
 
