@@ -24,6 +24,13 @@ collections:
         }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
       - {
+          label: "Math",
+          name: "math",
+          widget: "boolean",
+          default: false,
+          hint: "Turn on for Math supports",
+        }
+      - {
           label: "Description",
           name: "description",
           widget: "text",
