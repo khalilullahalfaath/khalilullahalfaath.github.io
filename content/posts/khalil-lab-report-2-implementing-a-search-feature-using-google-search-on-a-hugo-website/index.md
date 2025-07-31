@@ -5,7 +5,7 @@ date: 2025-07-29T02:56:00.000+08:00
 lastmod: 2025-07-31T23:49:00.000+08:00
 draft: true
 math: true
-description: This is a small tutorial on how I implemented the search button on my this site
+description: This is a small tutorial on how I implemented the search button on this site
 ---
 # Overview
 
@@ -69,7 +69,7 @@ In `layouts/_default/search.html`, add:
 {{ end }}
 \`\`\`
 
-One reason why Pagefind is so powerful is that they have already implemented the UI. So we do not bother to create a new one. But you can implement a different one. On this occasion, I only made minor changes to the UI so that it would work with my dark mode. Remember that you can check the element selector in Chrome Dev Tools.
+One reason why Pagefind is so powerful is that they have already implemented the UI. So I do not bother to create a new one. But you can implement a different one. On this occasion, I only made minor changes to the UI so that it would work with my dark mode. Remember that you can check the element selector in Chrome Dev Tools.
 
 \`\`\`css
   html.dark .pagefind-ui {
@@ -121,9 +121,9 @@ One reason why Pagefind is so powerful is that they have already implemented the
 I think it would be easier if I separate the search page from the page I am currently on, so I have to develop a button to move to the search page. This button, I chose to implement it on my footer, so it does not overpopulate my navbar.
 
 
-### 3. Build the Site
+### 4. Build the Site
 
-Build your Hugo site so that the HTML files are generated:
+Then I built my Hugo site so that the HTML files are generated:
 
 \`\`\`bash
 hugo
@@ -132,7 +132,7 @@ hugo
 This will populate the `public/` directory.
 
 
-### 4.  Run Pagefind Indexer
+### 5.  Run Pagefind Indexer
 
 From the root of your site, run:
 
@@ -158,20 +158,3 @@ Since I deploy this site on Netlify, Netlify needs to run Pagefind *after* Hugo 
 \`\`\`
 
 This ensures Pagefind runs after the build.
-
-
-## Result
-
-I now have a working, client-side search page at `/search` that:
-
-- Indexes all content after build
-- Works without external search providers
-- Is fully static and privacy-respecting
-
-
-
-## Notes
-
-- The search results are powered entirely by static JavaScript files (`pagefind-ui.js`) and do not require a backend.
-- Ensure all your pages have meaningful metadata (titles, descriptions) for better indexing.
-- Customise styles further in your global CSS file as needed.
