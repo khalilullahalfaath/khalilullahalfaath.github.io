@@ -2,7 +2,7 @@
 title: Fake Image Detection - A Lab Report
 date: 2025-08-09T19:52:00.000+08:00
 lastmod: 2025-08-09T19:52:00.000+08:00
-draft: true
+draft: false
 math: true
 description: >-
   As I want to continue practising my writing, and I'm currently doing a
@@ -40,5 +40,3 @@ First, we decided to submit our paper to a peer-reviewed journal, so we eliminat
 At that meeting, we also agreed to limit our research only on fake image detection. But what is the definition of a fake image? I do not know how to answer this until our third meeting sadly :")
 
 Between the first meeting and the second (August 6th, 2025), we agreed to review at least **15 papers each**. The goal was to understand the context and the history of this research topic. I will share my thought process during the literature review in the next section.
-
-## First literature review
