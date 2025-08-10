@@ -30,3 +30,13 @@ From the picture, we can see that I have ordered this spreadsheet based on the t
 * List of resources, to store all the resources that I got, like papers, datasets, repositories, videos, etc..
 * Paper review, to store all papers that are already reviewed, I have to fill several fields, like the title, link, strengths and weaknesses, dataset being used, performance, etc..
 * The rest are pages containing separate drafts organised by sections. These sections are organised based on questions and answers, for example, in introduction section for my first few sentences, I have to answer "What is the background of this project?"
+
+Our first meeting was scheduled on August 2nd, 2025. I proposed several topics to be discussed, such as what our target is, whether we wanted to submit it to a peer-reviewed journal or a conference? If it is a peer-reviewed journal, is it Scopus-indexed or just Sinta-indexed? In addition, I thought that we also need to address our milestones, topics related to our background, and task assignments. Our first meeting went very well, and we just left a few topics that need to be addressed further in the next meeting. So I thought we were very productive that day XD
+
+First, we agreed to submit our paper to a peer-reviewed journal, so we eliminated our first option to submit it to a conference. Initially, when we were debating whether to submit it to a Sinta- or Scopus-indexed journal, we searched for possible journals [here](https://sinta.kemendikbudristek.com/). However, we soon noticed that Scopus also indexes several Sinta-indexed journals. Based on that discovery, we agreed to prioritise Sinta-indexed journals that are also Scopus-indexed. There were several considerations, but most of them, whether it was already discontinued, in Bahasa Indonesia, the next issue was too far away, or the publication fees were too much for us. Then we came across a journal that we agreed on, but I do not want to share it publicly now.
+
+At that meeting, we also agreed to limit our research only on fake image detection. But what is the definition of a fake image? I do not know how to answer this until our third meeting sadly :")
+
+Between the first meeting and the second meeting on August 6th, 2025, we also agreed to review at least 15 papers each to grasp at least the context and the history of this research topic. I will explain my thought process during the literature review in the next section.
+
+## First literature review
