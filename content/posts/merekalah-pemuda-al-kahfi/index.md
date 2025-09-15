@@ -55,8 +55,6 @@ Adapun poin-poin penggambaran kisahnya adalah antara lain sebagai berikut.
 * Mata uang lama yang mereka bawa membuat orang-orang heran.
 * Bahkan penduduk ingin membangun masjid di atas makam mereka.
 
----
-
 ## Pelajaran-Pelajaran Penting
 
 ### 1. Tentang Pemuda
