@@ -9,4 +9,4 @@ categories:
   - Discrete Mathematics
   - English
 ---
-Placeholder
+Solving a recurrence relation can be hard to grasp at first. While some books explained it
