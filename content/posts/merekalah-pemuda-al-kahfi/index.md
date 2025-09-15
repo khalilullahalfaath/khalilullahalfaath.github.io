@@ -107,34 +107,35 @@ Adapun poin-poin penggambaran kisahnya adalah antara lain sebagai berikut.
 * Tidak semua kondisi disikapi frontal; kadang perlu strategi. Jangan jadi orang yang polos-polos saja. 
 * Ketika mereka bangkit dari tidur panjang, Ashabul Kahfi punya dua strategi, yaitu (1) hanya mengirim satu orang untuk membeli makanan, (2) dengan sikap hati-hati, tenang, atau pelan-pelan (wal-yatalattaf). (Qs. Al-Kahfi 18:19)
 
-### 8. Janji Allah adalah benar
+### 8. Pengingat bahwa Janji Allah adalah benar
 * Allah berfirman, "Dan demikian (pula) Kami perlihatkan (manusia) dengan mereka, agar mereka tahu, bahwa janji Allah benar." (QS. Al-Kahfi 18: 21)
 * Ahli tafsir menerangkan bahwa yang dimaksud "mereka" adalah ashabul kahfi. Bahwa ini bukan zaman mereka lagi dan manusia pada zaman itu sudah beriman dan tidak lagi kafir. 
 * Ada tafsir lain yang menyatakan bahwa "mereka" adalah penduduk di zaman itu bahwa Allah mudah untuk membangkitkan manusia yang tertidur selama 309 tahun.
 * Allah berfirman tentang Nabi Muhammad, "Sungguh, jika Kami mewafatkan kamu (sebelum kamu mencapai kemenangan) maka sesungguhnya Kami akan menyiksa mereka (di akhirat). Atau Kami memperlihatkan kepadamu (azab) yang telah Kami ancamkan kepada mereka. Maka sesungguhnya Kami berkuasa atas mereka." (QS. Az-Zukhruf 43:41-42)
+* Tentang Nabi Musa, "Dan kesudahan (yang baik) itu adalah bagi orang-orang yang bertakwa." (QS. Al-Qashash 28:83)
 
+### 9. Tentang Bangunan Masjid di atas Kuburan
+* Sebagian orang menyebutkan bagian dari ayat ke-21 dalam Surah Al-Kahfi, yaitu "Ketika orang-orang itu berselisih tentang urusan mereka, orang-orang itu berkata: “Dirikan sebuah bangunan di atas (gua) mereka, Tuhan mereka lebih mengetahui tentang mereka”. Orang-orang yang berkuasa atas urusan mereka berkata: “Sesungguhnya kami akan mendirikan sebuah rumah peribadatan di atasnya”. tentang bolehnya membangun masjid di atas kuburan. Ini adalah pendalilan yang salah. Maksud ayat ini adalah perkataan raja yang salah yang tidak paham agama. 
+* Terlebih lagi ada dalil tegas dari nabi tentang larangan membangun masjid di atas kuburan. <br> لَعْنَةُ اللهِ عَلَى الْيَهُوْدِ وَالنَّصَارَى اتَّخَذُوْا قُبُوْرَ أَنْبِيَائِهِمْ مَسَاجِدَ. <br> “Laknat Allah atas Yahudi dan Nashrani, mereka telah menjadikan kubur-kubur Nabi mereka sebagai tempat ibadah.” (Hadits Riwayat Bukhari dan Muslim)
 
-### 7. Fokus pada Manfaat
+### 7. Fokus pada Ucapan yang Bermanfaat
 
 * Allah melarang berdebat sia-sia tentang jumlah mereka atau detail yang tak bermanfaat.
+* Sebagaimana firman Allah, "Nanti (ada orang yang akan) mengatakan (jumlah mereka) adalah tiga orang yang keempat adalah anjingnya, dan (yang lain) mengatakan: “(jumlah mereka) adalah lima orang yang keenam adalah anjing nya”, sebagai terkaan terhadap barang yang gaib; dan (yang lain lagi) mengatakan: “(jumlah mereka) tujuh orang, yang ke delapan adalah anjingnya”. Katakanlah: “Tuhanku lebih mengetahui jumlah mereka; tidak ada orang yang mengetahui (bilangan) mereka kecuali sedikit”. Karena itu janganlah kamu (Muhammad) bertengkar tentang hal mereka, kecuali pertengkaran lahir saja dan jangan kamu menanyakan tentang mereka (pemuda-pemuda itu) kepada seorangpun di antara mereka." (QS. Al-Kahfi 18: 22)
 * Fokus pada pesan inti: perjuangan, iman, doa, strategi, dan pertolongan Allah.
 
 ### 8. Adab Ucapan
 
-* Jangan berkata “aku akan melakukan besok” tanpa menambahkan **in shā’ Allāh**.
-* Kisah ini terkait sebab turunnya ayat: Nabi ﷺ sempat lupa mengatakan “insyaaAllah” ketika ditanya kaum Quraisy.
+* Jangan berkata “aku akan melakukan besok” tanpa menambahkan **in syaa Allāh**.
+* Kisah ini terkait sebab turunnya ayat bahwa Nabi ﷺ sempat lupa mengatakan “insyaaAllah” ketika ditanya kaum Quraisy. Sampai mereka senang bahwa Nabi tidak bisa menjawab pertanyaan mereka.
+* Sebagaimana firman Allah, "Dan jangan sekali-kali kamu mengatakan tentang sesuatu: “Sesungguhnya aku akan mengerjakan ini besok pagi, kecuali (dengan menyebut): “Insya Allah”. Dan ingatlah kepada Tuhanmu jika kamu lupa dan katakanlah: “Mudah-mudahan Tuhanku akan memberiku petunjuk kepada yang lebih dekat kebenarannya dari pada ini”. (QS. Al-Kahfi 18: 23-24)
 
----
 
 ## Kesimpulan Utama
 
-1. **Kekuatan hujah** menambah kokohnya kebenaran.
-2. **Pemuda** wajib menempuh jalan kebenaran dengan istiqamah.
-3. **Siapa yang menjadikan Allah tujuan, Allah akan menolongnya.**
-4. **Hidayah adalah karunia Allah**, diberikan hanya kepada orang yang pantas.
+1. Kekuatan hujah akan menambah kokohnya kebenaran. 
+2. Pemuda wajib berusaha untuk menempuh jalan kebenaran dengan istiqamah.
+3. Siapa yang menjadikan Allah tujuan, Allah akan menolongnya.
+4. Hidayah adalah karunia Allah, diberikan hanya kepada orang yang pantas.
 
 Ilmu bernilai jika diamalkan. Sabar terwujud dengan terus bersabar. Bijak terbentuk dengan terus berlatih bijaksana.
-
----
-
-Mau saya buatkan versi yang lebih ringkas lagi (bullet-point inti saja, semacam “cheat sheet”) biar gampang kamu pakai saat review sebelum presentasi atau menulis ulang?
