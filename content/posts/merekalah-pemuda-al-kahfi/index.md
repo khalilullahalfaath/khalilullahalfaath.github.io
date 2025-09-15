@@ -10,6 +10,7 @@ description: Ini adalah catatan kajian masyayikh timur tengah Syaikh Muhammad
 categories:
   - Refleksi
   - Catatan Kajian
+  - Bahasa Indonesia
 ---
 # Catatan Kajian: Merekalah Pemuda Al-Kahfi
 
