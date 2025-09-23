@@ -1,7 +1,8 @@
 ---
 title: "Mount Everest Roleplay: Sebuah Catatan Pendakian Gunung Digital"
 date: 2025-07-20T21:45:00.000+08:00
-draft: false
+draft: true
+math: true
 image: 52899502-a480-403d-8017-74cc20df3aaf.jpeg
 tags:
   - Reflection
