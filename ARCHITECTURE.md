@@ -397,3 +397,239 @@ hugo version
 ---
 
 **Last Updated**: 2026-04-28
+
+---
+
+## Update April 2026: New Features (Sheldon Cooper-Inspired)
+
+### Fitur Baru yang Ditambahkan
+
+Blog ini sekarang punya 7 fitur baru yang terinspirasi dari Sheldon Cooper's obsessive documentation:
+
+#### 1. ?? Lab Notebook (/lab-notebook)
+**Section** untuk research experiments dan observations.
+
+- **Location**: content/lab-notebook/
+- **Templates**: layouts/lab-notebook/list.html, layouts/lab-notebook/single.html
+- **Features**:
+  - Status badges (ongoing/completed/failed)
+  - Tags per entry
+  - Kronologis dengan tanggal
+  - Sample entries: fake image detection, swarm intelligence, NLP sentiment analysis
+
+**Front matter**:
+\\\yaml
+---
+title: "Experiment Title"
+date: 2026-01-15T10:00:00+07:00
+status: "ongoing"  # ongoing/completed/failed
+tags: ["computer-vision", "deep-learning"]
+---
+\\\
+
+#### 2. ?? Bookshelf (/bookshelf)
+**Single page** untuk reading list (books & papers).
+
+- **Location**: content/bookshelf.md
+- **Template**: layouts/page/bookshelf.html
+- **Features**:
+  - Grid cards dengan status (reading/finished/want-to-read)
+  - Book icon, title, author, notes
+  - Color-coded status badges
+
+#### 3. ?? TIL - Today I Learned (/til)
+**Section** untuk short daily learnings.
+
+- **Location**: content/til/
+- **Templates**: layouts/til/list.html, layouts/til/single.html
+- **Features**:
+  - Compact cards
+  - Tags per entry
+  - Code-friendly formatting
+  - Sample entries: Git tips, Python tricks, Hugo features, CSS techniques
+
+**Front matter**:
+\\\yaml
+---
+title: "What I Learned"
+date: 2026-04-20T15:30:00+07:00
+tags: ["git", "productivity"]
+---
+\\\
+
+#### 4. ??? Uses (/uses)
+**Single page** untuk tools, software, dan setup.
+
+- **Location**: content/uses.md
+- **Template**: layouts/page/uses.html
+- **Sections**:
+  - Hardware
+  - Development Tools
+  - AI/ML Stack
+  - Productivity
+  - Web & Blogging
+  - Design & Media
+
+#### 5. ?? Timeline (/timeline)
+**Single page** dengan visual timeline of milestones.
+
+- **Location**: content/timeline.md
+- **Template**: layouts/page/timeline.html
+- **Features**:
+  - Vertical timeline dengan markers
+  - Dates dan descriptions
+  - Alternating layout
+  - Covers: Telkom University ? Len Industry ? Braincore ? UGM
+
+#### 6. ?? Fun Facts (/fun-facts)
+**Single page** dengan random lists ala Sheldon Cooper.
+
+- **Location**: content/fun-facts.md
+- **Template**: layouts/page/fun-facts.html
+- **Sections**:
+  - Favorite Algorithms (Ranked)
+  - Things I Learned the Hard Way
+  - Tools I Can't Live Without
+  - Papers That Blew My Mind
+  - Current Obsessions
+  - Sheldon Cooper Inspiration
+
+#### 7. ?? Schedule (/schedule)
+**Single page** dengan Google Calendar embed untuk availability.
+
+- **Location**: content/schedule.md
+- **Template**: layouts/page/schedule.html
+- **Features**:
+  - Google Calendar iframe embed
+  - Calendar ID: \khalilullah.alfaath21@gmail.com\
+  - Info cards (best times, contact)
+  - Responsive iframe wrapper
+
+---
+
+### Navigasi Update
+
+#### Desktop Navbar
+\Home / Writings / Lab Notebook / About / More ?\
+
+**Dropdown "More"** berisi:
+- Journals
+- Bookshelf
+- TIL
+- Uses
+- Timeline
+- Fun Facts
+- Schedule
+
+#### Mobile Navbar
+Semua 11 links ditampilkan flat (vertical stack) di hamburger menu.
+
+#### Homepage Sidebar
+Ditambahkan section "Explore More" dengan links ke:
+- ?? Lab Notebook
+- ?? Bookshelf
+- ?? TIL
+- ??? Uses
+- ?? Timeline
+- ?? Fun Facts
+
+#### Footer
+Ditambahkan ke secondary nav:
+- Lab Notebook
+- Bookshelf
+- TIL
+
+---
+
+### CSS Updates
+
+Semua fitur baru punya dedicated CSS di \static/styles/style.css\:
+
+- **Lab Notebook**: Status badges dengan color coding, lab entry cards
+- **Bookshelf**: Grid cards dengan status badges (reading/finished/want)
+- **TIL**: Compact cards dengan code formatting
+- **Uses**: Grouped sections dengan left border accent
+- **Timeline**: Vertical timeline dengan dots dan markers
+- **Fun Facts**: Card-based sections dengan ranked/bullet lists
+- **Schedule**: Calendar wrapper dengan responsive iframe
+- **Navbar Dropdown**: Hover-triggered dropdown (pure CSS)
+
+---
+
+### Design System Updates
+
+#### Typography
+- **Font**: Poppins (Google Fonts) untuk semua text
+- **Sizes**: Dikurangi untuk better hierarchy (H1: 32px, H2: 24px, H3: 20px)
+- **Line height**: 1.7 untuk body, 1.2 untuk headings
+
+#### Colors (Unchanged)
+- Light mode: \#ffffff\ bg, \#242424\ text, \#1a8917\ accent
+- Dark mode: \#121212\ bg, \#e0e0e0\ text, \#4caf50\ accent
+
+#### Spacing
+- Reduced spacing antar posts di homepage (lebih compact)
+- Footer lebih compact (horizontal layout)
+- Post header dengan visual separation (background box dengan border-left accent)
+
+---
+
+### File Locations Cheat Sheet (Updated)
+
+| Task | File/Folder |
+|---|---|
+| Edit navbar links | \layouts/partials/navbar.html\ |
+| Edit footer | \layouts/partials/footer.html\ |
+| Edit homepage | \layouts/index.html\ |
+| Edit post layout | \layouts/_default/single.html\ |
+| Edit CSS | \static/styles/style.css\ |
+| Edit dark mode toggle | \static/js/app.js\ |
+| Add new post | \content/posts/slug/index.md\ |
+| Add new lab entry | \content/lab-notebook/entry.md\ |
+| Add new TIL | \content/til/entry.md\ |
+| Add new journal | \content/journals/section/entry.md\ |
+| Edit bookshelf | \content/bookshelf.md\ + \layouts/page/bookshelf.html\ |
+| Edit timeline | \content/timeline.md\ + \layouts/page/timeline.html\ |
+| Edit fun facts | \content/fun-facts.md\ + \layouts/page/fun-facts.html\ |
+| Edit uses | \content/uses.md\ + \layouts/page/uses.html\ |
+| Edit schedule | \content/schedule.md\ + \layouts/page/schedule.html\ |
+| Edit Hugo config | \hugo.yaml\ |
+| Edit CMS config | \static/admin/config.yml\ |
+| Edit Netlify config | \
+etlify.toml\ |
+
+---
+
+### Pagefind Search Index
+
+**Important**: Pagefind index di-rebuild saat deployment ke Netlify. Untuk rebuild lokal:
+
+\\\ash
+# Install Pagefind (first time)
+npm install -g pagefind
+
+# Rebuild index
+hugo
+pagefind --site public
+
+# Restart server
+hugo server
+\\\
+
+Semua halaman baru (Lab Notebook, Bookshelf, TIL, Uses, Timeline, Fun Facts, Schedule) akan muncul di search setelah index di-rebuild.
+
+---
+
+### Inspiration & Philosophy
+
+Blog ini terinspirasi dari:
+
+1. **Sheldon Cooper** (The Big Bang Theory) - Dokumentasi obsesif tentang segala hal
+2. **@ghora** (ghora.net) - Research scientist perspective
+3. **Medium** - Clean, typography-first design
+
+Filosofi: "Document everything, organize systematically, make it accessible."
+
+---
+
+**Last Updated**: April 28, 2026
