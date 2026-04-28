@@ -1,12 +1,19 @@
 {{ define "main" }}
 <div class="content-wrapper">
   <h1>Categories</h1>
+  <p class="page-description">Explore posts by topic</p>
   
-  <div class="category-list">
-    {{ range $index, $term := .Data.Terms }}
-    {{ if $index }}<span class="separator">·</span>{{ end }}
-    <a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a>
+  <div class="categories-grid">
+    {{ range .Data.Terms.ByCount }}
+    <a href="{{ .Page.Permalink }}" class="category-card">
+      <div class="category-icon">📁</div>
+      <h3 class="category-title">{{ .Page.Title }}</h3>
+      <p class="category-count">{{ .Count }} {{ if eq .Count 1 }}post{{ else }}posts{{ end }}</p>
+    </a>
     {{ end }}
+  </div>
+</div>
+{{ end }}
   </div>
 </div>
 {{ end }}
