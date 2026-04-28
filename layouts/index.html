@@ -25,10 +25,23 @@
   
   <hr>
   
+  <!-- Popular Categories -->
+  <h2>Explore Topics</h2>
+  <div class="categories-showcase">
+    {{ range first 6 .Site.Taxonomies.categories.ByCount }}
+    <a href="{{ .Page.Permalink }}" class="category-card-home">
+      <span class="category-name">{{ .Page.Title }}</span>
+      <span class="category-count">{{ .Count }} {{ if eq .Count 1 }}post{{ else }}posts{{ end }}</span>
+    </a>
+    {{ end }}
+  </div>
+  
+  <hr>
+  
   <!-- Latest Posts -->
   <h2>Latest Writings</h2>
   
-  {{ range first 3 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+  {{ range first 4 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
   <article class="post-preview">
     <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
     <p class="excerpt">{{ .Summary | truncate 120 }}</p>
@@ -38,6 +51,8 @@
       {{ range first 1 (.GetTerms "categories") }}
       <a href="{{ .Permalink }}" class="category-link">{{ .LinkTitle }}</a>
       {{ end }}
+      <span class="separator">·</span>
+      <span class="read-time">{{ .ReadingTime }} min read</span>
     </div>
   </article>
   <hr>
@@ -52,7 +67,7 @@
   <!-- Recent Journals -->
   <h2>Recent Journal Entries</h2>
   
-  {{ range first 2 (where .Site.RegularPages "Section" "journals") }}
+  {{ range first 3 (where .Site.RegularPages "Section" "journals") }}
   <article class="post-preview">
     <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
     <p class="excerpt">{{ .Summary | truncate 100 }}</p>
@@ -65,6 +80,30 @@
   
   <div class="see-all">
     <a href="/journals">Explore all journals →</a>
+  </div>
+  
+  <hr style="margin-top: 48px;">
+  
+  <!-- Quick Links -->
+  <div class="quick-links">
+    <h2>Quick Links</h2>
+    <div class="quick-links-grid">
+      <a href="/about" class="quick-link-card">
+        <span class="quick-link-icon">👤</span>
+        <span class="quick-link-title">About Me</span>
+        <span class="quick-link-desc">Learn more about my journey</span>
+      </a>
+      <a href="/now" class="quick-link-card">
+        <span class="quick-link-icon">📍</span>
+        <span class="quick-link-title">What I'm Doing Now</span>
+        <span class="quick-link-desc">Current projects & focus</span>
+      </a>
+      <a href="/search" class="quick-link-card">
+        <span class="quick-link-icon">🔍</span>
+        <span class="quick-link-title">Search</span>
+        <span class="quick-link-desc">Find specific content</span>
+      </a>
+    </div>
   </div>
 </div>
 {{ end }}
