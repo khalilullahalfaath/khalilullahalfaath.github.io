@@ -307,13 +307,19 @@ hr {
   color: var(--accent);
 }
 
-/* Hamburger menu - hidden by default */
+/* Hamburger menu - hidden by default on desktop */
 .menu-toggle-checkbox {
   display: none;
 }
 
 .hamburger-wrapper {
-  display: none;
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .hamburger-wrapper {
+    display: block !important;
+  }
 }
 
 .hamburger {
@@ -347,10 +353,6 @@ hr {
   .nav-right {
     order: 2;
     margin-left: auto;
-  }
-
-  .hamburger-wrapper {
-    display: block;
   }
 
   .nav-desktop {
