@@ -2317,3 +2317,20 @@ main {
     min-height: 500px;
   }
 }
+
+/* Email Obfuscation */
+.email-obfuscated {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: var(--space-sm);
+  padding: var(--space-sm);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  user-select: all;
+}
+
+.email-obfuscated strong {
+  color: var(--text);
+}
