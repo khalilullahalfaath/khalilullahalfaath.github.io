@@ -2,27 +2,11 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Khalil-lab</a>
 
-    <div class="nav-right">
-      <button
-        id="theme-toggle"
-        class="theme-toggle"
-        aria-label="Toggle dark mode"
-      >
-        🌙
-      </button>
+    <!-- Hamburger checkbox (hidden, for mobile toggle) -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" />
 
-      <div class="hamburger-wrapper">
-        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" />
-        <label for="menu-toggle" class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
-    </div>
-
-    <div class="nav-menu" id="navbarNavAltMarkup">
-      <!-- Desktop Navigation -->
+    <!-- Desktop Navigation (center) -->
+    <div class="nav-menu">
       <div class="nav-desktop">
         <a class="nav-link" href="/">Home</a>
         <span class="nav-separator">/</span>
@@ -62,6 +46,23 @@
         <a class="nav-link" href="/fun-facts">Fun Facts</a>
         <a class="nav-link" href="/schedule">Schedule</a>
       </div>
+    </div>
+
+    <!-- Right side (theme toggle + hamburger) -->
+    <div class="nav-right">
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        aria-label="Toggle dark mode"
+      >
+        🌙
+      </button>
+
+      <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
     </div>
   </div>
 </nav>

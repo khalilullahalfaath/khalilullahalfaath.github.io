@@ -336,8 +336,17 @@ hr {
 @media (max-width: 767px) {
   .container-fluid {
     padding: 0 16px;
-    grid-template-columns: auto auto;
-    gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .navbar-brand {
+    order: 1;
+  }
+
+  .nav-right {
+    order: 2;
+    margin-left: auto;
   }
 
   .hamburger-wrapper {
@@ -356,32 +365,34 @@ hr {
   }
 
   .nav-menu {
+    order: 3;
+    width: 100%;
     position: absolute;
     top: 64px;
     left: 0;
     right: 0;
     background-color: var(--bg);
     border-bottom: 1px solid var(--border);
-    padding: 16px 24px;
+    padding: 0 24px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    grid-column: 1 / -1;
   }
 
-  .menu-toggle-checkbox:checked ~ .nav-menu {
+  #menu-toggle:checked + .nav-menu {
     max-height: 600px;
+    padding: 16px 24px;
   }
 
-  .menu-toggle-checkbox:checked ~ .hamburger-wrapper .hamburger span:nth-child(1) {
+  #menu-toggle:checked ~ .nav-right .hamburger span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
 
-  .menu-toggle-checkbox:checked ~ .hamburger-wrapper .hamburger span:nth-child(2) {
+  #menu-toggle:checked ~ .nav-right .hamburger span:nth-child(2) {
     opacity: 0;
   }
 
-  .menu-toggle-checkbox:checked ~ .hamburger-wrapper .hamburger span:nth-child(3) {
+  #menu-toggle:checked ~ .nav-right .hamburger span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
