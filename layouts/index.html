@@ -1,24 +1,43 @@
 {{ define "main" }}
 <div class="onboarding">
-  <h1>Welcome.</h1>
-  <p>
-    Explore <a href="/posts">my insights</a>,
-    <a href="/journals/schedules">schedules</a>, and
-    <a href="/journals">learning journey</a>.
+  <h1>Welcome to Khalil-lab.</h1>
+  <p class="intro">
+    A space where I share my <a href="/posts">insights</a>, document my 
+    <a href="/journals">learning journey</a>, and explore ideas in computer science, 
+    writing, and life. Join me as I learn, reflect, and grow.
   </p>
+  
+  <!-- Quick Stats -->
+  <div class="stats">
+    <div class="stat-item">
+      <span class="stat-number">{{ len (where .Site.RegularPages "Type" "posts") }}</span>
+      <span class="stat-label">Posts</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{{ len (where .Site.RegularPages "Section" "journals") }}</span>
+      <span class="stat-label">Journal Entries</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{{ len .Site.Taxonomies.categories }}</span>
+      <span class="stat-label">Topics</span>
+    </div>
+  </div>
   
   <hr>
   
-  <h2>Latest</h2>
+  <!-- Latest Posts -->
+  <h2>Latest Writings</h2>
   
   {{ range first 3 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
   <article class="post-preview">
     <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-    <p class="excerpt">{{ .Summary | truncate 100 }}</p>
+    <p class="excerpt">{{ .Summary | truncate 120 }}</p>
     <div class="meta">
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
       <span class="separator">·</span>
-      <span class="category">{{ .Section | humanize }}</span>
+      {{ range first 1 (.GetTerms "categories") }}
+      <a href="{{ .Permalink }}" class="category-link">{{ .LinkTitle }}</a>
+      {{ end }}
     </div>
   </article>
   <hr>
@@ -26,6 +45,26 @@
   
   <div class="see-all">
     <a href="/posts">See all posts →</a>
+  </div>
+  
+  <hr style="margin-top: 48px;">
+  
+  <!-- Recent Journals -->
+  <h2>Recent Journal Entries</h2>
+  
+  {{ range first 2 (where .Site.RegularPages "Section" "journals") }}
+  <article class="post-preview">
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <p class="excerpt">{{ .Summary | truncate 100 }}</p>
+    <div class="meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    </div>
+  </article>
+  <hr>
+  {{ end }}
+  
+  <div class="see-all">
+    <a href="/journals">Explore all journals →</a>
   </div>
 </div>
 {{ end }}

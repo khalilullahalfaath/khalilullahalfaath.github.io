@@ -17,7 +17,7 @@
           <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
           <span class="separator">·</span>
           {{ range first 1 (.GetTerms "categories") }}
-          <span class="category-badge">{{ .LinkTitle }}</span>
+          <a href="{{ .Permalink }}" class="category-badge">{{ .LinkTitle }}</a>
           {{ end }}
         </div>
       </div>
