@@ -1906,3 +1906,313 @@ main {
   padding-top: var(--space-lg);
   border-top: 1px solid var(--border);
 }
+
+/* ==========================================================================
+   Uses Page
+   ========================================================================== */
+
+.uses-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.uses-page h1 {
+  margin-bottom: var(--space-sm);
+}
+
+.uses-section {
+  margin-bottom: var(--space-xl);
+}
+
+.uses-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.uses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.uses-list li {
+  padding: var(--space-sm);
+  margin-bottom: var(--space-xs);
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.uses-list strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.uses-footer {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.uses-footer p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Timeline Page
+   ========================================================================== */
+
+.timeline-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.timeline {
+  position: relative;
+  margin-top: var(--space-xl);
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--space-xl);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -33px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.timeline-content {
+  background: var(--surface);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+
+.timeline-date {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-xs);
+}
+
+.timeline-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--text);
+}
+
+.timeline-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .timeline {
+    padding-left: 30px;
+  }
+  
+  .timeline::before {
+    left: 10px;
+  }
+  
+  .timeline-marker {
+    left: -28px;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* ==========================================================================
+   Fun Facts Page
+   ========================================================================== */
+
+.fun-facts-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.fun-fact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.fun-fact-card h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 var(--space-md) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.ranked-list {
+  padding-left: var(--space-lg);
+  margin: 0;
+}
+
+.ranked-list li {
+  margin-bottom: var(--space-sm);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.ranked-list strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.bullet-list {
+  list-style: disc;
+  padding-left: var(--space-lg);
+  margin: 0;
+}
+
+.bullet-list li {
+  margin-bottom: var(--space-sm);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.bullet-list strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.fun-fact-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.fun-fact-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Schedule Page
+   ========================================================================== */
+
+.schedule-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.schedule-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+}
+
+.info-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+
+.info-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 var(--space-sm) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.info-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.info-card a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.info-card a:hover {
+  text-decoration: underline;
+}
+
+.calendar-wrapper {
+  margin: var(--space-xl) 0;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.calendar-wrapper iframe {
+  display: block;
+  width: 100%;
+  min-height: 600px;
+}
+
+.schedule-note {
+  background: var(--surface);
+  border-left: 4px solid var(--accent);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  margin-top: var(--space-lg);
+}
+
+.schedule-note p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.schedule-note strong {
+  color: var(--text);
+}
+
+@media (max-width: 767px) {
+  .calendar-wrapper iframe {
+    min-height: 500px;
+  }
+}

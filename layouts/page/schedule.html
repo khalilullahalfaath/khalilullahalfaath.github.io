@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="schedule-page">
+  <h1>{{ .Title }}</h1>
+  <p class="page-description">My public calendar showing availability for meetings, collaborations, and office hours. Feel free to check my schedule before reaching out!</p>
+  
+  <div class="schedule-info">
+    <div class="info-card">
+      <h3>📅 Best Times to Meet</h3>
+      <p>Generally available on weekday afternoons (2-5 PM WIB). Check the calendar below for specific availability.</p>
+    </div>
+    
+    <div class="info-card">
+      <h3>💬 Want to Chat?</h3>
+      <p>For quick questions, reach out via <a href="mailto:khalilullah.alfaath21@gmail.com">email</a> or <a href="https://linkedin.com/in/khalilullah-al-faath-4a684021a" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    </div>
+  </div>
+  
+  <div class="calendar-wrapper">
+    <iframe 
+      src="https://calendar.google.com/calendar/embed?src=khalilullah.alfaath21%40gmail.com&ctz=Asia%2FJakarta&mode=WEEK&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&showTz=1" 
+      style="border: 0" 
+      width="100%" 
+      height="600" 
+      frameborder="0" 
+      scrolling="no">
+    </iframe>
+  </div>
+  
+  <div class="schedule-note">
+    <p><strong>Note:</strong> This calendar shows my general availability. Busy times are blocked out. If you'd like to schedule a meeting, please send me an email with a few time options that work for you.</p>
+  </div>
+</div>
+{{ end }}
