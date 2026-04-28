@@ -103,4 +103,4 @@ For detailed architecture, flow, templates, styling, and maintenance tips, see *
 
 ## License
 
-Personal project. All content © Khalil Ul Ahad Alfath.
+Personal project. All content © Khalilullah Al Faath
