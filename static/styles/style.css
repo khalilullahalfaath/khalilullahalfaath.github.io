@@ -230,9 +230,10 @@ hr {
   margin: 0 auto;
   padding: 0 24px;
   height: 64px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
+  gap: 24px;
 }
 
 .navbar-brand {
@@ -248,14 +249,9 @@ hr {
   color: var(--accent);
 }
 
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
 .nav-menu {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -287,6 +283,13 @@ hr {
   user-select: none;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-self: end;
+}
+
 .theme-toggle {
   background: none;
   border: none;
@@ -296,6 +299,7 @@ hr {
   align-items: center;
   justify-content: center;
   color: var(--text);
+  font-size: 20px;
   transition: color var(--transition);
 }
 
@@ -332,6 +336,8 @@ hr {
 @media (max-width: 767px) {
   .container-fluid {
     padding: 0 16px;
+    grid-template-columns: auto auto;
+    gap: 16px;
   }
 
   .hamburger-wrapper {
@@ -360,6 +366,7 @@ hr {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
+    grid-column: 1 / -1;
   }
 
   .menu-toggle-checkbox:checked ~ .nav-menu {
