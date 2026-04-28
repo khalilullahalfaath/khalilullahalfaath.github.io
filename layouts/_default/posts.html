@@ -1,33 +1,31 @@
-{{ define "main"}}
-<h1>My writings</h1>
-<div class="list">
-  {{ range .Paginator.Pages }}
-  <div class="listItem">
-    {{/* {{ $randomNumber := math.Ceil (mul (math.Rand) 5) }} {{ $imagePath :=
-    printf "/images/background_%.0f.jpg" $randomNumber }} {{ .Scratch.Set
-    "imagePath" $imagePath }}
-    <img
-      src="{{ $imagePath }}"
-      alt="{{.Title}}"
-      class="listItemImage"
-      loading="lazy"
-    />
-    */}}
-    <div class="listItemTexts">
-      <h2 class="listItemTitle">
-        <a href="{{.Permalink}}">{{ .Title }}</a>
-      </h2>
-      <p class="listItemDesc">{{.Params.description}}</p>
-      <div class="listItemDetail">
-        <time>{{dateFormat .Site.Params.dateFormat .Date}}</time>
+{{ define "main" }}
+<div class="content-wrapper">
+  <h1>My writings</h1>
+  
+  <div class="post-list">
+    {{ $paginator := .Paginate .Pages }}
+    {{ range $paginator.Pages }}
+    <article class="post-card">
+      {{ if .Params.image }}
+      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="post-thumbnail">
+      {{ end }}
+      
+      <div class="post-content">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <p class="excerpt">{{ .Summary | truncate 150 }}</p>
+        <div class="meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          <span class="separator">·</span>
+          {{ range first 1 (.GetTerms "categories") }}
+          <span class="category-badge">{{ .LinkTitle }}</span>
+          {{ end }}
+        </div>
       </div>
-      <div class="listItemCategories">
-        {{range (.GetTerms "categories")}}
-        <a href="{{.Permalink}}" class="listItemCategory">{{.Name}}</a> {{end}}
-      </div>
-    </div>
+    </article>
+    <hr>
+    {{ end }}
   </div>
-
-  {{ end }} {{template "_internal/pagination.html" .}}
+  
+  {{ template "_internal/pagination.html" . }}
 </div>
 {{ end }}

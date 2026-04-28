@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Not found</title>
-  </head>
-  <body>
-    <p>Not found!</p>
-    <a href="/">Go to homepage</a>
-  </body>
-</html>
+{{ define "main" }}
+<div class="error-404">
+  <h1>Page not found</h1>
+  <p>The page you're looking for doesn't exist.</p>
+  <a href="/">← Back to home</a>
+</div>
+{{ end }}

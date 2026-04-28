@@ -1,29 +1,25 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-<div class="single">
-  <div class="about">
-    <div class="aboutImg">
-      <img src="/images/myself.jpg" alt="halo" />
-      <figcaption>My portrait</figcaption>
-    </div>
-    <div class="singlePage">
-      <div class="singlePageContent">{{ .Content }}</div>
-    </div>
+<div class="about">
+  <img src="/images/myself.jpg" alt="Khalilullah Al Fath" class="portrait">
+  
+  <h1>Khalilullah Al Fath</h1>
+  
+  <p class="bio">
+    I'm a Computer Science student passionate about learning and sharing knowledge through writing.
+  </p>
+  
+  <div class="social-links">
+    <a href="https://github.com/khalilulahalfath" target="_blank" rel="noopener">GitHub</a>
+    <span class="separator">·</span>
+    <a href="https://instagram.com/khalilulahalfath" target="_blank" rel="noopener">Instagram</a>
+    <span class="separator">·</span>
+    <a href="https://x.com/khalilulahalfath" target="_blank" rel="noopener">X</a>
   </div>
-  <hr class="dividerAbout" />
-  <div class="aboutWebsite">
-    <h4>Note:</h4>
-    <p>
-      If you find any errors on this website, please report them through my
-      email or X, or open an issue on Github
-    </p>
-    <p>I appreciate any help in making this website better.</p>
-
-    <h4>Language</h4>
-    <p>
-      This website is primarily written in English, but I also write articles in
-      Indonesian (Bahasa Indonesia).
-    </p>
+  
+  <hr>
+  
+  <div class="content">
+    {{ .Content }}
   </div>
 </div>
 {{ end }}

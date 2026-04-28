@@ -1,51 +1,48 @@
 {{ define "main" }}
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/pagefind/pagefind-ui.js"></script>
+
 <style>
-  html.dark .pagefind-ui {
-    background-color: #121212;
-    color: #e0e0e0;
+  /* Dark mode overrides for Pagefind UI */
+  .dark .pagefind-ui {
+    --pagefind-ui-primary: var(--accent);
+    --pagefind-ui-text: var(--text);
+    --pagefind-ui-background: var(--bg);
+    --pagefind-ui-border: var(--border);
+    --pagefind-ui-tag: var(--surface);
   }
-
-  html.dark .pagefind-ui * {
-    color: #e0e0e0 !important;
+  
+  .dark .pagefind-ui__search-input {
+    background-color: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
   }
-
-  html.dark .pagefind-ui__search-input {
-    background-color: #1e1e1e !important;
-    color: #ffffff !important;
-    border: 1px solid #444 !important;
+  
+  .dark .pagefind-ui__result {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
   }
-
-  html.dark .pagefind-ui__result {
-    background-color: #1e1e1e !important;
-    border-color: #333 !important;
+  
+  .dark .pagefind-ui__result-link {
+    color: var(--accent);
   }
-
-  html.dark .pagefind-ui__result-link {
-    color: #90cdf4 !important;
-    text-decoration: none;
+  
+  .dark .pagefind-ui__result-link:hover {
+    color: var(--accent);
+    opacity: 0.8;
   }
-
-  html.dark .pagefind-ui__result-title a:hover {
-    color: #63b3ed !important;
+  
+  .dark .pagefind-ui__message {
+    color: var(--text-muted);
   }
-
-  html.dark .pagefind-ui__message {
-    color: #ccc !important;
-  }
-
-  html.dark .pagefind-ui__drawer {
-    background-color: #121212 !important;
-  }
-
-  html.dark .pagefind-ui mark {
-    background-color: #555 !important;
-    color: #fff !important;
+  
+  .dark .pagefind-ui mark {
+    background-color: var(--accent);
+    color: var(--bg);
   }
 </style>
 
-<div class="container py-5">
+<div class="content-wrapper">
   <h1>Search</h1>
   <div id="search"></div>
 </div>

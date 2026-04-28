@@ -1,67 +1,82 @@
-{{ define "main"}}
-<h1>{{ .Title }}</h1>
-{{/*
-<p>{{.Description}}</p>
-*/}}
-
-<!-- Display the content of _index.md -->
-{{/* {{ .Content }} */}}
-
-<!-- Check if this is the main journals page or a category page -->
-{{ if eq .RelPermalink "/journals/" }}
-<!-- Main journals page -->
-<div class="journalCategories">
-  {{ range .Pages }}
-  <div class="journalCategory">
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    <p>{{ .Description }}</p>
+{{ define "main" }}
+<div class="content-wrapper">
+  <h1>{{ .Title }}</h1>
+  
+  {{ if eq .RelPermalink "/journals/" }}
+  <!-- Main journals page: Display sub-sections as cards -->
+  <div class="journal-categories">
+    {{ range .Sections }}
+    <article class="journal-card">
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <p>{{ .Description }}</p>
+    </article>
+    {{ end }}
   </div>
-  {{ end }}
-</div>
-{{ else }}
-<!-- Individual category page -->
-{{ $isList := or (eq .RelPermalink "/journals/reviews/") (eq .RelPermalink
-"/journals/gratitudes/") (eq .RelPermalink "/journals/logbooks/")}} {{ if
-$isList }}
-<!-- For list-based categories (reviews, gratitudes) -->
-<div class="list">
-  {{ $paginator := .Paginate (where .Pages "Type" "ne" "page") }} {{ range
-  $paginator.Pages }}
-  <div class="listItem">
-    <div class="listItemTexts">
-      <h2 class="listItemTitle">
-        <a href="{{.Permalink}}">{{ .Title }}</a>
-      </h2>
+  
+  {{ else }}
+  <!-- Individual journal section -->
+  
+  {{ $section := .Section }}
+  {{ $isListBased := or (eq $section "reviews") (eq $section "gratitudes") (eq $section "logbooks") }}
+  {{ $isSinglePage := or (eq $section "ielts-preparation") (eq $section "ml-fundamentals") (eq $section "schedules") }}
+  
+  {{ if $isListBased }}
+  <!-- List-based journals: Display as post list -->
+  <div class="post-list">
+    {{ $paginator := .Paginate .Pages }}
+    {{ range $paginator.Pages }}
+    <article class="post-preview">
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       {{ if .Params.description }}
-      <p class="listItemDesc">{{.Params.description}}</p>
+      <p class="excerpt">{{ .Params.description }}</p>
+      {{ else }}
+      <p class="excerpt">{{ .Summary | truncate 150 }}</p>
       {{ end }}
-      <div class="listItemDetail">
-        <time>{{dateFormat .Site.Params.dateFormat .Date}}</time>
+      <div class="meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
       </div>
-      {{ if .Params.tags }}
-      <div class="listItemTags">
-        {{range (.GetTerms "tags")}}
-        <a href="{{.Permalink}}" class="listItemTag">{{.Name}}</a>
-        {{end}}
-      </div>
-      {{ end }}
+    </article>
+    <hr>
+    {{ end }}
+  </div>
+  
+  {{ template "_internal/pagination.html" . }}
+  
+  {{ else if $isSinglePage }}
+  <!-- Single-page journals: Render first page as article -->
+  {{ $firstPage := index .Pages 0 }}
+  {{ with $firstPage }}
+  <article class="journal-single">
+    <div class="meta">
+      <time datetime="{{ .Lastmod.Format "2006-01-02" }}">Last updated: {{ .Lastmod.Format "Jan 2, 2006" }}</time>
     </div>
+    
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </article>
+  {{ else }}
+  <p>No content found for this journal.</p>
+  {{ end }}
+  
+  {{ else }}
+  <!-- Fallback: Display as list -->
+  <div class="post-list">
+    {{ range .Pages }}
+    <article class="post-preview">
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      {{ if .Params.description }}
+      <p class="excerpt">{{ .Params.description }}</p>
+      {{ end }}
+      <div class="meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      </div>
+    </article>
+    <hr>
+    {{ end }}
   </div>
   {{ end }}
-
-  <!-- Pagination -->
-  {{ template "_internal/pagination.html" . }}
+  
+  {{ end }}
 </div>
-{{ else }}
-<!-- For single-page categories (ml, ielts journey) -->
-{{ $firstPage := index .Pages 0 }} {{ with $firstPage }}
-<article>
-  <h2>{{ .Title }}</h2>
-  <div class="articleMeta">
-    <time>Last updated: {{dateFormat $.Site.Params.dateFormat .Lastmod}}</time>
-  </div>
-  {{ .Content }}
-</article>
-{{ else }}
-<p>No content found for this category.</p>
-{{ end }} {{ end }} {{ end }} {{ end }}
+{{ end }}

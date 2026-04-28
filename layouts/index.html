@@ -1,27 +1,31 @@
 {{ define "main" }}
 <div class="onboarding">
-  <h1 class="onboardingTitle">Welcome!</h1>
-  <p class="onboardingDesc">
+  <h1>Welcome.</h1>
+  <p>
     Explore <a href="/posts">my insights</a>,
-    <a href="/journals/schedules">my schedules</a> throughout the weeks, and
-    join me on my continuous learning journey in
-    <a href="/journals">various subjects</a>.
+    <a href="/journals/schedules">schedules</a>, and
+    <a href="/journals">learning journey</a>.
   </p>
-  <div class="recentPosts">
-    <h2>Check my latest writings:</h2>
-    <div class="postPreviewWrapper">
-      {{ range first 3 (where .Site.RegularPages "Type" "in"
-      .Site.Params.mainSections) }}
-      <div class="postCardWrapper">
-        <a href="{{ .Permalink }}" class="postPreview">
-          <h3>{{ .Title }}</h3>
-          <p>{{ .Params.description | truncate 100 }}</p>
-        </a>
-      </div>
-      {{ end }}
+  
+  <hr>
+  
+  <h2>Latest</h2>
+  
+  {{ range first 3 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+  <article class="post-preview">
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <p class="excerpt">{{ .Summary | truncate 100 }}</p>
+    <div class="meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      <span class="separator">·</span>
+      <span class="category">{{ .Section | humanize }}</span>
     </div>
+  </article>
+  <hr>
+  {{ end }}
+  
+  <div class="see-all">
+    <a href="/posts">See all posts →</a>
   </div>
-
-  <a href="{{ .Site.BaseURL }}posts/"><u>See all posts</u></a>
 </div>
 {{ end }}

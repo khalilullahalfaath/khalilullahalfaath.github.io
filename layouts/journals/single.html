@@ -1,26 +1,42 @@
 {{ define "main" }}
-<div class="single">
-  <div class="singleHead">
-    <div class="singleHeadText">
-      <h1 class="singleHeadTitle">{{.Title}}</h1>
-      <p class="singleHeadDesc">{{.Params.description}}</p>
-      <div class="singleHeadDetail">
-        {{range (.GetTerms "categories")}}
-        <a href="{{.Permalink}}" class="singleCategory">{{.Name}}</a>
-        {{end}}
-      </div>
-      <div class="singleHeadTimes">
-        <time>Created: {{dateFormat .Site.Params.dateFormat .Date}}</time>
-        {{ if ne .Lastmod .Date }}
-        <time
-          >Last updated: {{dateFormat .Site.Params.dateFormat .Lastmod}}</time
-        >
-        {{ end }}
-      </div>
+<article class="single">
+  <header>
+    <h1>{{ .Title }}</h1>
+    
+    {{ with .Params.description }}
+    <p class="subtitle">{{ . | markdownify }}</p>
+    {{ end }}
+    
+    <div class="meta">
+      <span class="author">{{ .Site.Params.author | default "Khalilullah Al Fath" }}</span>
+      <span class="separator">·</span>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      {{ range first 1 (.GetTerms "categories") }}
+      <span class="separator">·</span>
+      <span class="category-badge">{{ .LinkTitle }}</span>
+      {{ end }}
     </div>
+  </header>
+  
+  {{ if .Params.image }}
+  <img src="{{ .Params.image }}" alt="{{ .Title }}" class="featured-image">
+  {{ end }}
+  
+  <div class="content">
+    {{ .Content }}
   </div>
-  <div class="singleBottom">
-    <div class="singleContent">{{.Content}}</div>
-  </div>
-</div>
+  
+  <hr>
+  
+  <footer>
+    {{ if .GetTerms "categories" }}
+    <div class="tags">
+      <span>Tags: </span>
+      {{ range .GetTerms "categories" }}
+      <a href="{{ .Permalink }}" class="category-badge">{{ .LinkTitle }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </footer>
+</article>
 {{ end }}
