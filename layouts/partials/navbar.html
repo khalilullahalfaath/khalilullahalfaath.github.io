@@ -1,26 +1,67 @@
 <nav class="navbar">
-  <div class="navbar-container">
-    <a href="/" class="navbar-brand">Khalil-lab</a>
-    
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-    <label for="nav-toggle" class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    
-    <div class="nav-links">
-      <a href="/" class="nav-link">Home</a>
-      <span class="nav-separator">/</span>
-      <a href="/posts/" class="nav-link">Writings</a>
-      <span class="nav-separator">/</span>
-      <a href="/journals/" class="nav-link">Journals</a>
-      <span class="nav-separator">/</span>
-      <a href="/about/" class="nav-link">About</a>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Khalil-lab</a>
+
+    <div class="nav-right">
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        aria-label="Toggle dark mode"
+      >
+        🌙
+      </button>
+
+      <div class="hamburger-wrapper">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" />
+        <label for="menu-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
     </div>
-    
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-      🌙
-    </button>
+
+    <div class="nav-menu" id="navbarNavAltMarkup">
+      <!-- Desktop Navigation -->
+      <div class="nav-desktop">
+        <a class="nav-link" href="/">Home</a>
+        <span class="nav-separator">/</span>
+        <a class="nav-link" href="/posts">Writings</a>
+        <span class="nav-separator">/</span>
+        <a class="nav-link" href="/lab-notebook">Lab Notebook</a>
+        <span class="nav-separator">/</span>
+        <a class="nav-link" href="/about">About</a>
+        <span class="nav-separator">/</span>
+        
+        <!-- Dropdown More -->
+        <div class="nav-dropdown">
+          <button class="nav-link dropdown-toggle">More ▾</button>
+          <div class="dropdown-menu">
+            <a href="/journals" class="dropdown-item">Journals</a>
+            <a href="/bookshelf" class="dropdown-item">Bookshelf</a>
+            <a href="/til" class="dropdown-item">TIL</a>
+            <a href="/uses" class="dropdown-item">Uses</a>
+            <a href="/timeline" class="dropdown-item">Timeline</a>
+            <a href="/fun-facts" class="dropdown-item">Fun Facts</a>
+            <a href="/schedule" class="dropdown-item">Schedule</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="nav-mobile">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/posts">Writings</a>
+        <a class="nav-link" href="/lab-notebook">Lab Notebook</a>
+        <a class="nav-link" href="/about">About</a>
+        <a class="nav-link" href="/journals">Journals</a>
+        <a class="nav-link" href="/bookshelf">Bookshelf</a>
+        <a class="nav-link" href="/til">TIL</a>
+        <a class="nav-link" href="/uses">Uses</a>
+        <a class="nav-link" href="/timeline">Timeline</a>
+        <a class="nav-link" href="/fun-facts">Fun Facts</a>
+        <a class="nav-link" href="/schedule">Schedule</a>
+      </div>
+    </div>
   </div>
 </nav>
