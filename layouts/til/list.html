@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="content-wrapper">
+  <h1>{{ .Title }}</h1>
+  <p class="page-description">{{ .Content }}</p>
+  
+  <div class="til-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <article class="til-card">
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <div class="til-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        {{ if .Params.tags }}
+        <span class="separator">·</span>
+        {{ range .Params.tags }}
+        <span class="tag">{{ . }}</span>
+        {{ end }}
+        {{ end }}
+      </div>
+      <div class="til-content">
+        {{ .Content }}
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="content-wrapper">
+  <h1>{{ .Title }}</h1>
+  <p class="page-description">{{ .Content }}</p>
+  
+  <div class="lab-entries">
+    {{ range .Pages.ByDate.Reverse }}
+    <article class="lab-entry">
+      <div class="lab-header">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <span class="lab-status lab-status-{{ .Params.status }}">{{ .Params.status }}</span>
+      </div>
+      <div class="lab-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        {{ if .Params.tags }}
+        <span class="separator">·</span>
+        <div class="lab-tags">
+          {{ range .Params.tags }}
+          <span class="tag">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+      <p class="lab-excerpt">{{ .Summary | truncate 150 }}</p>
+    </article>
+    <hr>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

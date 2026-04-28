@@ -1,0 +1,59 @@
+{{ define "main" }}
+<div class="content-wrapper">
+  <h1>{{ .Title }}</h1>
+  <p class="page-description">Books, papers, and articles I'm reading or have read. Inspired by my love for learning and documenting everything (thanks, Sheldon!).</p>
+  
+  <div class="bookshelf-grid">
+    <!-- Currently Reading -->
+    <div class="book-card status-reading">
+      <div class="book-icon">📖</div>
+      <h3>Deep Learning</h3>
+      <p class="book-author">Ian Goodfellow, Yoshua Bengio, Aaron Courville</p>
+      <span class="book-status">Currently Reading</span>
+      <p class="book-note">The bible of deep learning. Dense but essential.</p>
+    </div>
+    
+    <div class="book-card status-reading">
+      <div class="book-icon">📄</div>
+      <h3>Attention Is All You Need</h3>
+      <p class="book-author">Vaswani et al. (2017)</p>
+      <span class="book-status">Currently Reading</span>
+      <p class="book-note">The transformer paper. Revolutionary architecture.</p>
+    </div>
+    
+    <!-- Finished -->
+    <div class="book-card status-finished">
+      <div class="book-icon">✅</div>
+      <h3>Clean Code</h3>
+      <p class="book-author">Robert C. Martin</p>
+      <span class="book-status">Finished</span>
+      <p class="book-note">Changed how I write code. Every developer should read this.</p>
+    </div>
+    
+    <div class="book-card status-finished">
+      <div class="book-icon">✅</div>
+      <h3>The Pragmatic Programmer</h3>
+      <p class="book-author">Andrew Hunt, David Thomas</p>
+      <span class="book-status">Finished</span>
+      <p class="book-note">Timeless advice for software engineers.</p>
+    </div>
+    
+    <div class="book-card status-finished">
+      <div class="book-icon">📄</div>
+      <h3>BERT: Pre-training of Deep Bidirectional Transformers</h3>
+      <p class="book-author">Devlin et al. (2018)</p>
+      <span class="book-status">Finished</span>
+      <p class="book-note">Foundation of modern NLP. Elegant and powerful.</p>
+    </div>
+    
+    <!-- Want to Read -->
+    <div class="book-card status-want">
+      <div class="book-icon">📚</div>
+      <h3>Designing Data-Intensive Applications</h3>
+      <p class="book-author">Martin Kleppmann</p>
+      <span class="book-status">Want to Read</span>
+      <p class="book-note">On my list for understanding distributed systems.</p>
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="lab-single">
+  <header class="lab-single-header">
+    <h1>{{ .Title }}</h1>
+    <div class="lab-single-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <span class="separator">·</span>
+      <span class="lab-status lab-status-{{ .Params.status }}">{{ .Params.status }}</span>
+      {{ if .Params.tags }}
+      <span class="separator">·</span>
+      {{ range .Params.tags }}
+      <span class="tag">{{ . }}</span>
+      {{ end }}
+      {{ end }}
+    </div>
+  </header>
+  
+  <div class="content">
+    {{ .Content }}
+  </div>
+  
+  <footer class="lab-single-footer">
+    <a href="/lab-notebook" class="back-link">← Back to Lab Notebook</a>
+  </footer>
+</article>
+{{ end }}
