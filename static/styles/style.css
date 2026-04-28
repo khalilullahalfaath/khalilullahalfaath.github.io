@@ -312,22 +312,18 @@ hr {
   display: none;
 }
 
-.hamburger-wrapper {
-  display: none !important;
-}
-
-@media (max-width: 767px) {
-  .hamburger-wrapper {
-    display: block !important;
-  }
-}
-
 .hamburger {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
   padding: 8px;
+}
+
+@media (max-width: 767px) {
+  .hamburger {
+    display: flex !important;
+  }
 }
 
 .hamburger span {
