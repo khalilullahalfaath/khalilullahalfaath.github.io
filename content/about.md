@@ -5,19 +5,19 @@ date = 2024-07-23T20:35:17+07:00
 layout = "about"
 name = "Khalilullah Al Fath"
 image = "/images/myself.jpg"
-tagline = "I'm a Computer Science student passionate about learning and sharing knowledge through writing."
+tagline = "AI Engineer & Master's student, interested in ML theory, evolutionary algorithms, NLP, and computer vision."
 
 [[socials]]
 label = "GitHub"
-url = "https://github.com/khalilulahalfath"
+url = "https://github.com/khalilullahalfaath"
 
 [[socials]]
 label = "Instagram"
-url = "https://instagram.com/khalilulahalfath"
+url = "https://instagram.com/khalilullahalfaath"
 
 [[socials]]
 label = "X"
-url = "https://x.com/khalilulahalfath"
+url = "https://x.com/khaleeelll"
 +++
 
 ### About Me

@@ -8,13 +8,13 @@ projects:
     description: "Short description of what this project does and why you built it."
     tech: ["Python", "PyTorch"]
     status: "active"
-    github: "https://github.com/khalilulahalfath"
+    github: "https://github.com/khalilullahalfaath"
     demo: ""
   - icon: "🧪"
     title: "PLACEHOLDER: Another project"
     description: "Short description of what this project does and why you built it."
     tech: ["Hugo", "JavaScript"]
     status: "completed"
-    github: "https://github.com/khalilulahalfath"
+    github: "https://github.com/khalilullahalfaath"
     demo: ""
 ---

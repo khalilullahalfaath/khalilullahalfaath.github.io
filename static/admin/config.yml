@@ -66,3 +66,314 @@ collections:
           widget: "markdown",
           hint: "Write your article here",
         }
+
+  - name: "lab-notebook"
+    label: "Lab Notebook"
+    folder: "content/lab-notebook"
+    path: "{{slug}}"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - {
+          label: "Status",
+          name: "status",
+          widget: "select",
+          options: ["ongoing", "completed", "failed"],
+        }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          field: { label: "Tag", name: "tag", widget: "string" },
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "til"
+    label: "TIL (Today I Learned)"
+    folder: "content/til"
+    path: "{{slug}}"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          field: { label: "Tag", name: "tag", widget: "string" },
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "journals-gratitudes"
+    label: "Journals - Gratitudes"
+    folder: "content/journals/gratitudes"
+    path: "{{slug}}"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "journals-logbooks"
+    label: "Journals - Log Books"
+    folder: "content/journals/logbooks"
+    path: "{{slug}}"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "journals-reviews"
+    label: "Journals - Reviews"
+    folder: "content/journals/reviews"
+    path: "{{slug}}"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Single Pages"
+    files:
+      - name: "bookshelf"
+        label: "Bookshelf"
+        file: "content/bookshelf.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Books",
+              name: "books",
+              widget: "list",
+              fields:
+                [
+                  { label: "Icon (emoji)", name: "icon", widget: "string" },
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Author", name: "author", widget: "string" },
+                  {
+                    label: "Status",
+                    name: "status",
+                    widget: "select",
+                    options: ["reading", "finished", "want"],
+                  },
+                  { label: "Note", name: "note", widget: "text" },
+                ],
+            }
+
+      - name: "fun-facts"
+        label: "Fun Facts"
+        file: "content/fun-facts.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Sections",
+              name: "sections",
+              widget: "list",
+              fields:
+                [
+                  { label: "Icon (emoji)", name: "icon", widget: "string" },
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Type",
+                    name: "type",
+                    widget: "select",
+                    options: ["ranked", "bullet", "text"],
+                  },
+                  {
+                    label: "Items (for ranked/bullet types)",
+                    name: "items",
+                    widget: "list",
+                    required: false,
+                    fields:
+                      [
+                        { label: "Title", name: "title", widget: "string" },
+                        {
+                          label: "Description",
+                          name: "desc",
+                          widget: "string",
+                          required: false,
+                        },
+                      ],
+                  },
+                  {
+                    label: "Paragraphs (for text type)",
+                    name: "paragraphs",
+                    widget: "list",
+                    required: false,
+                    field:
+                      { label: "Paragraph", name: "paragraph", widget: "text" },
+                  },
+                ],
+            }
+
+      - name: "uses"
+        label: "Uses"
+        file: "content/uses.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Last Updated", name: "lastmod", widget: "date" }
+          - {
+              label: "Sections",
+              name: "sections",
+              widget: "list",
+              fields:
+                [
+                  { label: "Icon (emoji)", name: "icon", widget: "string" },
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Items",
+                    name: "items",
+                    widget: "list",
+                    fields:
+                      [
+                        { label: "Title", name: "title", widget: "string" },
+                        { label: "Description", name: "desc", widget: "string" },
+                      ],
+                  },
+                ],
+            }
+
+      - name: "timeline"
+        label: "Timeline"
+        file: "content/timeline.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Items",
+              name: "items",
+              widget: "list",
+              fields:
+                [
+                  { label: "Date", name: "date", widget: "string" },
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "text",
+                  },
+                ],
+            }
+
+      - name: "projects"
+        label: "Projects"
+        file: "content/projects.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Projects",
+              name: "projects",
+              widget: "list",
+              fields:
+                [
+                  { label: "Icon (emoji)", name: "icon", widget: "string" },
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "text",
+                  },
+                  {
+                    label: "Tech Stack",
+                    name: "tech",
+                    widget: "list",
+                    field: { label: "Tech", name: "tech", widget: "string" },
+                    required: false,
+                  },
+                  {
+                    label: "Status",
+                    name: "status",
+                    widget: "select",
+                    options: ["active", "completed", "archived"],
+                  },
+                  {
+                    label: "GitHub URL",
+                    name: "github",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Demo URL",
+                    name: "demo",
+                    widget: "string",
+                    required: false,
+                  },
+                ],
+            }
+
+      - name: "schedule"
+        label: "Schedule"
+        file: "content/schedule.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Google Calendar Email",
+              name: "calendar_id",
+              widget: "string",
+            }
+          - { label: "Timezone", name: "timezone", widget: "string" }
+          - { label: "Best Times to Meet", name: "best_times", widget: "text" }
+          - {
+              label: "Contact Note (markdown supported)",
+              name: "contact_note",
+              widget: "text",
+            }
+          - {
+              label: "Obfuscated Email",
+              name: "email_obfuscated",
+              widget: "string",
+            }
+          - { label: "Footer Note", name: "footer_note", widget: "text" }
+
+      - name: "about"
+        label: "About"
+        file: "content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Photo", name: "image", widget: "image" }
+          - { label: "Tagline", name: "tagline", widget: "text" }
+          - {
+              label: "Social Links",
+              name: "socials",
+              widget: "list",
+              fields:
+                [
+                  { label: "Label", name: "label", widget: "string" },
+                  { label: "URL", name: "url", widget: "string" },
+                ],
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - name: "now"
+        label: "Now"
+        file: "content/now.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Last Modified", name: "lastmod", widget: "datetime" }
+          - { label: "Body", name: "body", widget: "markdown" }

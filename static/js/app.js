@@ -22,3 +22,15 @@ toggleButton.addEventListener("click", () => {
   const isDark = document.documentElement.classList.contains("dark");
   setTheme(isDark ? "light" : "dark");
 });
+
+// Back to top button
+const backToTopButton = document.getElementById("back-to-top");
+if (backToTopButton) {
+  window.addEventListener("scroll", () => {
+    backToTopButton.classList.toggle("visible", window.scrollY > 400);
+  });
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}

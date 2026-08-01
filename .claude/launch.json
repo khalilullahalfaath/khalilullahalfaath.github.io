@@ -6,6 +6,12 @@
       "runtimeExecutable": "hugo",
       "runtimeArgs": ["server", "-D", "-p", "1314"],
       "port": 1314
+    },
+    {
+      "name": "static-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "public", "-l", "1315"],
+      "port": 1315
     }
   ]
 }

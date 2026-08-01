@@ -1710,7 +1710,11 @@ main {
 }
 
 .lab-entry {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.lab-entries > .lab-entry:last-child {
+  margin-bottom: 0;
 }
 
 .lab-header {
@@ -2465,4 +2469,38 @@ main {
 
 .email-obfuscated strong {
   color: var(--text);
+}
+
+/* ==========================================================================
+   Back to Top
+   ========================================================================== */
+
+#back-to-top {
+  position: fixed;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+  z-index: 900;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }

@@ -7,7 +7,33 @@
       name="description"
       content="{{or .Params.description .Site.Params.description}}"
     />
-    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/robot.png" />
+
+    <!-- Open Graph / Twitter Card -->
+    {{ $ogImage := "images/myself.jpg" | absURL }}
+    {{ if .Params.image }}
+      {{ if hasPrefix .Params.image "http" }}
+        {{ $ogImage = .Params.image }}
+      {{ else if hasPrefix .Params.image "/" }}
+        {{ $ogImage = .Params.image | absURL }}
+      {{ else }}
+        {{ $ogImage = printf "%s%s" .Permalink .Params.image }}
+      {{ end }}
+    {{ end }}
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:description" content="{{or .Params.description .Site.Params.description}}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:image" content="{{ $ogImage }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ .Title }}" />
+    <meta name="twitter:description" content="{{or .Params.description .Site.Params.description}}" />
+    <meta name="twitter:image" content="{{ $ogImage }}" />
+    <link rel="canonical" href="{{ .Permalink }}" />
+
     <!-- Dark mode instant-apply script -->
     <script>
       (function () {
@@ -59,6 +85,8 @@
       <main>{{block "main" .}}{{end}}</main>
       {{partial "footer" .}}
     </div>
+
+    <button id="back-to-top" aria-label="Back to top">↑</button>
     
     <!-- Netlify Identity -->
     <script>

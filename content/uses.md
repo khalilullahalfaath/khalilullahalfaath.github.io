@@ -65,8 +65,6 @@ sections:
         desc: "Netlify for deployment"
       - title: "CMS"
         desc: "Decap CMS for content management"
-      - title: "Analytics"
-        desc: "Plausible (privacy-friendly)"
       - title: "Search"
         desc: "Pagefind for client-side search"
   - icon: "🎨"
