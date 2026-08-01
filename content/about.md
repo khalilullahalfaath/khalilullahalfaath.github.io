@@ -3,6 +3,21 @@ title= "About Me"
 description= "My summary"
 date = 2024-07-23T20:35:17+07:00
 layout = "about"
+name = "Khalilullah Al Fath"
+image = "/images/myself.jpg"
+tagline = "I'm a Computer Science student passionate about learning and sharing knowledge through writing."
+
+[[socials]]
+label = "GitHub"
+url = "https://github.com/khalilulahalfath"
+
+[[socials]]
+label = "Instagram"
+url = "https://instagram.com/khalilulahalfath"
+
+[[socials]]
+label = "X"
+url = "https://x.com/khalilulahalfath"
 +++
 
 ### About Me

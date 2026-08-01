@@ -2,74 +2,20 @@
 <div class="uses-page">
   <h1>{{ .Title }}</h1>
   <p class="page-description">My current setup, tools, and software. Inspired by <a href="https://uses.tech" target="_blank" rel="noopener">uses.tech</a>.</p>
-  
+
+  {{ range .Params.sections }}
   <div class="uses-section">
-    <h2>💻 Hardware</h2>
+    <h2>{{ .icon }} {{ .title }}</h2>
     <ul class="uses-list">
-      <li><strong>Laptop:</strong> MacBook Pro / ThinkPad (for different workflows)</li>
-      <li><strong>Monitor:</strong> 27" 4K display for extended screen real estate</li>
-      <li><strong>Keyboard:</strong> Mechanical keyboard (Cherry MX switches)</li>
-      <li><strong>Mouse:</strong> Logitech MX Master 3</li>
-      <li><strong>Headphones:</strong> Sony WH-1000XM4 for focus sessions</li>
+      {{ range .items }}
+      <li><strong>{{ .title }}:</strong> {{ .desc }}</li>
+      {{ end }}
     </ul>
   </div>
-  
-  <div class="uses-section">
-    <h2>🛠️ Development Tools</h2>
-    <ul class="uses-list">
-      <li><strong>Editor:</strong> VS Code with Vim keybindings</li>
-      <li><strong>Terminal:</strong> iTerm2 / Windows Terminal with Oh My Zsh</li>
-      <li><strong>Version Control:</strong> Git + GitHub</li>
-      <li><strong>API Testing:</strong> Postman / Insomnia</li>
-      <li><strong>Database Client:</strong> DBeaver / TablePlus</li>
-    </ul>
-  </div>
-  
-  <div class="uses-section">
-    <h2>🤖 AI/ML Stack</h2>
-    <ul class="uses-list">
-      <li><strong>Framework:</strong> PyTorch (primary), TensorFlow (occasionally)</li>
-      <li><strong>Notebook:</strong> Jupyter Lab for experimentation</li>
-      <li><strong>Data:</strong> Pandas, NumPy, Scikit-learn</li>
-      <li><strong>Visualization:</strong> Matplotlib, Seaborn, Plotly</li>
-      <li><strong>MLOps:</strong> Weights & Biases for experiment tracking</li>
-    </ul>
-  </div>
-  
-  <div class="uses-section">
-    <h2>📝 Productivity</h2>
-    <ul class="uses-list">
-      <li><strong>Notes:</strong> Obsidian for personal knowledge management</li>
-      <li><strong>Tasks:</strong> Todoist for task management</li>
-      <li><strong>Calendar:</strong> Google Calendar for scheduling</li>
-      <li><strong>Writing:</strong> Notion for long-form writing, VS Code for technical docs</li>
-      <li><strong>Reading:</strong> Zotero for research papers, Kindle for books</li>
-    </ul>
-  </div>
-  
-  <div class="uses-section">
-    <h2>🌐 Web & Blogging</h2>
-    <ul class="uses-list">
-      <li><strong>Static Site Generator:</strong> Hugo (this blog!)</li>
-      <li><strong>Hosting:</strong> Netlify for deployment</li>
-      <li><strong>CMS:</strong> Decap CMS for content management</li>
-      <li><strong>Analytics:</strong> Plausible (privacy-friendly)</li>
-      <li><strong>Search:</strong> Pagefind for client-side search</li>
-    </ul>
-  </div>
-  
-  <div class="uses-section">
-    <h2>🎨 Design & Media</h2>
-    <ul class="uses-list">
-      <li><strong>Design:</strong> Figma for UI/UX mockups</li>
-      <li><strong>Icons:</strong> Heroicons, Lucide</li>
-      <li><strong>Colors:</strong> Coolors for palette generation</li>
-      <li><strong>Screenshots:</strong> CleanShot X / ShareX</li>
-    </ul>
-  </div>
-  
+  {{ end }}
+
   <div class="uses-footer">
-    <p>This page is a living document. Last updated: <time datetime="2026-04-28">April 28, 2026</time></p>
+    <p>This page is a living document. Last updated: <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "January 2, 2006" }}</time></p>
   </div>
 </div>
 {{ end }}

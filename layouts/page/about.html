@@ -1,23 +1,22 @@
 {{ define "main" }}
 <div class="about">
-  <img src="/images/myself.jpg" alt="Khalilullah Al Fath" class="portrait">
-  
-  <h1>Khalilullah Al Fath</h1>
-  
+  <img src="{{ .Params.image }}" alt="{{ .Params.name }}" class="portrait">
+
+  <h1>{{ .Params.name }}</h1>
+
   <p class="bio">
-    I'm a Computer Science student passionate about learning and sharing knowledge through writing.
+    {{ .Params.tagline }}
   </p>
-  
+
   <div class="social-links">
-    <a href="https://github.com/khalilulahalfath" target="_blank" rel="noopener">GitHub</a>
-    <span class="separator">·</span>
-    <a href="https://instagram.com/khalilulahalfath" target="_blank" rel="noopener">Instagram</a>
-    <span class="separator">·</span>
-    <a href="https://x.com/khalilulahalfath" target="_blank" rel="noopener">X</a>
+    {{ range $i, $s := .Params.socials }}
+    {{ if $i }}<span class="separator">·</span>{{ end }}
+    <a href="{{ $s.url }}" target="_blank" rel="noopener">{{ $s.label }}</a>
+    {{ end }}
   </div>
-  
+
   <hr>
-  
+
   <div class="content">
     {{ .Content }}
   </div>
