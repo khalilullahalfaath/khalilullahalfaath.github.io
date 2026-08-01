@@ -459,11 +459,39 @@ hr {
   color: var(--accent);
 }
 
-/* Mobile: hide dropdown, show all links flat */
+/* Mobile: hide dropdown, use "More" accordion instead */
 @media (max-width: 767px) {
   .nav-dropdown {
     display: none;
   }
+}
+
+.nav-more {
+  width: 100%;
+}
+
+.nav-more summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-more summary::-webkit-details-marker,
+.nav-more summary::marker {
+  display: none;
+  content: "";
+}
+
+.nav-more[open] summary {
+  color: var(--accent);
+}
+
+.nav-more-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
 }
 
 /* ==========================================================================
