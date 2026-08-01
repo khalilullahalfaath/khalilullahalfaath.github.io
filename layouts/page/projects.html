@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="projects-page">
+  <h1>{{ .Title }}</h1>
+  <p class="page-description">A selection of things I've built — research projects, tools, and side experiments.</p>
+
+  <div class="projects-grid">
+    {{ range .Params.projects }}
+    <div class="project-card status-{{ .status }}">
+      <div class="project-header">
+        <span class="project-icon">{{ .icon }}</span>
+        <span class="project-status">{{- if eq .status "active" -}}
+            Active
+          {{- else if eq .status "completed" -}}
+            Completed
+          {{- else if eq .status "archived" -}}
+            Archived
+          {{- else -}}
+            {{ .status }}
+          {{- end -}}</span>
+      </div>
+      <h3>{{ .title }}</h3>
+      <p class="project-description">{{ .description }}</p>
+      {{ if .tech }}
+      <div class="project-tech">
+        {{ range .tech }}
+        <span class="tag">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+      <div class="project-links">
+        {{ if .github }}<a href="{{ .github }}" target="_blank" rel="noopener">GitHub →</a>{{ end }}
+        {{ if .demo }}<a href="{{ .demo }}" target="_blank" rel="noopener">Live Demo →</a>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

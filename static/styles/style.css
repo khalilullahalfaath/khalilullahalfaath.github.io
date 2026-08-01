@@ -812,6 +812,10 @@ main {
   margin-bottom: var(--space-sm); /* Reduced spacing */
 }
 
+.homepage-main hr {
+  margin: var(--space-sm) 0;
+}
+
 .post-preview h3 {
   font-family: var(--font-body);
   font-size: 20px; /* Reduced from 24px */
@@ -865,7 +869,11 @@ main {
 .post-card {
   display: flex;
   gap: var(--space-md);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.post-list > .post-card:last-child {
+  margin-bottom: 0;
 }
 
 .post-thumbnail {
@@ -1924,6 +1932,121 @@ main {
   line-height: 1.5;
   margin: 0;
   font-style: italic;
+}
+
+/* ==========================================================================
+   Projects
+   ========================================================================== */
+
+.projects-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.project-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  transition: all var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.project-icon {
+  font-size: 28px;
+}
+
+.project-status {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-active .project-status {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.dark .status-active .project-status {
+  background: #1e3a8a;
+  color: #dbeafe;
+}
+
+.status-completed .project-status {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.dark .status-completed .project-status {
+  background: #064e3b;
+  color: #d1fae5;
+}
+
+.status-archived .project-status {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.dark .status-archived .project-status {
+  background: #581c87;
+  color: #f3e8ff;
+}
+
+.project-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 var(--space-xs) 0;
+  color: var(--text);
+}
+
+.project-description {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.project-links {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.project-links a {
+  font-size: 14px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
 }
 
 /* ==========================================================================
