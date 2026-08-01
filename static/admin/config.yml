@@ -190,6 +190,26 @@ collections:
   - name: "pages"
     label: "Single Pages"
     files:
+      - name: "reviews-index"
+        label: "Reviews (page settings)"
+        file: "content/reviews/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "External Review Profiles",
+              name: "external_reviews",
+              widget: "list",
+              required: false,
+              fields:
+                [
+                  { label: "Icon (emoji)", name: "icon", widget: "string" },
+                  { label: "Label", name: "label", widget: "string" },
+                  { label: "URL", name: "url", widget: "string" },
+                ],
+            }
+          - { label: "Intro Text", name: "body", widget: "markdown", required: false }
+
       - name: "bookshelf"
         label: "Bookshelf"
         file: "content/bookshelf.md"

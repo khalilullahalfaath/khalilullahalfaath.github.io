@@ -2112,6 +2112,57 @@ main {
    Reviews
    ========================================================================== */
 
+.external-reviews {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  margin: var(--space-md) 0;
+}
+
+.external-reviews-label {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.external-reviews-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.external-review-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 8px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.external-review-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.external-review-link .arrow {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.external-review-link:hover .arrow {
+  color: var(--accent);
+}
+
 .review-filters {
   display: flex;
   flex-wrap: wrap;

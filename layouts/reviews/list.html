@@ -3,6 +3,21 @@
   <h1>{{ .Title }}</h1>
   <p class="page-description">{{ .Content }}</p>
 
+  {{ if .Params.external_reviews }}
+  <div class="external-reviews">
+    <p class="external-reviews-label">I post book & movie reviews more actively here:</p>
+    <div class="external-reviews-links">
+      {{ range .Params.external_reviews }}
+      <a href="{{ .url }}" target="_blank" rel="noopener" class="external-review-link">
+        <span class="icon">{{ .icon }}</span>
+        <span>{{ .label }}</span>
+        <span class="arrow">↗</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
   <div class="review-filters">
     <button class="review-filter-btn active" data-filter="all">All</button>
     <button class="review-filter-btn" data-filter="book">📖 Books</button>
