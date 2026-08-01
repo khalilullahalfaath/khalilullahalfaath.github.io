@@ -93,16 +93,6 @@
       <a href="/about" class="sidebar-link">Learn more →</a>
     </div>
     
-    <!-- Popular Posts -->
-    <div class="sidebar-card">
-      <h3>Popular Posts</h3>
-      <ul class="sidebar-list">
-        {{ range first 5 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
-      </ul>
-    </div>
-    
     <!-- New Pages -->
     <div class="sidebar-card">
       <h3>Explore More</h3>
@@ -115,6 +105,16 @@
         <li><a href="/uses">🛠️ Uses</a></li>
         <li><a href="/timeline">📅 Timeline</a></li>
         <li><a href="/fun-facts">🎯 Fun Facts</a></li>
+      </ul>
+    </div>
+
+    <!-- Popular Posts -->
+    <div class="sidebar-card">
+      <h3>Popular Posts</h3>
+      <ul class="sidebar-list">
+        {{ range first 5 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
       </ul>
     </div>
     
