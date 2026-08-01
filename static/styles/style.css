@@ -1077,19 +1077,22 @@ main {
 .category-badge {
   display: inline-block;
   padding: 4px 12px;
-  border-radius: 12px;
+  border-radius: 999px;
   background: var(--surface);
+  border: 1px solid var(--border);
   color: var(--text);
   font-family: var(--font-ui);
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
   margin-right: var(--space-xs);
-  transition: background-color var(--transition);
+  transition: all var(--transition);
 }
 
 .category-badge:hover {
-  background: var(--border);
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--surface);
   text-decoration: none;
 }
 
