@@ -3,7 +3,7 @@ title= "About Me"
 description= "My summary"
 date = 2024-07-23T20:35:17+07:00
 layout = "about"
-name = "Khalilullah Al Fath"
+name = "Khalilullah Al Faath"
 image = "/images/myself.jpg"
 tagline = "AI Engineer & Master's student, interested in ML theory, evolutionary algorithms, NLP, and computer vision."
 

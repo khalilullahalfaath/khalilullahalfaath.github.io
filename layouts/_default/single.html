@@ -8,7 +8,7 @@
     {{ end }}
     
     <div class="meta">
-      <span class="author">{{ .Site.Params.author | default "Khalilullah Al Fath" }}</span>
+      <span class="author">{{ .Site.Params.author | default "Khalilullah Al Faath" }}</span>
       <span class="separator">·</span>
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
       {{ range first 1 (.GetTerms "categories") }}
