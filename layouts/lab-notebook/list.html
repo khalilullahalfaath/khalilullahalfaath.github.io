@@ -2,10 +2,17 @@
 <div class="content-wrapper">
   <h1>{{ .Title }}</h1>
   <p class="page-description">{{ .Content }}</p>
-  
+
+  <div class="review-filters">
+    <button class="review-filter-btn active" data-status-filter="all">All</button>
+    <button class="review-filter-btn" data-status-filter="ongoing">Ongoing</button>
+    <button class="review-filter-btn" data-status-filter="completed">Completed</button>
+    <button class="review-filter-btn" data-status-filter="failed">Failed</button>
+  </div>
+
   <div class="lab-entries">
     {{ range .Pages.ByDate.Reverse }}
-    <article class="lab-entry">
+    <article class="lab-entry" data-status="{{ .Params.status }}" data-tags="{{ delimit .Params.tags "," }}">
       <div class="lab-header">
         <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         <span class="lab-status lab-status-{{ .Params.status }}">{{ .Params.status }}</span>
@@ -16,7 +23,7 @@
         <span class="separator">·</span>
         <div class="lab-tags">
           {{ range .Params.tags }}
-          <span class="tag">{{ . }}</span>
+          <button type="button" class="tag tag-filter" data-tag-filter="{{ . }}">{{ . }}</button>
           {{ end }}
         </div>
         {{ end }}
@@ -25,5 +32,54 @@
     </article>
     {{ end }}
   </div>
+
+  <p class="no-results" style="display:none;">No entries match the selected filters.</p>
 </div>
+
+<script>
+  (function () {
+    const statusButtons = document.querySelectorAll("[data-status-filter]");
+    const tagButtons = document.querySelectorAll("[data-tag-filter]");
+    const entries = document.querySelectorAll(".lab-entry");
+    const noResults = document.querySelector(".no-results");
+    let activeStatus = "all";
+    let activeTag = null;
+
+    function applyFilters() {
+      let visibleCount = 0;
+      entries.forEach((entry) => {
+        const statusMatch = activeStatus === "all" || entry.dataset.status === activeStatus;
+        const tags = (entry.dataset.tags || "").split(",");
+        const tagMatch = !activeTag || tags.includes(activeTag);
+        const visible = statusMatch && tagMatch;
+        entry.style.display = visible ? "" : "none";
+        if (visible) visibleCount++;
+      });
+      if (noResults) noResults.style.display = visibleCount === 0 ? "" : "none";
+    }
+
+    statusButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        statusButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeStatus = btn.dataset.statusFilter;
+        applyFilters();
+      });
+    });
+
+    tagButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const tag = btn.dataset.tagFilter;
+        if (activeTag === tag) {
+          activeTag = null;
+          tagButtons.forEach((b) => b.classList.remove("tag-active"));
+        } else {
+          activeTag = tag;
+          tagButtons.forEach((b) => b.classList.toggle("tag-active", b.dataset.tagFilter === tag));
+        }
+        applyFilters();
+      });
+    });
+  })();
+</script>
 {{ end }}

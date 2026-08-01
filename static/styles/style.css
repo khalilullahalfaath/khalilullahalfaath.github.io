@@ -1825,6 +1825,30 @@ main {
   font-size: 12px;
 }
 
+.tag-filter {
+  border: none;
+  font-family: var(--font-ui);
+  color: var(--text);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.tag-filter:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.tag-filter.tag-active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.no-results {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: var(--space-lg);
+}
+
 .lab-excerpt {
   font-size: 16px;
   color: var(--text-muted);
@@ -2079,6 +2103,140 @@ main {
 
 .project-links a:hover {
   text-decoration: underline;
+}
+
+/* ==========================================================================
+   Reviews
+   ========================================================================== */
+
+.review-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: var(--space-md) 0 var(--space-lg);
+}
+
+.review-filter-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.review-filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.review-filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+.review-card {
+  display: block;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  text-decoration: none;
+  color: var(--text);
+  transition: all var(--transition);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.review-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.review-type-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.review-type-book {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.dark .review-type-book {
+  background: #1e3a8a;
+  color: #dbeafe;
+}
+
+.review-type-movie {
+  background: #fde68a;
+  color: #92400e;
+}
+
+.dark .review-type-movie {
+  background: #78350f;
+  color: #fde68a;
+}
+
+.review-type-song {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.dark .review-type-song {
+  background: #581c87;
+  color: #f3e8ff;
+}
+
+.review-rating {
+  color: #f59e0b;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.review-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 var(--space-xs) 0;
+  color: var(--text);
+}
+
+.review-creator {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.review-description {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.review-single-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
 }
 
 /* ==========================================================================

@@ -107,6 +107,41 @@ collections:
         }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  - name: "reviews"
+    label: "Reviews"
+    folder: "content/reviews"
+    path: "{{slug}}"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - {
+          label: "Type",
+          name: "mediatype",
+          widget: "select",
+          options: ["book", "movie", "song"],
+        }
+      - {
+          label: "Creator (author / director / artist)",
+          name: "creator",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Rating (1-5)",
+          name: "rating",
+          widget: "number",
+          min: 1,
+          max: 5,
+          default: 5,
+        }
+      - {
+          label: "Short Description",
+          name: "description",
+          widget: "text",
+        }
+      - { label: "Review", name: "body", widget: "markdown" }
+
   - name: "journals-gratitudes"
     label: "Journals - Gratitudes"
     folder: "content/journals/gratitudes"

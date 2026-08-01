@@ -1,0 +1,53 @@
+{{ define "main" }}
+<div class="content-wrapper">
+  <h1>{{ .Title }}</h1>
+  <p class="page-description">{{ .Content }}</p>
+
+  <div class="review-filters">
+    <button class="review-filter-btn active" data-filter="all">All</button>
+    <button class="review-filter-btn" data-filter="book">📖 Books</button>
+    <button class="review-filter-btn" data-filter="movie">🎬 Movies</button>
+    <button class="review-filter-btn" data-filter="song">🎵 Songs</button>
+  </div>
+
+  <div class="review-grid">
+    {{ range .Pages.ByDate.Reverse }}
+    <a href="{{ .Permalink }}" class="review-card" data-type="{{ .Params.mediatype }}">
+      <div class="review-card-header">
+        <span class="review-type-badge review-type-{{ .Params.mediatype }}">
+          {{- if eq .Params.mediatype "book" -}}📖 Book
+          {{- else if eq .Params.mediatype "movie" -}}🎬 Movie
+          {{- else if eq .Params.mediatype "song" -}}🎵 Song
+          {{- else -}}{{ .Params.mediatype }}
+          {{- end -}}
+        </span>
+        <span class="review-rating">
+          {{ $rating := .Params.rating | default 0 }}
+          {{ range seq 5 }}{{ if le . $rating }}★{{ else }}☆{{ end }}{{ end }}
+        </span>
+      </div>
+      <h3>{{ .Title }}</h3>
+      {{ if .Params.creator }}<p class="review-creator">{{ .Params.creator }}</p>{{ end }}
+      <p class="review-description">{{ .Params.description }}</p>
+    </a>
+    {{ end }}
+  </div>
+</div>
+
+<script>
+  (function () {
+    const buttons = document.querySelectorAll(".review-filter-btn");
+    const cards = document.querySelectorAll(".review-card");
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filter = btn.dataset.filter;
+        cards.forEach((card) => {
+          card.style.display = filter === "all" || card.dataset.type === filter ? "" : "none";
+        });
+      });
+    });
+  })();
+</script>
+{{ end }}
