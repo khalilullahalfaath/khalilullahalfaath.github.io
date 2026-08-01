@@ -2,7 +2,7 @@
 title: Senior High School's Era
 date: 2026-08-02T01:22:00.000+07:00
 lastmod: 2026-08-02T01:22:00.000+07:00
-draft: true
+draft: false
 math: false
 description: Watching Kafka's SMA era vts makes me wander ...
 categories:
