@@ -1809,6 +1809,7 @@ main {
 
 .lab-meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-xs);
   font-size: 13px;
@@ -1816,8 +1817,14 @@ main {
   margin-bottom: var(--space-xs);
 }
 
+.lab-meta time,
+.lab-meta .separator {
+  white-space: nowrap;
+}
+
 .lab-tags {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-xs);
 }
 
@@ -1826,6 +1833,7 @@ main {
   background: var(--surface);
   border-radius: 4px;
   font-size: 12px;
+  white-space: nowrap;
 }
 
 .tag-filter {
