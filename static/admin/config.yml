@@ -106,6 +106,20 @@ collections:
           options: ["active", "completed", "archived"],
         }
       - {
+          label: "Role",
+          name: "role",
+          widget: "string",
+          required: false,
+          hint: "e.g. Lead AI Engineer & Researcher",
+        }
+      - {
+          label: "Period",
+          name: "period",
+          widget: "string",
+          required: false,
+          hint: "e.g. Oct 2024 – Dec 2024, or Jul 2026 - Now",
+        }
+      - {
           label: "Tech Stack",
           name: "tech",
           widget: "list",
@@ -113,16 +127,15 @@ collections:
           required: false,
         }
       - {
-          label: "GitHub URL",
-          name: "github",
-          widget: "string",
+          label: "Links",
+          name: "links",
+          widget: "list",
           required: false,
-        }
-      - {
-          label: "Demo URL",
-          name: "demo",
-          widget: "string",
-          required: false,
+          fields:
+            [
+              { label: "Label", name: "label", widget: "string", hint: "e.g. GitHub, Demo, Paper, Kaggle" },
+              { label: "URL", name: "url", widget: "string" },
+            ],
         }
       - {
           label: "Short Description",

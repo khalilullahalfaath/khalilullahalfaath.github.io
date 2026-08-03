@@ -2103,6 +2103,13 @@ main {
   margin: 0 0 var(--space-sm) 0;
 }
 
+.project-role {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 var(--space-xs) 0;
+}
+
 .project-tech {
   display: flex;
   flex-wrap: wrap;

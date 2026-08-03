@@ -26,6 +26,9 @@
           {{- end -}}</span>
       </div>
       <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      {{ if or .Params.role .Params.period }}
+      <p class="project-role">{{ .Params.role }}{{ if and .Params.role .Params.period }} · {{ end }}{{ .Params.period }}</p>
+      {{ end }}
       <p class="project-description">{{ .Params.description }}</p>
       {{ if .Params.tech }}
       <div class="project-tech">
@@ -34,10 +37,13 @@
         {{ end }}
       </div>
       {{ end }}
+      {{ if .Params.links }}
       <div class="project-links">
-        {{ if .Params.github }}<a href="{{ .Params.github }}" target="_blank" rel="noopener">GitHub →</a>{{ end }}
-        {{ if .Params.demo }}<a href="{{ .Params.demo }}" target="_blank" rel="noopener">Live Demo →</a>{{ end }}
+        {{ range .Params.links }}
+        <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }} →</a>
+        {{ end }}
       </div>
+      {{ end }}
     </div>
     {{ end }}
   </div>

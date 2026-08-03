@@ -12,6 +12,10 @@
         {{- else -}}
           {{ .Params.status }}
         {{- end -}}</span>
+      {{ if or .Params.role .Params.period }}
+      <span class="separator">·</span>
+      <span>{{ .Params.role }}{{ if and .Params.role .Params.period }} · {{ end }}{{ .Params.period }}</span>
+      {{ end }}
       {{ if .Params.tech }}
       <span class="separator">·</span>
       {{ range .Params.tech }}
@@ -25,10 +29,13 @@
     {{ .Content }}
   </div>
 
+  {{ if .Params.links }}
   <div class="project-links" style="margin-top: var(--space-lg);">
-    {{ if .Params.github }}<a href="{{ .Params.github }}" target="_blank" rel="noopener">GitHub →</a>{{ end }}
-    {{ if .Params.demo }}<a href="{{ .Params.demo }}" target="_blank" rel="noopener">Live Demo →</a>{{ end }}
+    {{ range .Params.links }}
+    <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }} →</a>
+    {{ end }}
   </div>
+  {{ end }}
 
   <footer class="lab-single-footer">
     <a href="/projects" class="back-link">← Back to Projects</a>
