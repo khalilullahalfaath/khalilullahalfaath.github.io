@@ -23,7 +23,9 @@
   {{ if .Params.image }}
   <img src="{{ .Params.image }}" alt="{{ .Title }}" class="featured-image">
   {{ end }}
-  
+
+  {{ partial "toc.html" . }}
+
   <div class="content">
     {{ .Content }}
   </div>

@@ -2805,3 +2805,60 @@ main {
   border-color: var(--accent);
   color: var(--accent);
 }
+
+/* ==========================================================================
+   Table of Contents
+   ========================================================================== */
+
+.toc-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-lg) 0;
+}
+
+.toc-box summary {
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  list-style: none;
+}
+
+.toc-box summary::-webkit-details-marker,
+.toc-box summary::marker {
+  display: none;
+  content: "";
+}
+
+.toc-nav {
+  margin-top: var(--space-sm);
+  font-size: 14px;
+}
+
+.toc-nav ul {
+  list-style: none;
+  padding-left: var(--space-md);
+  margin: 0;
+}
+
+.toc-nav > ul {
+  padding-left: 0;
+}
+
+.toc-nav li {
+  margin-bottom: 6px;
+}
+
+.toc-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.toc-nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}

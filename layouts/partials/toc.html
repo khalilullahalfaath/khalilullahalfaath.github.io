@@ -1,0 +1,9 @@
+{{ $headingCount := len (findRE "<h[2-3][ >]" .Content) }}
+{{ if ge $headingCount 3 }}
+<details class="toc-box" open>
+  <summary>📑 On this page</summary>
+  <nav class="toc-nav">
+    {{ .TableOfContents }}
+  </nav>
+</details>
+{{ end }}
