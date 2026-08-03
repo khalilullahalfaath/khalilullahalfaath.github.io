@@ -4,7 +4,7 @@ date: 2026-08-02T10:00:00+07:00
 icon: "🧠"
 status: "completed"
 role: "Researcher"
-period: "Published 2026"
+period: "August 2025 – December 2025"
 tech: ["ResNet-50", "PyTorch", "Model Pruning", "Optuna", "CNN"]
 links:
   - label: "Read Paper"

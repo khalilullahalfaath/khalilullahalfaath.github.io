@@ -2195,6 +2195,42 @@ main {
   margin: var(--space-md) 0 var(--space-lg);
 }
 
+.projects-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.projects-toolbar .review-filters {
+  margin: var(--space-md) 0;
+}
+
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.sort-select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.sort-select:hover {
+  border-color: var(--accent);
+}
+
 .review-filter-btn {
   background: var(--surface);
   border: 1px solid var(--border);

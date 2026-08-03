@@ -3,16 +3,26 @@
   <h1>{{ .Title }}</h1>
   <p class="page-description">{{ .Content }}</p>
 
-  <div class="review-filters">
-    <button class="review-filter-btn active" data-status-filter="all">All</button>
-    <button class="review-filter-btn" data-status-filter="active">Active</button>
-    <button class="review-filter-btn" data-status-filter="completed">Completed</button>
-    <button class="review-filter-btn" data-status-filter="archived">Archived</button>
+  <div class="projects-toolbar">
+    <div class="review-filters">
+      <button class="review-filter-btn active" data-status-filter="all">All</button>
+      <button class="review-filter-btn" data-status-filter="active">Active</button>
+      <button class="review-filter-btn" data-status-filter="completed">Completed</button>
+      <button class="review-filter-btn" data-status-filter="archived">Archived</button>
+    </div>
+
+    <div class="sort-control">
+      <label for="project-sort">Sort by</label>
+      <select id="project-sort" class="sort-select">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+      </select>
+    </div>
   </div>
 
   <div class="projects-grid">
     {{ range .Pages.ByDate.Reverse }}
-    <div class="project-card status-{{ .Params.status }}" data-status="{{ .Params.status }}" data-tech="{{ delimit .Params.tech "," }}">
+    <div class="project-card status-{{ .Params.status }}" data-status="{{ .Params.status }}" data-tech="{{ delimit .Params.tech "," }}" data-date="{{ .Date.Format "2006-01-02" }}">
       <div class="project-header">
         <span class="project-icon">{{ .Params.icon }}</span>
         <span class="project-status">{{- if eq .Params.status "active" -}}
@@ -55,8 +65,10 @@
   (function () {
     const statusButtons = document.querySelectorAll("[data-status-filter]");
     const tagButtons = document.querySelectorAll("[data-tag-filter]");
+    const grid = document.querySelector(".projects-grid");
     const cards = document.querySelectorAll(".project-card");
     const noResults = document.querySelector(".no-results");
+    const sortSelect = document.getElementById("project-sort");
     let activeStatus = "all";
     let activeTag = null;
 
@@ -95,6 +107,16 @@
         applyFilters();
       });
     });
+
+    if (sortSelect) {
+      sortSelect.addEventListener("change", () => {
+        const sorted = Array.from(cards).sort((a, b) => {
+          const diff = new Date(a.dataset.date) - new Date(b.dataset.date);
+          return sortSelect.value === "newest" ? -diff : diff;
+        });
+        sorted.forEach((card) => grid.appendChild(card));
+      });
+    }
   })();
 </script>
 {{ end }}
