@@ -1,0 +1,94 @@
+{{ define "main" }}
+<div class="projects-page">
+  <h1>{{ .Title }}</h1>
+  <p class="page-description">{{ .Content }}</p>
+
+  <div class="review-filters">
+    <button class="review-filter-btn active" data-status-filter="all">All</button>
+    <button class="review-filter-btn" data-status-filter="active">Active</button>
+    <button class="review-filter-btn" data-status-filter="completed">Completed</button>
+    <button class="review-filter-btn" data-status-filter="archived">Archived</button>
+  </div>
+
+  <div class="projects-grid">
+    {{ range .Pages.ByDate.Reverse }}
+    <div class="project-card status-{{ .Params.status }}" data-status="{{ .Params.status }}" data-tech="{{ delimit .Params.tech "," }}">
+      <div class="project-header">
+        <span class="project-icon">{{ .Params.icon }}</span>
+        <span class="project-status">{{- if eq .Params.status "active" -}}
+            Active
+          {{- else if eq .Params.status "completed" -}}
+            Completed
+          {{- else if eq .Params.status "archived" -}}
+            Archived
+          {{- else -}}
+            {{ .Params.status }}
+          {{- end -}}</span>
+      </div>
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <p class="project-description">{{ .Params.description }}</p>
+      {{ if .Params.tech }}
+      <div class="project-tech">
+        {{ range .Params.tech }}
+        <button type="button" class="tag tag-filter" data-tag-filter="{{ . }}">{{ . }}</button>
+        {{ end }}
+      </div>
+      {{ end }}
+      <div class="project-links">
+        {{ if .Params.github }}<a href="{{ .Params.github }}" target="_blank" rel="noopener">GitHub →</a>{{ end }}
+        {{ if .Params.demo }}<a href="{{ .Params.demo }}" target="_blank" rel="noopener">Live Demo →</a>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  <p class="no-results" style="display:none;">No projects match the selected filters.</p>
+</div>
+
+<script>
+  (function () {
+    const statusButtons = document.querySelectorAll("[data-status-filter]");
+    const tagButtons = document.querySelectorAll("[data-tag-filter]");
+    const cards = document.querySelectorAll(".project-card");
+    const noResults = document.querySelector(".no-results");
+    let activeStatus = "all";
+    let activeTag = null;
+
+    function applyFilters() {
+      let visibleCount = 0;
+      cards.forEach((card) => {
+        const statusMatch = activeStatus === "all" || card.dataset.status === activeStatus;
+        const techs = (card.dataset.tech || "").split(",");
+        const tagMatch = !activeTag || techs.includes(activeTag);
+        const visible = statusMatch && tagMatch;
+        card.style.display = visible ? "" : "none";
+        if (visible) visibleCount++;
+      });
+      if (noResults) noResults.style.display = visibleCount === 0 ? "" : "none";
+    }
+
+    statusButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        statusButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeStatus = btn.dataset.statusFilter;
+        applyFilters();
+      });
+    });
+
+    tagButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const tag = btn.dataset.tagFilter;
+        if (activeTag === tag) {
+          activeTag = null;
+          tagButtons.forEach((b) => b.classList.remove("tag-active"));
+        } else {
+          activeTag = tag;
+          tagButtons.forEach((b) => b.classList.toggle("tag-active", b.dataset.tagFilter === tag));
+        }
+        applyFilters();
+      });
+    });
+  })();
+</script>
+{{ end }}

@@ -90,6 +90,47 @@ collections:
         }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    path: "{{slug}}"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Icon (emoji)", name: "icon", widget: "string", required: false }
+      - {
+          label: "Status",
+          name: "status",
+          widget: "select",
+          options: ["active", "completed", "archived"],
+        }
+      - {
+          label: "Tech Stack",
+          name: "tech",
+          widget: "list",
+          field: { label: "Tech", name: "tech", widget: "string" },
+          required: false,
+        }
+      - {
+          label: "GitHub URL",
+          name: "github",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Demo URL",
+          name: "demo",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Short Description",
+          name: "description",
+          widget: "text",
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "til"
     label: "TIL (Today I Learned)"
     folder: "content/til"
@@ -328,53 +369,6 @@ collections:
                     label: "Description",
                     name: "description",
                     widget: "text",
-                  },
-                ],
-            }
-
-      - name: "projects"
-        label: "Projects"
-        file: "content/projects.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - {
-              label: "Projects",
-              name: "projects",
-              widget: "list",
-              fields:
-                [
-                  { label: "Icon (emoji)", name: "icon", widget: "string" },
-                  { label: "Title", name: "title", widget: "string" },
-                  {
-                    label: "Description",
-                    name: "description",
-                    widget: "text",
-                  },
-                  {
-                    label: "Tech Stack",
-                    name: "tech",
-                    widget: "list",
-                    field: { label: "Tech", name: "tech", widget: "string" },
-                    required: false,
-                  },
-                  {
-                    label: "Status",
-                    name: "status",
-                    widget: "select",
-                    options: ["active", "completed", "archived"],
-                  },
-                  {
-                    label: "GitHub URL",
-                    name: "github",
-                    widget: "string",
-                    required: false,
-                  },
-                  {
-                    label: "Demo URL",
-                    name: "demo",
-                    widget: "string",
-                    required: false,
                   },
                 ],
             }

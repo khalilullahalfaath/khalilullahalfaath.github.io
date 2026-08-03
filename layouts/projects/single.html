@@ -1,0 +1,37 @@
+{{ define "main" }}
+<article class="lab-single">
+  <header class="lab-single-header">
+    <h1>{{ .Params.icon }} {{ .Title }}</h1>
+    <div class="lab-single-meta">
+      <span class="project-status">{{- if eq .Params.status "active" -}}
+          Active
+        {{- else if eq .Params.status "completed" -}}
+          Completed
+        {{- else if eq .Params.status "archived" -}}
+          Archived
+        {{- else -}}
+          {{ .Params.status }}
+        {{- end -}}</span>
+      {{ if .Params.tech }}
+      <span class="separator">·</span>
+      {{ range .Params.tech }}
+      <span class="tag">{{ . }}</span>
+      {{ end }}
+      {{ end }}
+    </div>
+  </header>
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+
+  <div class="project-links" style="margin-top: var(--space-lg);">
+    {{ if .Params.github }}<a href="{{ .Params.github }}" target="_blank" rel="noopener">GitHub →</a>{{ end }}
+    {{ if .Params.demo }}<a href="{{ .Params.demo }}" target="_blank" rel="noopener">Live Demo →</a>{{ end }}
+  </div>
+
+  <footer class="lab-single-footer">
+    <a href="/projects" class="back-link">← Back to Projects</a>
+  </footer>
+</article>
+{{ end }}

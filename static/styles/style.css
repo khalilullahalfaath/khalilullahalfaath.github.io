@@ -1894,6 +1894,24 @@ main {
   border-top: 1px solid var(--border);
 }
 
+.lab-single .content {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: var(--line-body);
+}
+
+.lab-single .content p {
+  font-size: 16px;
+}
+
+.lab-single .content h2 {
+  font-size: 22px;
+}
+
+.lab-single .content h3 {
+  font-size: 18px;
+}
+
 .back-link {
   color: var(--accent);
   text-decoration: none;
