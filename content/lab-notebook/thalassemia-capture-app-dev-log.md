@@ -1,13 +1,13 @@
 ---
 title: "Development Log — Peripheral Blood Smear (PBS) Image Acquisition App"
 date: 2026-07-27T09:00:00+07:00
-lastmod: 2026-08-03T18:00:00+07:00
+lastmod: 2026-08-04T18:00:00+07:00
 status: "ongoing"
-tags: ["thalassemia", "computer-vision", "edge-ai", "embedded", "hardware", "debugging"]
+tags: ["thalassemia", "computer-vision", "edge-ai", "embedded", "hardware", "debugging", "sdk-integration"]
 ---
 
 **Project:** Thalassemia Capture App (Flask + OpenCV, MiiCam USB microscope camera)
-**Period:** ~July 27 – August 3, 2026
+**Period:** ~July 27 – August 4, 2026
 **Working directory:** `thalassemia-capture-app/` (working copy) — synced to the thesis documentation mirror
 
 Part of the [Thalassemia Edge Deep Learning Model](/projects/thalassemia-edge-deep-learning-model/) project — this log covers the image acquisition app specifically.
@@ -98,7 +98,7 @@ usb 1-2.2: USB disconnect, device number 14
 
 **🔑 Key finding (breakthrough)**
 
-Tried the Linux ARM64 driver/SDK from `touptekphotonics.com` (the original vendor of the ToupTek chipset that's rebranded as MiiCam) — the camera was successfully detected through that driver application.
+Tried the ToupCam SDK from `touptekphotonics.com` (the original vendor of the ToupTek chipset that's rebranded as MiiCam) — the camera was successfully detected through that SDK. Picked the **Latest** release (Jun 12, 2026) over **Stable** (Dec 30, 2025, the vendor's "Recommended" label) or **Legacy** (Oct 15, 2024), reasoning that a newer release would more likely have up-to-date OS/ARM64 compatibility fixes — relevant since the issue here was specifically about Linux kernel compatibility on this board. Stable was kept as a fallback in case Latest caused problems.
 
 **Conclusion:** the MiiCam is likely not fully UVC-compliant in a way that the standard `uvcvideo` kernel module can bind to on this Jetson platform. The Linux kernel module fails to bind the device (even though it's successfully recognized at the USB level), but the vendor SDK (direct communication via `libusb`, bypassing `uvcvideo`/V4L2) works. This means Linux/Jetson integration for this app needs the ToupTek/MII vendor SDK as a separate capture backend, rather than relying on `cv2.VideoCapture` + generic V4L2 as currently used.
 
@@ -106,14 +106,65 @@ Tried the Linux ARM64 driver/SDK from `touptekphotonics.com` (the original vendo
 
 - Found during testing: captured images looked yellowish on 2 laptops, but normal ("white") on 1 laptop — confirmed this was the same physical camera & microscope, just moved between laptops.
 - Initial hypothesis: different color format (YUV) negotiation between laptops → fix applied: explicitly force `MJPG` format via `cap.set(CAP_PROP_FOURCC, ...)` in `CameraManager.open()`, so decoding always goes through the same standard JPEG path consistently across machines.
-- Compared Driver Provider/Version in Device Manager across laptops → results were identical, so it's not a driver version issue.
-- Next hypothesis suggested (not yet confirmed by the user): Windows Night Light / blue light filter active on the 2 laptops showing yellow — this would only affect the on-screen display, not the saved PNG file. Needs verification by opening the saved file on a different laptop.
+- Compared Driver Provider/Version in Device Manager across laptops — initially looked identical, and the Windows Night Light / blue light filter was suspected as a possible cause.
+- **Root cause confirmed:** the laptops showing the yellow tint were actually running an older camera driver version than the laptop showing normal color — not a Night Light issue after all. **Fix:** update the camera driver to the latest version on the affected laptops.
 
-## Status & Next Steps (as of August 3, 2026)
+## August 4, 2026 — ToupCam SDK Integration: MiiCam Now Working on the Jetson
 
-- [ ] Extract & study the contents of `miicamsdk.20250415.zip` (find the ARM64 `.so` library + Python bindings, e.g. `toupcam.py`) for integration planning.
-- [ ] Design an alternative capture backend for Linux that uses the vendor SDK (not `cv2.VideoCapture`), possibly auto-enabled via OS detection / V4L2 failure.
-- [ ] Verify the Night Light hypothesis for the yellow tint issue (compare saved PNG files across different laptops).
+**SDK exploration**
+
+Extracted the ToupCam SDK Latest release (Jun 12, 2026) and found the relevant structure for the Jetson (Linux ARM64):
+
+```
+linux/arm64/glibc/libtoupcam.so   ← used (Jetson Ubuntu = glibc, not musl)
+linux/udev/99-toupcam.rules       ← udev rule for permissions
+python/toupcam.py                 ← ctypes binding
+```
+
+Important finding: the contents of `99-toupcam.rules` (`SUBSYSTEM=="usb", ATTRS{idVendor}=="0547", MODE="0666"`) exactly match the VID `0547` seen in `lsusb` from the start (`Anchor Chips`) — confirming the theory that this camera needs raw USB access (`libusb`) via the vendor SDK, rather than the standard `uvcvideo`/V4L2 kernel path. `toupcam.py` also automatically looks for `libtoupcam.so` in the same folder as itself, so no system-wide install is needed.
+
+**Implementation**
+
+- SDK bundled into `vendor/toupcam/` (`toupcam.py`, `libtoupcam.so` for arm64/glibc, `99-toupcam.rules`).
+- `CameraManager` in `app.py` refactored into a dual backend: `list_cameras()` merges ToupCam SDK enumeration results with the usual OpenCV/pygrabber/V4L2 probing, and `open()` automatically picks the right backend per device from the combined registry.
+- The ToupCam backend uses the SDK's callback model (`StartPullModeWithCallback` → `PullImageV4` on each `TOUPCAM_EVENT_IMAGE` event), forced to BGR (`TOUPCAM_OPTION_BYTEORDER=1`) to stay consistent with the existing OpenCV pipeline — so none of the downstream functions (MJPEG streaming, focus/blank detection, resizing, PNG saving) needed any changes; the backend is fully abstracted away.
+- Windows was left completely untouched, still using the already-working OpenCV/DirectShow path.
+- `run.sh` updated to optionally offer installing `99-toupcam.rules` automatically (requires sudo).
+
+**Bug & fix during live testing on the Jetson**
+
+- First attempt: the SDK successfully enumerated the device (`ToupCam SDK found device: ['ECMOS05000KPA']` — the MiiCam's actual sensor name!) and `connect` succeeded (200 OK), but every frame pull failed: `[DEBUG] ToupCam PullImageV4 failed: argument 2: TypeError: wrong type`.
+- Root cause: `Toupcam_PullImageV4` is declared with `ctypes.c_char_p` as the argtype for its image buffer, which only accepts `bytes` — the code was using a `bytearray` (incompatible with `c_char_p`, even though it's generally the more "correct" choice for a writable buffer).
+- **Fix:** switched to `bytes(...)`, exactly matching the pattern used in the vendor's official example (`simplest.py`) — even though `bytes` is immutable at the Python level, the SDK can still write directly to its raw memory through the C pointer.
+- After the fix: fully working end-to-end — connect → stream → capture (multiple times) → save (multiple times) → folder summary updates, all without errors in the server log.
+
+**Status**
+
+✅ MiiCam successfully detected and working on the NVIDIA Jetson via the ToupCam SDK backend. ⏳ Visual verification of capture results (making sure the blood smear images are sharp, correctly colored, and not corrupted) is still pending, since access to the microscope wasn't available at the time. Needs verification once access is available again.
+
+**Performance optimization (app felt heavy after the ToupCam integration)**
+
+After the integration was working, the app felt noticeably heavier/laggier on the Jetson than before. Root cause: unlike the old OpenCV backend (which only pulled frames at our own MJPEG polling rate, ~30fps), the ToupCam SDK pushes frames as fast as the sensor can produce them at full native resolution (5MP) via callback, with no throttling — every frame was being fully processed (raw data pull + reshape) even though the stream didn't need to be that fast.
+
+Fixes applied in `_open_toupcam_locked`/`_on_toupcam_event`:
+
+- Throttled to ~20fps — frames arriving faster than that are skipped immediately.
+- `put_RealTime(1)` — the SDK always delivers the latest frame and drops the old queue instead of buffering it up.
+- Fixed the resolution setting: the initial attempt used `put_Size(width, height)` with values from the dropdown (e.g. 1280x720), which failed with error `-2147024809` (E_INVALIDARG) — it turns out the ToupCam sensor only supports a fixed set of discrete resolutions, not arbitrary values. Fixed by finding the nearest valid resolution from the camera's supported list (`ResolutionNumber()` + `get_Resolution()`), then using `put_eSize(index)` to select it.
+
+**Result:** confirmed by the user that the app felt noticeably lighter after these fixes.
+
+**Multi-architecture CPU support (arm64 + x64)**
+
+`libtoupcam.so` is a native binary per CPU architecture, so the arm64 version bundled initially wouldn't run if the app is moved to plain Ubuntu x86_64 (not the Jetson). Restructured into `vendor/toupcam/<arch>/` (`arm64/` and `x64/`, each carrying its own copy of `toupcam.py` since the binding looks for the `.so` in the exact same folder as itself). `app.py` now auto-detects the architecture via `platform.machine()` (`_TOUPCAM_ARCH_MAP`) and picks the matching folder — so the same app codebase runs on either the Jetson or Ubuntu x86_64 without manually swapping files. Verified working in an x86_64 sandbox (the SDK loaded automatically from `vendor/toupcam/x64/`).
+
+## Status & Next Steps (as of August 4, 2026)
+
+- [x] ToupCam SDK integration on the Jetson — MiiCam successfully detected and working end-to-end (connect/stream/capture/save).
+- [x] ToupCam backend performance optimization (throttling, `put_RealTime`, discrete resolution handling via `put_eSize`).
+- [x] Multi-architecture CPU support (arm64 + x64) — auto-detected, no manual file swapping needed.
+- [x] Yellow tint issue on Windows laptops — confirmed to be an outdated camera driver version, fix identified (update the driver).
+- [ ] Visually verify MiiCam capture results on the Jetson once microscope access is available again (image quality, color, no corruption).
 - [ ] (Optional, if another power-hungry camera comes up later) Keep a powered USB hub on hand as a general mitigation for the Jetson.
 
 ## Related Files & Locations

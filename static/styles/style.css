@@ -2870,3 +2870,17 @@ main {
   color: var(--accent);
   text-decoration: none;
 }
+
+/* ==========================================================================
+   Markdown Task Lists
+   ========================================================================== */
+
+.content li:has(> input[type="checkbox"]) {
+  list-style: none;
+  margin-left: -1.4em;
+}
+
+.content li input[type="checkbox"] {
+  accent-color: var(--accent);
+  margin-right: 6px;
+}
