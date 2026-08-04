@@ -3,7 +3,11 @@
   <header class="lab-single-header">
     <h1>{{ .Title }}</h1>
     <div class="lab-single-meta">
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <span class="date-label">Created <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></span>
+      {{ if ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }}
+      <span class="separator">·</span>
+      <span class="date-label">Updated <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "January 2, 2006" }}</time></span>
+      {{ end }}
       <span class="separator">·</span>
       <span class="lab-status lab-status-{{ .Params.status }}">{{ .Params.status }}</span>
       {{ if .Params.tags }}
