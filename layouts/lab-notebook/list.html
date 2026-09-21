@@ -11,14 +11,14 @@
   </div>
 
   <div class="lab-entries">
-    {{ range .Pages.ByDate.Reverse }}
+    {{ range .Pages.ByLastmod.Reverse }}
     <article class="lab-entry" data-status="{{ .Params.status }}" data-tags="{{ delimit .Params.tags "," }}">
       <div class="lab-header">
         <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         <span class="lab-status lab-status-{{ .Params.status }}">{{ .Params.status }}</span>
       </div>
       <div class="lab-meta">
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "January 2, 2006" }}</time>
         {{ if .Params.tags }}
         <span class="separator">·</span>
         <div class="lab-tags">

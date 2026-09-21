@@ -42,12 +42,12 @@
     <!-- Latest Posts -->
     <h2>Latest Writings</h2>
     
-    {{ range first 4 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+    {{ range first 4 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections).ByLastmod.Reverse }}
     <article class="post-preview">
       <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       <p class="excerpt">{{ .Summary | truncate 120 }}</p>
       <div class="meta">
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
         <span class="separator">·</span>
         {{ range first 1 (.GetTerms "categories") }}
         <a href="{{ .Permalink }}" class="category-link">{{ .LinkTitle }}</a>
@@ -68,12 +68,12 @@
     <!-- Recent Journals -->
     <h2>Recent Journal Entries</h2>
     
-    {{ range first 3 (where .Site.RegularPages "Section" "journals") }}
+    {{ range first 3 (where .Site.RegularPages "Section" "journals").ByLastmod.Reverse }}
     <article class="post-preview">
       <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       <p class="excerpt">{{ .Summary | truncate 100 }}</p>
       <div class="meta">
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
       </div>
     </article>
     <hr>
@@ -112,7 +112,7 @@
     <div class="sidebar-card">
       <h3>Popular Posts</h3>
       <ul class="sidebar-list">
-        {{ range first 5 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+        {{ range first 5 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections).ByLastmod.Reverse }}
         <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
         {{ end }}
       </ul>

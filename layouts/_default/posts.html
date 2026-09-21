@@ -4,18 +4,18 @@
   <p class="page-description">{{ .Content }}</p>
 
   <div class="post-list">
-    {{ $paginator := .Paginate .Pages }}
+    {{ $paginator := .Paginate .Pages.ByLastmod.Reverse }}
     {{ range $paginator.Pages }}
     <article class="post-card">
       {{ if .Params.image }}
       <img src="{{ .Params.image }}" alt="{{ .Title }}" class="post-thumbnail">
       {{ end }}
-      
+
       <div class="post-content">
         <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         <p class="excerpt">{{ .Summary | truncate 150 }}</p>
         <div class="meta">
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
           <span class="separator">·</span>
           {{ range first 1 (.GetTerms "categories") }}
           <a href="{{ .Permalink }}" class="category-badge">{{ .LinkTitle }}</a>
