@@ -8,7 +8,7 @@
     <article class="til-card">
       <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       <div class="til-meta">
-        <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
+        {{ partial "post-dates.html" . }}
         {{ if .Params.tags }}
         <span class="separator">·</span>
         {{ range .Params.tags }}

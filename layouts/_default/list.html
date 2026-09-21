@@ -14,7 +14,7 @@
         <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         <p class="excerpt">{{ .Summary | truncate 150 }}</p>
         <div class="meta">
-          <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
+          {{ partial "post-dates.html" . }}
           <span class="separator">·</span>
           {{ range first 1 (.GetTerms "categories") }}
           <a href="{{ .Permalink }}" class="category-badge">{{ .LinkTitle }}</a>

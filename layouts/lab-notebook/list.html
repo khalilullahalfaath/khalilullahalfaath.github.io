@@ -18,7 +18,7 @@
         <span class="lab-status lab-status-{{ .Params.status }}">{{ .Params.status }}</span>
       </div>
       <div class="lab-meta">
-        <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "January 2, 2006" }}</time>
+        {{ partial "post-dates.html" . }}
         {{ if .Params.tags }}
         <span class="separator">·</span>
         <div class="lab-tags">

@@ -33,7 +33,7 @@
       <p class="excerpt">{{ .Summary | truncate 150 }}</p>
       {{ end }}
       <div class="meta">
-        <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
+        {{ partial "post-dates.html" . }}
       </div>
     </article>
     {{ end }}
@@ -68,7 +68,7 @@
       <p class="excerpt">{{ .Params.description }}</p>
       {{ end }}
       <div class="meta">
-        <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
+        {{ partial "post-dates.html" . }}
       </div>
     </article>
     {{ end }}

@@ -950,6 +950,7 @@ main {
   font-size: var(--text-xs);
   color: var(--text-muted);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-xs);
 }
@@ -2397,6 +2398,7 @@ main {
 
 .til-meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-xs);
   font-size: 13px;

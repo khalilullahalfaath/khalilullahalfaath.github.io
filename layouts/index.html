@@ -47,7 +47,7 @@
       <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       <p class="excerpt">{{ .Summary | truncate 120 }}</p>
       <div class="meta">
-        <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
+        {{ partial "post-dates.html" . }}
         <span class="separator">·</span>
         {{ range first 1 (.GetTerms "categories") }}
         <a href="{{ .Permalink }}" class="category-link">{{ .LinkTitle }}</a>
@@ -73,12 +73,12 @@
       <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       <p class="excerpt">{{ .Summary | truncate 100 }}</p>
       <div class="meta">
-        <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
+        {{ partial "post-dates.html" . }}
       </div>
     </article>
     <hr>
     {{ end }}
-    
+
     <div class="see-all">
       <a href="/journals">Explore all journals →</a>
     </div>
