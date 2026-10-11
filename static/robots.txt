@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://khalil-lab.netlify.app/sitemap.xml
+Sitemap: https://kafkuy.tech/sitemap.xml
