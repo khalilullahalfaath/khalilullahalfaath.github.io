@@ -2,7 +2,7 @@
 
 Personal blog built with Hugo, featuring custom layouts, dark mode, math rendering, full-text search, and comprehensive documentation inspired by Sheldon Cooper's obsessive note-taking.
 
-**Live**: https://khalil-lab.netlify.app/
+**Live**: https://kafkuy.tech/
 
 ---
 
