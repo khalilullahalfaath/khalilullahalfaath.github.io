@@ -1,0 +1,168 @@
+# Digital CV data, rendered by layouts/page/cv.html.
+# Source of truth: D:\5 Work\CVs\cv-general\Khalilullah_Al_Faath_CV.tex
+# Never add phone numbers or referees here (public page).
+
+summary: >-
+  Final-year Computer Science master's student at Universitas Gadjah Mada, specializing in
+  Artificial Intelligence. I work as a full-stack developer and as a medical-imaging research
+  assistant, and I have three publications on CNN optimization, model compression, and
+  AI-generated image detection (one Best Paper). Available from December 2026.
+
+links:
+  - { label: Email, url: "mailto:khalilullah.alfaath21@gmail.com" }
+  - { label: LinkedIn, url: "https://www.linkedin.com/in/khalilullah-al-faath-4a684021a/" }
+  - { label: GitHub, url: "https://github.com/khalilullahalfaath" }
+  - { label: Google Scholar, url: "https://scholar.google.com/citations?user=K7BRvIwAAAAJ" }
+
+kinds:
+  - { id: work, label: Work }
+  - { id: research, label: Research }
+  - { id: education, label: Education }
+
+# Newest first. `year` groups entries on the timeline.
+timeline:
+  - year: 2026
+    kind: work
+    title: Full-Stack Developer
+    org: PGE (Pertamina Geothermal Energy) with Universitas Gadjah Mada
+    when: Aug 2026 – present
+    current: true
+    note: Contract, project-based. Project details are not disclosed yet.
+
+  - year: 2026
+    kind: work
+    title: Practicum Assistant
+    org: Basic Computer Laboratory (Labkomdas), Universitas Gadjah Mada
+    when: Aug 2026 – present
+    current: true
+    points:
+      - Programming and Database courses; grade and give feedback for 3 classes (around 75 students).
+      - Lead substitute teaching sessions when the lecturer is unavailable.
+
+  - year: 2026
+    kind: research
+    title: Research Assistant
+    org: Electronics and Instrumentation Laboratory, DIKE FMIPA, UGM
+    when: Jul 2026 – present
+    current: true
+    points:
+      - Built a Flask web app for hematologists to acquire images straight from a microscope camera; in active use.
+      - Smart-microscope acquisition pipeline with blur detection and CLIP-based captioning to reject unsuitable images.
+      - Edge-AI thalassemia detection from peripheral blood smears; annotated 170 smear images in Roboflow.
+      - RF-DETR instance segmentation of red blood cells with 5-fold cross-validation, comparing FP16/INT8 quantization and pruning.
+      - Extended Chula-RBC-12 with about 4,300 locally labeled cells mapped to ICSH nomenclature.
+
+  - year: 2026
+    kind: research
+    title: Research Assistant
+    org: Algorithm and Computation Laboratory, DIKE FMIPA, UGM
+    when: Mar – Jul 2026
+    points:
+      - Reproduced 6 model-compression methods for lung-CT lesion detection; quantization kept 99%+ accuracy at a smaller model size.
+
+  - year: 2025
+    kind: education
+    title: M.Cs. in Computer Science
+    org: Universitas Gadjah Mada
+    when: 2025 – expected Apr 2027
+    current: true
+    points:
+      - cGPA 3.98/4.00. Thesis on central pallor-aware instance segmentation of overlapping red blood cells (proposal defended).
+      - Supervisor Prof. Agus Harjoko, M.Sc., Ph.D. General Secretary of HIMPASIKOM.
+
+  - year: 2024
+    kind: research
+    title: AI Researcher & Engineer
+    org: Braincore, Jakarta
+    when: Oct 2024 – Feb 2025
+    points:
+      - Seven-person R&D team developing Binary KMA, a new feature-selection algorithm; co-wrote the technical paper.
+
+  - year: 2024
+    kind: work
+    title: Azure AI Engineer Apprentice
+    org: Digital Talent Scholarship, Kominfo
+    when: May – Jul 2024
+    points:
+      - 90-hour program on Azure Machine Learning, Computer Vision, Language, and Video Indexer; led to the AI-102 certification.
+
+  - year: 2023
+    kind: work
+    title: Software Engineer & Data Analyst Intern
+    org: PT Len Industri (Persero), Bandung
+    when: Jul – Oct 2023
+    points:
+      - Built and deployed a Laravel attendance app on Apache; led a small team of vocational-school interns.
+      - Cleaned the HR database and built a Looker dashboard.
+
+  - year: 2023
+    kind: education
+    title: Machine Learning Cohort
+    org: Bangkit Academy (Google, Tokopedia, Gojek, Traveloka)
+    when: Feb – Jul 2023
+    points:
+      - Final score 93.13. Led the ML team of the HaloWisata capstone, a mood-based attraction recommender.
+
+  - year: 2022
+    kind: work
+    title: Practicum Assistant
+    org: Informatics Laboratory, Telkom University
+    when: Oct 2022 – Jun 2023
+    points:
+      - Operating Systems and Data Structures labs (XINU, Linux, C++).
+
+  - year: 2022
+    kind: work
+    title: Lecturer Assistant
+    org: School of Computing, Telkom University
+    when: Mar 2022 – Jan 2023
+    points:
+      - Calculus, Data Structures, Logic, Discrete Mathematics, and Algorithm Complexity; ran extra weekly classes.
+
+  - year: 2020
+    kind: education
+    title: S.Kom. in Informatics, Cum Laude
+    org: Telkom University
+    when: 2020 – 2024
+    points:
+      - GPA 3.94/4.00, Intelligent Systems track. Thesis on optimizing CNN architectures with the Komodo Mlipir Algorithm.
+
+publications:
+  - title: "Medaka-EL: An Ensemble Learning Framework for Reliable Detection of Endangered Medakafish"
+    venue: Artificial Intelligence and Applications (Scopus Q1), under review
+    year: 2026
+  - title: Implementation of ResNet Architecture for Classification of Original and Synthetic (AI-Generated) Digital Images
+    venue: ICoBITS 2025, Best Paper Award
+    year: 2026
+    url: https://doi.org/10.32664/icobits.v1.58
+  - title: Komodo Mlipir Algorithm for Optimizing a Convolutional Neural Network
+    venue: ICCAI 2024, ACM Digital Library
+    year: 2024
+    url: https://dl.acm.org/doi/10.1145/3669754.3669809
+
+projects:
+  - { title: Thalassemia Edge AI Screening, url: /projects/thalassemia-edge-deep-learning-model/, what: "Microscope acquisition app and RBC segmentation for edge deployment on a Jetson Orin Nano." }
+  - { title: "Alvar, a multi-agent AI tutor", what: "Claude Code port of an AI tutor with clean-context subagents for lessons, audits, quizzes, and grading. 100+ lessons so far." }
+  - { title: Benchmarking CNN compression, url: /projects/benchmarking-cnn-compression-methods/, what: "Six compression methods compared on lung-CT lesion detection." }
+  - { title: Binary Komodo Mlipir Algorithm, url: /projects/binary-komodo-mlipir-algorithm/, what: "Binary KMA with time-variant transfer functions for feature selection." }
+  - { title: CaDas (Catatan Cerdas), url: /projects/cadas-catatan-cerdas/, what: "Reading-comprehension app: summaries, quizzes, and flashcards from text or images." }
+
+skills:
+  - { group: Languages, items: "Python, TypeScript, SQL, C++" }
+  - { group: ML and vision, items: "PyTorch, TensorFlow, scikit-learn, RF-DETR, segmentation, forecasting, quantization, pruning, Roboflow" }
+  - { group: Web and data, items: "FastAPI, Flask, Next.js, Laravel, PostgreSQL, Alembic, Looker, Power BI" }
+  - { group: Engineering, items: "Git, GitHub Actions, Docker, pytest, vitest, ruff, mypy" }
+  - { group: Cloud and AI, items: "Google Cloud, Azure AI, AWS, RAG, multi-agent workflows, Claude Code plugins" }
+
+certifications:
+  - { title: AWS Certified AI Practitioner, url: "https://www.credly.com/badges/62a83587-54ed-479b-abb1-a42fbb199d8a/public_url" }
+  - { title: "Microsoft Certified: Azure AI Engineer Associate", url: "https://learn.microsoft.com/en-us/users/khalilullahalfaath-7477/credentials/27e8495b9518a4ba" }
+  - { title: Google IT Automation with Python, url: "https://www.coursera.org/account/accomplishments/specialization/certificate/AUYWKLV2H872" }
+  - { title: DeepLearning.AI TensorFlow Developer, url: "https://coursera.org/share/9fab57420e424a6c0e752c33d2c35a73" }
+  - { title: Machine Learning Specialization, url: "https://coursera.org/verify/specialization/54NR7BTW3FC3" }
+
+awards:
+  - Tier 2 prize, Google Cloud AI Study Jam #JuaraGCP Season 12 (2026)
+  - Best Paper Award, ICoBITS 2025
+  - Cum Laude, Telkom University (2024)
+  - IELTS Academic 7.5 (Listening 8.5, Reading 8.5)

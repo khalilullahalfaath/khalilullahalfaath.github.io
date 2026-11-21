@@ -6,6 +6,15 @@ layout = "about"
 name = "Khalilullah Al Faath"
 image = "/images/myself.jpg"
 tagline = "AI Engineer & Master's student, interested in ML theory, evolutionary algorithms, NLP, and computer vision."
+based_in = "Sleman, Yogyakarta, Indonesia"
+studying = "M.Cs. in Computer Science, Universitas Gadjah Mada (until April 2027)"
+working_on = "Red blood cell segmentation for my thesis, an edge-AI thalassemia screening system, and a full-stack project with PGE"
+interests = "Machine learning theory, evolutionary algorithms, NLP, computer vision"
+email = "khalilullah.alfaath21@gmail.com"
+
+[[socials]]
+label = "LinkedIn"
+url = "https://www.linkedin.com/in/khalilullah-al-faath-4a684021a/"
 
 [[socials]]
 label = "GitHub"
@@ -20,27 +29,14 @@ label = "X"
 url = "https://x.com/khaleeelll"
 +++
 
-### About Me
+### About me
 
-Hi! Khalilullah Al Faath's here. What I mostly do is AI Engineering,  but sometimes I procrastinate in software engineering in general. I am interested in AI research and its applications in the real-world.
-I'm especially interested in machine learning theory, evolutionary algorithms, NLP, and computer vision 😄. If you're interested in working with me, please find my email below.
+Hi, I'm Khalilullah Al Faath. I mostly do AI engineering, though sometimes I procrastinate by doing general software engineering. I'm interested in AI research and how it gets used in the real world, especially machine learning theory, evolutionary algorithms, NLP, and computer vision. If you'd like to work with me, my email is on this page.
 
-<br/>
+### Experience
 
-### 💼 Experience
-* Master's Student @Gadjah Mada University (2025 - now)
-* Researcher and Engineer @Braincore (2024 - 2025)
-* Software Engineer Intern @PT. Len  Industry (2023)
-* Bachelor's Student, Lecturer, and Practicum Assistant @Telkom University (2022-2023)
-
-<br/>
-
-### 🤝 Let's connect
-[e-Mail](mailto:khalilullah.alfaath21@gmail.com) / [Github](https://github.com/khalilullahalfaath) / [LinkedIn](https://www.linkedin.com/in/khalilullah-al-faath-4a684021a/) / [X (Twitter)](https://x.com/khaleeelll) / [Instagram](https://www.instagram.com/khalilullahalfaath/)
-
-<br/>
+Right now I'm a full-stack developer on a PGE project, a research assistant in medical imaging at UGM, and a practicum assistant. My full history, publications, and certifications are on my [CV](/cv/).
 
 ### Fun fact
-This website was mainly inspired by Sheldon Cooper's website from the Big Bang Theory. I love how he managed to publish everything what came into his mind, even his enemy lists and his bathroom schedule😂. Unfortunately, you wont find that in this website. At some point, I stumbled upon [@ghora](ghora.net), which gave me a new perspective on how to publish a website as a research scientist (future me, Aaamiin).
 
-<br/>
+This website was mainly inspired by Sheldon Cooper's website in The Big Bang Theory. I love that he published whatever came into his head, even his enemies list and his bathroom schedule. You won't find those here. Later I came across [@ghora](https://ghora.net), which showed me how a research scientist might run a personal website (future me, aamiin).

@@ -1,144 +1,46 @@
 {{ define "main" }}
-<div class="homepage-layout">
-  <div class="homepage-main">
-    <h1>Welcome to Khalil-lab.</h1>
-    <p class="intro">
-      A space where I share my <a href="/posts">insights</a>, document my 
-      <a href="/journals">learning journey</a>, and explore ideas in computer science, 
-      writing, and life. Join me as I learn, reflect, and grow.
-    </p>
-    
-    <!-- Quick Stats -->
-    <div class="stats">
-      <div class="stat-item">
-        <span class="stat-number">{{ len (where .Site.RegularPages "Type" "posts") }}</span>
-        <span class="stat-label">Posts</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">{{ len (where .Site.RegularPages "Section" "journals") }}</span>
-        <span class="stat-label">Journal Entries</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">{{ len .Site.Taxonomies.categories }}</span>
-        <span class="stat-label">Topics</span>
-      </div>
+{{ $posts := where site.RegularPages "Section" "posts" }}
+{{ $lab := where site.RegularPages "Section" "notebook" }}
+{{ $week := (where site.RegularPages "Type" "weekly").ByDate.Reverse }}
+<div class="nb-page">
+  <section class="nb-cover" aria-labelledby="cover-title">
+    <div class="nb-cover-text">
+      <h1 id="cover-title">Khalil-lab</h1>
+      <p class="nb-lede">I research AI for medical imaging at Universitas Gadjah Mada. This notebook holds my essays and lab notes, failed experiments included.</p>
     </div>
-    
-    <hr>
-    
-    <!-- Explore Topics -->
-    <h2>Explore Topics</h2>
-    <div class="categories-showcase">
-      {{ range first 6 .Site.Taxonomies.categories.ByCount }}
-      <a href="{{ .Page.Permalink }}" class="category-card-home">
-        <span class="category-name">{{ .Page.Title }}</span>
-        <span class="category-count">{{ .Count }} {{ if eq .Count 1 }}post{{ else }}posts{{ end }}</span>
-      </a>
-      {{ end }}
-    </div>
-    
-    <hr>
-    
-    <!-- Latest Posts -->
-    <h2>Latest Writings</h2>
-    
-    {{ range first 4 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections).ByLastmod.Reverse }}
-    <article class="post-preview">
-      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-      <p class="excerpt">{{ .Summary | truncate 120 }}</p>
-      <div class="meta">
-        {{ partial "post-dates.html" . }}
-        <span class="separator">·</span>
-        {{ range first 1 (.GetTerms "categories") }}
-        <a href="{{ .Permalink }}" class="category-link">{{ .LinkTitle }}</a>
-        {{ end }}
-        <span class="separator">·</span>
-        <span class="read-time">{{ .ReadingTime }} min read</span>
-      </div>
-    </article>
-    <hr>
-    {{ end }}
-    
-    <div class="see-all">
-      <a href="/posts">See all posts →</a>
-    </div>
-    
-    <hr style="margin-top: 32px;">
-    
-    <!-- Recent Journals -->
-    <h2>Recent Journal Entries</h2>
-    
-    {{ range first 3 (where .Site.RegularPages "Section" "journals").ByLastmod.Reverse }}
-    <article class="post-preview">
-      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-      <p class="excerpt">{{ .Summary | truncate 100 }}</p>
-      <div class="meta">
-        {{ partial "post-dates.html" . }}
-      </div>
-    </article>
-    <hr>
-    {{ end }}
+    <dl class="nb-label" aria-label="About this notebook">
+      <div><dt>Name</dt><dd><a href="/about/">Khalilullah Al Faath</a></dd></div>
+      <div><dt>Since</dt><dd>July 2024</dd></div>
+      <div><dt>Entries</dt><dd>{{ len $posts }} essays, {{ len $lab }} notebook logs</dd></div>
+    </dl>
+  </section>
 
-    <div class="see-all">
-      <a href="/journals">Explore all journals →</a>
+  <section class="nb-section" aria-labelledby="latest">
+    <div class="nb-section-head">
+      <h2 id="latest">Latest writing</h2>
+      <a href="/posts/">All {{ len $posts }} entries</a>
     </div>
-  </div>
-  
-  <!-- Sidebar -->
-  <aside class="homepage-sidebar">
-    <!-- About Card -->
-    <div class="sidebar-card">
-      <h3>About Me</h3>
-      <p>Computer Science student passionate about learning, writing, and exploring new ideas.</p>
-      <a href="/about" class="sidebar-link">Learn more →</a>
-    </div>
-    
-    <!-- New Pages -->
-    <div class="sidebar-card">
-      <h3>Explore More</h3>
-      <ul class="sidebar-list">
-        <li><a href="/lab-notebook">🔬 Lab Notebook</a></li>
-        <li><a href="/projects">🚀 Projects</a></li>
-        <li><a href="/reviews">⭐ Reviews</a></li>
-        <li><a href="/bookshelf">📚 Bookshelf</a></li>
-        <li><a href="/til">💡 TIL</a></li>
-        <li><a href="/uses">🛠️ Uses</a></li>
-        <li><a href="/timeline">📅 Timeline</a></li>
-        <li><a href="/fun-facts">🎯 Fun Facts</a></li>
-      </ul>
-    </div>
+    {{ partial "notebook-index.html" (dict "pages" (first 6 $posts.ByDate.Reverse)) }}
+  </section>
 
-    <!-- Popular Posts -->
-    <div class="sidebar-card">
-      <h3>Popular Posts</h3>
-      <ul class="sidebar-list">
-        {{ range first 5 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections).ByLastmod.Reverse }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
-      </ul>
+  {{ with where $lab "Params.status" "ongoing" }}
+  <section class="nb-section" aria-labelledby="open">
+    <div class="nb-section-head">
+      <h2 id="open">Open experiments</h2>
+      <a href="/notebook/">Notebook</a>
     </div>
-    
-    <!-- Quick Links -->
-    <div class="sidebar-card">
-      <h3>Quick Links</h3>
-      <div class="quick-links-compact">
-        <a href="/schedule" class="quick-link-compact">
-          <span class="icon">📅</span>
-          <span>Schedule</span>
-        </a>
-        <a href="/search" class="quick-link-compact">
-          <span class="icon">🔍</span>
-          <span>Search</span>
-        </a>
-      </div>
-    </div>
-    
-    <!-- Stay Updated -->
-    <div class="sidebar-card">
-      <h3>Stay Updated</h3>
-      <p>Subscribe to get notified about new posts.</p>
-      <a href="/index.xml" class="sidebar-link">RSS Feed →</a>
-    </div>
-  </aside>
+    {{ partial "notebook-index.html" (dict "pages" .ByDate.Reverse "stamps" true) }}
+  </section>
+  {{ end }}
+
+  <section class="nb-section nb-elsewhere" aria-labelledby="elsewhere">
+    <h2 id="elsewhere">Elsewhere in the notebook</h2>
+    <ul>
+      <li><a href="/projects/">Work</a><span>Projects, CV, and when I am free to meet</span></li>
+      <li><a href="/back-pages/">Back pages</a><span>Weekly plans, gratitude, lists, and reviews</span></li>
+      {{ range first 1 $week }}<li><a href="{{ .RelPermalink }}">This week</a><span>{{ .Title }}</span></li>{{ end }}
+      <li><a href="/now/">Now</a><span>What I am doing this month</span></li>
+    </ul>
+  </section>
 </div>
 {{ end }}

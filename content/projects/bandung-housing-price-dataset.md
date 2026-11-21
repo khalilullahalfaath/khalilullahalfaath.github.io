@@ -1,7 +1,6 @@
 ---
 title: "Daftar Harga Rumah di Kota Bandung (Dataset)"
 date: 2023-02-01T10:00:00+07:00
-icon: "🏠"
 status: "completed"
 role: "Engineer"
 period: "March 2024"

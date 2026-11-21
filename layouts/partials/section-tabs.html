@@ -1,0 +1,38 @@
+{{/* Divider tabs for multi-page sections (Work, Back pages), shown on their index pages. */}}
+{{ $pillar := partial "pillar.html" . }}
+{{ $tabs := slice }}
+{{ if eq $pillar "work" }}
+  {{ $tabs = slice
+    (dict "l" "Projects" "d" "Things I built" "u" "/projects/")
+    (dict "l" "CV" "d" "Where I have worked" "u" "/cv/")
+    (dict "l" "Schedule" "d" "When I am free to meet" "u" "/schedule/") }}
+{{ else if eq $pillar "back" }}
+  {{ $tabs = slice
+    (dict "l" "Overview" "u" "/back-pages/")
+    (dict "l" "Weekly" "u" "/back-pages/weekly/")
+    (dict "l" "Gratitude" "u" "/back-pages/gratitude/")
+    (dict "l" "Reviews" "u" "/back-pages/reviews/")
+    (dict "l" "TIL" "u" "/back-pages/til/")
+    (dict "l" "Fun facts" "u" "/back-pages/fun-facts/")
+    (dict "l" "Bookshelf" "u" "/back-pages/bookshelf/")
+    (dict "l" "Uses" "u" "/back-pages/uses/") }}
+{{ end }}
+{{ if and $tabs (or (not .IsPage) (eq .Type "page")) }}
+<nav class="nb-section-tabs tabs-{{ $pillar }}" aria-label="{{ cond (eq $pillar "work") "Work" "Back pages" }} pages">
+  {{ range $tabs }}
+  {{ $on := eq $.RelPermalink .u }}
+  <a href="{{ .u }}"{{ if $on }} aria-current="page"{{ end }}>
+    <span class="nb-section-tab-label">{{ .l }}</span>
+    {{ with .d }}<span class="nb-section-tab-desc">{{ . }}</span>{{ end }}
+  </a>
+  {{ end }}
+</nav>
+<script>
+  /* On narrow screens the tab row scrolls: bring the current tab into view. */
+  (function () {
+    const row = document.currentScript.previousElementSibling;
+    const on = row.querySelector('[aria-current="page"]');
+    if (on) row.scrollLeft = on.offsetLeft - (row.clientWidth - on.offsetWidth) / 2;
+  })();
+</script>
+{{ end }}

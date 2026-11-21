@@ -1,7 +1,6 @@
 ---
 title: "Binary Komodo Mlipir Algorithm"
 date: 2024-10-01T10:00:00+07:00
-icon: "🦎"
 status: "completed"
 role: "Lead AI Engineer & Researcher"
 period: "Oct 2024 – Dec 2024"

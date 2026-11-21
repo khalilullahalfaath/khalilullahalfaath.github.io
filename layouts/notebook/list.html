@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="nb-page">
+  <header class="nb-page-head">
+    <h1>{{ .Title }}</h1>
+    <div class="nb-page-desc">{{ .Content }}</div>
+  </header>
+
+  <div class="nb-filters">
+    <button class="nb-filter-btn active" data-status-filter="all">All</button>
+    <button class="nb-filter-btn" data-status-filter="ongoing">Ongoing</button>
+    <button class="nb-filter-btn" data-status-filter="completed">Completed</button>
+    <button class="nb-filter-btn" data-status-filter="failed">Failed</button>
+  </div>
+
+  {{ partial "notebook-index.html" (dict "pages" .Pages.ByDate.Reverse "stamps" true "filter" true) }}
+
+  <p class="no-results" hidden>No entries match the selected filters.</p>
+</div>
+
+{{ partial "status-filter.js.html" . }}
+{{ end }}

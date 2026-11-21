@@ -1,24 +1,20 @@
 {{ define "main" }}
-<div class="about">
-  <img src="{{ .Params.image }}" alt="{{ .Params.name }}" class="portrait">
-
-  <h1>{{ .Params.name }}</h1>
-
-  <p class="bio">
-    {{ .Params.tagline }}
-  </p>
-
-  <div class="social-links">
-    {{ range $i, $s := .Params.socials }}
-    {{ if $i }}<span class="separator">·</span>{{ end }}
-    <a href="{{ $s.url }}" target="_blank" rel="noopener">{{ $s.label }}</a>
-    {{ end }}
-  </div>
-
-  <hr>
-
-  <div class="content">
-    {{ .Content }}
-  </div>
+<div class="nb-page about-nb">
+  <section class="owner" aria-labelledby="owner-name">
+    <img src="{{ .Params.image }}" alt="Portrait of {{ .Params.name }}" class="owner-photo" width="150" height="150">
+    <div class="owner-form">
+      <p class="owner-line">This notebook belongs to</p>
+      <h1 id="owner-name">{{ .Params.name }}</h1>
+      <dl class="nb-facts owner-fields">
+        {{ with .Params.based_in }}<div><dt>Based in</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.studying }}<div><dt>Studying</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.working_on }}<div><dt>Working on</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.interests }}<div><dt>Interested in</dt><dd>{{ . }}</dd></div>{{ end }}
+        <div><dt>Elsewhere</dt><dd class="owner-links">{{ range .Params.socials }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ end }}<a href="/cv/">CV</a><a href="/now/">Now</a></dd></div>
+      </dl>
+      {{ with .Params.email }}<p class="owner-return">If found, please return to <a href="mailto:{{ . }}">{{ . }}</a>.</p>{{ end }}
+    </div>
+  </section>
+  <div class="content nb-prose">{{ .Content }}</div>
 </div>
 {{ end }}

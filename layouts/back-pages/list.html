@@ -1,0 +1,33 @@
+{{ define "main" }}
+{{ $weeks := (where site.RegularPages "Type" "weekly").ByDate.Reverse }}
+<div class="nb-page">
+  {{ partial "page-head.html" (dict "title" .Title "desc" .Content) }}
+
+  <section class="nb-section" aria-labelledby="this-week">
+    <div class="nb-section-head">
+      <h2 id="this-week">This week</h2>
+      <a href="/back-pages/weekly/">All weeks</a>
+    </div>
+    {{ range first 1 $weeks }}
+    <div class="nb-week">
+      <p class="nb-week-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a> {{ partial "week-progress.html" . }}</p>
+      <div class="content">{{ .Content }}</div>
+    </div>
+    {{ else }}
+    <p class="nb-end">No weekly plan yet.</p>
+    {{ end }}
+  </section>
+
+  <section class="nb-section" aria-labelledby="pages">
+    <h2 id="pages">In the back pages</h2>
+    <ul class="nb-termlist nb-journals">
+      {{ range .Sections }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a><span>{{ .Description }}{{ with len .RegularPages }} {{ . }} {{ cond (eq . 1) "entry" "entries" }}.{{ end }}</span></li>
+      {{ end }}
+      {{ range .RegularPages }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a><span>{{ .Description }}</span></li>
+      {{ end }}
+    </ul>
+  </section>
+</div>
+{{ end }}

@@ -1,29 +1,19 @@
 {{ define "main" }}
-<div class="fun-facts-page">
-  <h1>{{ .Title }}</h1>
-  <p class="page-description">Random lists, rankings, and facts about me. Inspired by Sheldon Cooper's meticulous documentation of everything. You won't find my bathroom schedule here though 😂</p>
-
+<div class="nb-page">
+  {{ partial "page-head.html" (dict "title" .Title
+       "desc" "Lists, rankings, and facts about me, kept the way Sheldon Cooper documents everything. You won't find my bathroom schedule here, though.") }}
   {{ range .Params.sections }}
-  <div class="fun-fact-card">
-    <h2>{{ .icon }} {{ .title }}</h2>
-    {{ if eq .type "ranked" }}
-    <ol class="ranked-list">
-      {{ range .items }}
-      <li>{{ if .desc }}<strong>{{ .title }}</strong> - {{ .desc }}{{ else }}{{ .title }}{{ end }}</li>
-      {{ end }}
-    </ol>
-    {{ else if eq .type "bullet" }}
-    <ul class="bullet-list">
-      {{ range .items }}
-      <li>{{ if .desc }}<strong>{{ .title }}</strong> - {{ .desc }}{{ else }}{{ .title }}{{ end }}</li>
-      {{ end }}
-    </ul>
-    {{ else if eq .type "text" }}
-    {{ range .paragraphs }}
-    <p>{{ . }}</p>
+  <section class="nb-section nb-prose">
+    <h2>{{ .title }}</h2>
+    {{ if eq .type "text" }}
+      {{ range .paragraphs }}<p>{{ . }}</p>{{ end }}
+    {{ else }}
+      {{ $tag := cond (eq .type "ranked") "ol" "ul" }}
+      {{ printf "<%s class=\"nb-list\">" $tag | safeHTML }}
+        {{ range .items }}<li>{{ if .desc }}<strong>{{ .title }}.</strong> {{ .desc }}{{ else }}{{ .title }}{{ end }}</li>{{ end }}
+      {{ printf "</%s>" $tag | safeHTML }}
     {{ end }}
-    {{ end }}
-  </div>
+  </section>
   {{ end }}
 </div>
 {{ end }}

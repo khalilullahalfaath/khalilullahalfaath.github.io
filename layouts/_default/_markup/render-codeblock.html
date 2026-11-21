@@ -1,0 +1,4 @@
+<div class="nb-code">
+  {{- with .Type }}<span class="nb-code-lang">{{ . }}</span>{{ end -}}
+  {{- transform.Highlight .Inner .Type .Options -}}
+</div>

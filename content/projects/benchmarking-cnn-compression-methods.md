@@ -1,7 +1,6 @@
 ---
 title: "Benchmarking CNN Compression Methods"
 date: 2025-11-01T10:00:00+07:00
-icon: "🫁"
 status: "completed"
 role: "Researcher"
 period: "Nov 2025 - Feb 2026"

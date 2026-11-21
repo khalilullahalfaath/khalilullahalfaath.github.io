@@ -1,0 +1,10 @@
+{{/* Which part of the notebook a page belongs to: writing, notebook, work, back, about, or home. */}}
+{{ $p := "home" }}
+{{ $path := .RelPermalink }}
+{{ if or (eq .Section "posts") (hasPrefix $path "/categories/") }}{{ $p = "writing" }}
+{{ else if or (eq .Section "notebook") (hasPrefix $path "/tags/") }}{{ $p = "notebook" }}
+{{ else if or (eq .Section "projects") (in (slice "/cv/" "/schedule/") $path) }}{{ $p = "work" }}
+{{ else if eq .Section "back-pages" }}{{ $p = "back" }}
+{{ else if in (slice "/about/" "/now/") $path }}{{ $p = "about" }}
+{{ end }}
+{{ return $p }}

@@ -1,26 +1,26 @@
 {{ define "main" }}
-<div class="content-wrapper">
-  <h1>{{ .Title }}</h1>
-  <p class="page-description">Books, papers, and articles I'm reading or have read. Inspired by my love for learning and documenting everything (thanks, Sheldon!).</p>
-
-  <div class="bookshelf-grid">
-    {{ range .Params.books }}
-    <div class="book-card status-{{ .status }}">
-      <div class="book-icon">{{ .icon }}</div>
-      <h3>{{ .title }}</h3>
-      <p class="book-author">{{ .author }}</p>
-      <span class="book-status">{{- if eq .status "reading" -}}
-          Currently Reading
-        {{- else if eq .status "finished" -}}
-          Finished
-        {{- else if eq .status "want" -}}
-          Want to Read
-        {{- else -}}
-          {{ .status }}
-        {{- end -}}</span>
-      <p class="book-note">{{ .note }}</p>
-    </div>
-    {{ end }}
-  </div>
+{{ $label := dict "reading" "Reading" "finished" "Finished" "want" "Want to read" }}
+<div class="nb-page">
+  {{ partial "page-head.html" (dict "title" .Title
+       "desc" "Books, papers, and articles I am reading or have read.") }}
+  {{ if not .Params.books }}<p class="nb-end">Nothing on the shelf yet.</p>{{ end }}
+  {{ range $status := slice "reading" "finished" "want" }}
+  {{ with where $.Params.books "status" $status }}
+  <section class="nb-section">
+    <h2>{{ index $label $status }}</h2>
+    <ol class="nb-entries">
+      {{ range . }}
+      <li class="nb-entry">
+        <div class="nb-body">
+          <h3>{{ .title }}</h3>
+          <p class="nb-creator">{{ .author }}</p>
+          {{ with .note }}<p class="nb-excerpt">{{ . }}</p>{{ end }}
+        </div>
+      </li>
+      {{ end }}
+    </ol>
+  </section>
+  {{ end }}
+  {{ end }}
 </div>
 {{ end }}

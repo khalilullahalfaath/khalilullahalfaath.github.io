@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="lab-single">
+  {{ partial "entry-head.html" . }}
+
+  {{ partial "toc.html" . }}
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+  
+  <footer class="lab-single-footer">
+    <p class="nb-end">End of entry. <a href="/notebook/">Back to the notebook</a></p>
+  </footer>
+</article>
+{{ end }}

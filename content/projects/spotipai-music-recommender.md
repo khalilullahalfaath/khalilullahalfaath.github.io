@@ -1,7 +1,6 @@
 ---
 title: "Spotipai - Spotify-Inspired Music Recommender UI"
 date: 2026-06-01T10:00:00+07:00
-icon: "🎵"
 status: "completed"
 role: "AI Engineer"
 period: "June 2026"

@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="single">
+  <header class="nb-head">
+    <p class="nb-margin">
+      <span class="nb-no">Week {{ div (add .Date.YearDay 6) 7 }}</span>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      {{ partial "week-progress.html" . }}
+    </p>
+    <div class="nb-head-main"><h1>{{ .Title }}</h1></div>
+  </header>
+  <div class="content">{{ .Content }}</div>
+  <p class="nb-end">
+    {{ $weeks := .CurrentSection.RegularPages.ByDate }}
+    {{ $older := false }}{{ $newer := false }}{{ $seen := false }}
+    {{ range $weeks }}{{ if eq . $ }}{{ $seen = true }}{{ else if $seen }}{{ if not $newer }}{{ $newer = . }}{{ end }}{{ else }}{{ $older = . }}{{ end }}{{ end }}
+    {{ with $older }}<a href="{{ .RelPermalink }}">Previous week</a>{{ end }}
+    {{ with $newer }}<a href="{{ .RelPermalink }}">Next week</a>{{ end }}
+    <a href="/back-pages/weekly/">All weeks</a>
+  </p>
+</article>
+{{ end }}

@@ -1,7 +1,6 @@
 ---
 title: "TSP Wisata Jogja — Genetic Algorithm"
 date: 2025-12-15T10:00:00+07:00
-icon: "🧭"
 status: "completed"
 role: "Developer"
 period: "May 2026 - June 2026"

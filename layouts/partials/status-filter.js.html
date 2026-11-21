@@ -1,0 +1,35 @@
+<script>
+  /* Notebook index filters: status buttons [data-status-filter] and tag buttons
+     [data-tag-filter] (click a tag again to clear it). Entries: .nb-entry[data-status][data-tags] */
+  (function () {
+    const statusButtons = document.querySelectorAll("[data-status-filter]");
+    const tagButtons = document.querySelectorAll("[data-tag-filter]");
+    const entries = document.querySelectorAll(".nb-entry");
+    const empty = document.querySelector(".no-results");
+    let status = "all";
+    let tag = null;
+
+    function apply() {
+      let shown = 0;
+      entries.forEach((e) => {
+        const ok = (status === "all" || e.dataset.status === status) &&
+                   (!tag || (e.dataset.tags || "").split(",").includes(tag));
+        e.hidden = !ok;
+        if (ok) shown++;
+      });
+      document.querySelectorAll(".nb-year").forEach((y) => { y.hidden = !y.querySelector(".nb-entry:not([hidden])"); });
+      tagButtons.forEach((b) => b.setAttribute("aria-pressed", b.dataset.tagFilter === tag));
+      if (empty) empty.hidden = shown > 0;
+    }
+
+    statusButtons.forEach((btn) => btn.addEventListener("click", () => {
+      statusButtons.forEach((b) => { b.classList.toggle("active", b === btn); b.setAttribute("aria-pressed", b === btn); });
+      status = btn.dataset.statusFilter;
+      apply();
+    }));
+    tagButtons.forEach((btn) => btn.addEventListener("click", () => {
+      tag = tag === btn.dataset.tagFilter ? null : btn.dataset.tagFilter;
+      apply();
+    }));
+  })();
+</script>

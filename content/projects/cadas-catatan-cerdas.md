@@ -1,7 +1,6 @@
 ---
 title: "CaDas (Catatan Cerdas)"
 date: 2024-06-01T10:00:00+07:00
-icon: "📝"
 status: "completed"
 role: "Lead AI Engineer & Front-End Developer"
 period: "Jun 2024 – Jul 2024"

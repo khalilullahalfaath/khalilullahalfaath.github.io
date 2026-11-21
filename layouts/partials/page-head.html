@@ -1,0 +1,6 @@
+{{/* Page title block for notebook sheets. Params: title, desc (string or HTML), note (small line). */}}
+<header class="nb-page-head">
+  <h1>{{ .title }}</h1>
+  {{ with .desc }}<div class="nb-page-desc">{{ . }}</div>{{ end }}
+  {{ with .note }}<p class="nb-page-note">{{ . }}</p>{{ end }}
+</header>

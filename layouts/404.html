@@ -1,7 +1,7 @@
 {{ define "main" }}
-<div class="error-404">
-  <h1>Page not found</h1>
-  <p>The page you're looking for doesn't exist.</p>
-  <a href="/">← Back to home</a>
+<div class="nb-page">
+  {{ partial "page-head.html" (dict "title" "This page is not in the notebook"
+       "desc" "The link may be old, or the entry was moved. Try the writing index or search instead.") }}
+  <p class="nb-end"><a href="/posts/">All writing</a>, <a href="/notebook/">notebook</a>, or <a href="/search/">search</a>.</p>
 </div>
 {{ end }}

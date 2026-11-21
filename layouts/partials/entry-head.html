@@ -1,0 +1,18 @@
+{{/* Article header with notebook margin: entry number, dates, reading time, optional status. */}}
+<header class="nb-head">
+  <p class="nb-margin">
+    <span class="nb-no">No. {{ partial "entry-no.html" . }}</span>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    {{ if gt (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }}
+    <span>Revised <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time></span>
+    {{ end }}
+    <span>{{ .ReadingTime }} min read</span>
+  </p>
+  <div class="nb-head-main">
+    {{ with .Params.status }}<span class="nb-stamp is-{{ . }}">{{ . | humanize }}</span>{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<div class="nb-standfirst">{{ . | markdownify }}</div>{{ end }}
+    {{ $terms := .GetTerms "categories" }}{{ with .GetTerms "tags" }}{{ $terms = $terms | append . }}{{ end }}
+    {{ with $terms }}<p class="nb-terms">{{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}</p>{{ end }}
+  </div>
+</header>

@@ -3,6 +3,7 @@
 <script src="/pagefind/pagefind-ui.js"></script>
 
 <style>
+  .pagefind-ui { --pagefind-ui-font: var(--font-ui); --pagefind-ui-primary: var(--accent); --pagefind-ui-border-radius: 4px; }
   /* Dark mode overrides for Pagefind UI */
   .dark .pagefind-ui {
     --pagefind-ui-primary: var(--accent);
@@ -42,8 +43,8 @@
   }
 </style>
 
-<div class="content-wrapper">
-  <h1>Search</h1>
+<div class="nb-page">
+  {{ partial "page-head.html" (dict "title" "Search" "desc" "Search every essay, lab log, journal, and review.") }}
   <div id="search"></div>
 </div>
 

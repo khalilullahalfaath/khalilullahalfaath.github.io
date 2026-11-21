@@ -1,24 +1,6 @@
 {{ define "main" }}
 <article class="single">
-  <header class="post-header">
-    <h1>{{ .Title }}</h1>
-    
-    {{ with .Params.description }}
-    <p class="subtitle">{{ . | markdownify }}</p>
-    {{ end }}
-    
-    <div class="meta">
-      <span class="author">{{ .Site.Params.author | default "Khalilullah Al Faath" }}</span>
-      <span class="separator">·</span>
-      {{ partial "post-dates.html" . }}
-      {{ range first 1 (.GetTerms "categories") }}
-      <span class="separator">·</span>
-      <a href="{{ .Permalink }}" class="category-badge">{{ .LinkTitle }}</a>
-      {{ end }}
-      <span class="separator">·</span>
-      <span class="read-time">{{ .ReadingTime }} min read</span>
-    </div>
-  </header>
+  {{ partial "entry-head.html" . }}
   
   {{ if .Params.image }}
   <img src="{{ .Params.image }}" alt="{{ .Title }}" class="featured-image">
@@ -30,22 +12,13 @@
     {{ .Content }}
   </div>
   
-  <hr>
-  
   <footer class="post-footer">
-    {{ if .GetTerms "categories" }}
-    <div class="tags">
-      <span>Tags: </span>
-      {{ range .GetTerms "categories" }}
-      <a href="{{ .Permalink }}" class="category-badge">{{ .LinkTitle }}</a>
-      {{ end }}
-    </div>
-    {{ end }}
+    <p class="nb-end">End of entry. {{ with .Parent }}<a href="{{ .RelPermalink }}">Back to {{ cond (eq .Section "posts") "all writing" (lower .Title) }}</a>{{ end }}</p>
     
     {{ with .Params.mediumLink }}
     {{ $link := partial "sanitize-link.html" . }}
     <p class="medium-link">
-      <em>Also published on <a href="{{ $link }}" target="_blank" rel="noopener">Medium</a> →</em>
+      <em>Also published on <a href="{{ $link }}" target="_blank" rel="noopener">Medium</a></em>
     </p>
     {{ end }}
   </footer>

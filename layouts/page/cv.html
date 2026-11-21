@@ -1,0 +1,94 @@
+{{ define "main" }}
+{{ $cv := site.Data.cv }}
+<article class="cv">
+  <header class="cv-head">
+    <img src="/images/myself.jpg" alt="Portrait of Khalilullah Al Faath" class="cv-photo" width="112" height="112">
+    <div>
+      <h1>Khalilullah Al Faath</h1>
+      <p class="cv-role">{{ .Params.description }}</p>
+      <p class="cv-summary">{{ $cv.summary }}</p>
+      <p class="cv-links">
+        {{ range $cv.links }}<a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }}>{{ .label }}</a>{{ end }}
+      </p>
+    </div>
+  </header>
+
+  <section class="cv-timeline" aria-labelledby="cv-journey">
+    <div class="cv-section-head">
+      <h2 id="cv-journey">Journey</h2>
+      <fieldset class="cv-filter">
+        <legend class="visually-hidden">Show</legend>
+        <input type="radio" name="cv-kind" id="kind-all" checked><label for="kind-all">All</label>
+        {{ range $cv.kinds }}
+        <input type="radio" name="cv-kind" id="kind-{{ .id }}"><label for="kind-{{ .id }}" class="k-{{ .id }}">{{ .label }}</label>
+        {{ end }}
+      </fieldset>
+    </div>
+
+    {{ $years := slice }}
+    {{ range $cv.timeline }}{{ if not (in $years .year) }}{{ $years = $years | append .year }}{{ end }}{{ end }}
+    {{ range $years }}
+    {{ $y := . }}
+    <div class="cv-year">
+      <div class="cv-year-num" aria-hidden="true">{{ $y }}</div>
+      <ol class="cv-entries" aria-label="{{ $y }}">
+        {{ range where $cv.timeline "year" $y }}
+        <li class="cv-entry k-{{ .kind }}{{ if .current }} is-current{{ end }}" data-kind="{{ .kind }}">
+          <p class="cv-when">{{ .when }}{{ if .current }}<span class="cv-now">Now</span>{{ end }}</p>
+          <h3>{{ .title }}</h3>
+          <p class="cv-org">{{ .org }}</p>
+          {{ with .note }}<p class="cv-note">{{ . }}</p>{{ end }}
+          {{ with .points }}<ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+        </li>
+        {{ end }}
+      </ol>
+    </div>
+    {{ end }}
+  </section>
+
+  <section class="cv-block" aria-labelledby="cv-pubs">
+    <h2 id="cv-pubs">Publications</h2>
+    <ul class="cv-pubs">
+      {{ range $cv.publications }}
+      <li>
+        {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}<span class="cv-pub-title">{{ .title }}</span>{{ end }}
+        <span class="cv-meta">{{ .venue }}, {{ .year }}</span>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <section class="cv-block" aria-labelledby="cv-projects">
+    <h2 id="cv-projects">Selected projects</h2>
+    <ul class="cv-projects">
+      {{ range $cv.projects }}
+      <li>
+        {{ if .url }}<a href="{{ .url }}">{{ .title }}</a>{{ else }}<span class="cv-pub-title">{{ .title }}</span>{{ end }}
+        <span class="cv-meta">{{ .what }}</span>
+      </li>
+      {{ end }}
+    </ul>
+    <p><a href="/projects/">See all projects</a></p>
+  </section>
+
+  <section class="cv-block" aria-labelledby="cv-skills">
+    <h2 id="cv-skills">Skills</h2>
+    <dl class="cv-skills">
+      {{ range $cv.skills }}<dt>{{ .group }}</dt><dd>{{ .items }}</dd>{{ end }}
+    </dl>
+  </section>
+
+  <section class="cv-block cv-two" aria-label="Certifications and awards">
+    <div>
+      <h2>Certifications</h2>
+      <ul>{{ range $cv.certifications }}<li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></li>{{ end }}</ul>
+    </div>
+    <div>
+      <h2>Awards</h2>
+      <ul>{{ range $cv.awards }}<li>{{ . }}</li>{{ end }}</ul>
+    </div>
+  </section>
+
+  <p class="cv-updated">Last updated {{ .Lastmod.Format site.Params.dateFormat }}</p>
+</article>
+{{ end }}

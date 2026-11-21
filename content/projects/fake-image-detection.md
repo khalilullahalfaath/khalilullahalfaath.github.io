@@ -1,7 +1,6 @@
 ---
 title: "Fake Image Detection: ResNet-50 Classification of AI-Generated Images"
 date: 2026-08-02T10:00:00+07:00
-icon: "🧠"
 status: "completed"
 role: "Researcher"
 period: "August 2025 – December 2025"
@@ -32,4 +31,4 @@ The baseline model achieved 95.48% accuracy. Critically, all fine-tuned pruned m
 
 ---
 
-See the [related lab notebook entry](/lab-notebook/fake-image-detection-experiment/) documenting the earlier experimentation phase of this research.
+See the [related lab notebook entry](/notebook/fake-image-detection-experiment/) documenting the earlier experimentation phase of this research.

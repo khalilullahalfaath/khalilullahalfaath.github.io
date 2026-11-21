@@ -1,30 +1,19 @@
 {{ define "main" }}
 <article class="single review-single">
-  <header class="post-header">
-    <div class="review-single-meta">
-      <span class="review-type-badge review-type-{{ .Params.mediatype }}">
-        {{- if eq .Params.mediatype "book" -}}📖 Book
-        {{- else if eq .Params.mediatype "movie" -}}🎬 Movie
-        {{- else if eq .Params.mediatype "song" -}}🎵 Song
-        {{- else -}}{{ .Params.mediatype }}
-        {{- end -}}
-      </span>
-      <span class="review-rating">
-        {{ $rating := .Params.rating | default 0 }}
-        {{ range seq 5 }}{{ if le . $rating }}★{{ else }}☆{{ end }}{{ end }}
-      </span>
-    </div>
-    <h1>{{ .Title }}</h1>
-    {{ if .Params.creator }}<p class="subtitle">{{ .Params.creator }}</p>{{ end }}
-    <div class="meta">
+  <header class="nb-head">
+    <p class="nb-margin">
+      <span class="nb-no">{{ .Params.mediatype | humanize }}</span>
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      <span>{{ .ReadingTime }} min read</span>
+    </p>
+    <div class="nb-head-main">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.creator }}<p class="nb-creator">{{ . }}</p>{{ end }}
+      {{ with .Params.description }}<div class="nb-standfirst">{{ . | markdownify }}</div>{{ end }}
+      {{ with .Params.rating }}<p class="nb-meta"><span class="nb-score" aria-label="Rated {{ . }} out of 5">{{ . }}<small>/5</small></span></p>{{ end }}
     </div>
   </header>
-
-  <div class="content">
-    {{ .Content }}
-  </div>
-
-  <a href="/reviews" class="back-link">← Back to Reviews</a>
+  <div class="content">{{ .Content }}</div>
+  <p class="nb-end">End of review. <a href="/back-pages/reviews/">Back to all reviews</a></p>
 </article>
 {{ end }}

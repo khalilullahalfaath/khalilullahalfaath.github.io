@@ -1,46 +1,15 @@
 {{ define "main" }}
 <article class="lab-single">
-  <header class="lab-single-header">
-    <h1>{{ .Params.icon }} {{ .Title }}</h1>
-    <div class="lab-single-meta">
-      <span class="project-status">{{- if eq .Params.status "active" -}}
-          Active
-        {{- else if eq .Params.status "completed" -}}
-          Completed
-        {{- else if eq .Params.status "archived" -}}
-          Archived
-        {{- else -}}
-          {{ .Params.status }}
-        {{- end -}}</span>
-      {{ if or .Params.role .Params.period }}
-      <span class="separator">·</span>
-      <span>{{ .Params.role }}{{ if and .Params.role .Params.period }} · {{ end }}{{ .Params.period }}</span>
-      {{ end }}
-      {{ if .Params.tech }}
-      <span class="separator">·</span>
-      {{ range .Params.tech }}
-      <span class="tag">{{ . }}</span>
-      {{ end }}
-      {{ end }}
-    </div>
-  </header>
+  {{ partial "entry-head.html" . }}
+  <dl class="nb-facts">
+    {{ with .Params.role }}<div><dt>Role</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Params.period }}<div><dt>Period</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Params.tech }}<div><dt>Tools</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
+    {{ with .Params.links }}<div><dt>Links</dt><dd>{{ range $i, $l := . }}{{ if $i }}, {{ end }}<a href="{{ $l.url }}" target="_blank" rel="noopener">{{ $l.label }}</a>{{ end }}</dd></div>{{ end }}
+  </dl>
 
   {{ partial "toc.html" . }}
-
-  <div class="content">
-    {{ .Content }}
-  </div>
-
-  {{ if .Params.links }}
-  <div class="project-links" style="margin-top: var(--space-lg);">
-    {{ range .Params.links }}
-    <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }} →</a>
-    {{ end }}
-  </div>
-  {{ end }}
-
-  <footer class="lab-single-footer">
-    <a href="/projects" class="back-link">← Back to Projects</a>
-  </footer>
+  <div class="content">{{ .Content }}</div>
+  <p class="nb-end">End of entry. <a href="/projects/">Back to all projects</a></p>
 </article>
 {{ end }}

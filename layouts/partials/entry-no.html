@@ -1,0 +1,5 @@
+{{/* Entry number of a page within its section, counted by date (1 = oldest). */}}
+{{ $page := . }}
+{{ $n := 0 }}
+{{ range $i, $p := (where site.RegularPages "Section" .Section).ByDate }}{{ if eq $p $page }}{{ $n = add $i 1 }}{{ end }}{{ end }}
+{{ return $n }}

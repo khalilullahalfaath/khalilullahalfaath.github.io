@@ -1,31 +1,9 @@
 {{ define "main" }}
-<div class="content-wrapper">
-  <h1>My writings</h1>
-  <p class="page-description">{{ .Content }}</p>
-
-  <div class="post-list">
-    {{ $paginator := .Paginate .Pages.ByLastmod.Reverse }}
-    {{ range $paginator.Pages }}
-    <article class="post-card">
-      {{ if .Params.image }}
-      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="post-thumbnail">
-      {{ end }}
-
-      <div class="post-content">
-        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        <p class="excerpt">{{ .Summary | truncate 150 }}</p>
-        <div class="meta">
-          {{ partial "post-dates.html" . }}
-          <span class="separator">·</span>
-          {{ range first 1 (.GetTerms "categories") }}
-          <a href="{{ .Permalink }}" class="category-badge">{{ .LinkTitle }}</a>
-          {{ end }}
-        </div>
-      </div>
-    </article>
-    {{ end }}
-  </div>
-  
-  {{ partial "pagination.html" . }}
+<div class="nb-page">
+  <header class="nb-page-head">
+    <h1>Writing</h1>
+    <div class="nb-page-desc">{{ .Content }}</div>
+  </header>
+  {{ partial "notebook-index.html" (dict "pages" .Pages.ByDate.Reverse) }}
 </div>
 {{ end }}

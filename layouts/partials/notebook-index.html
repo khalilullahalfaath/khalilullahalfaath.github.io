@@ -1,0 +1,35 @@
+{{/* Year-grouped entry index with a notebook margin.
+     Params: pages (required), stamps (bool: show lab status stamps),
+     filter (bool: tags become filter buttons; otherwise links to tag pages). */}}
+<div class="nb-index">
+  {{ range .pages.GroupByDate "2006" }}
+  <section class="nb-year">
+    <h2 class="nb-year-num">{{ .Key }}</h2>
+    <ol class="nb-entries">
+      {{ range .Pages }}
+      {{ $status := .Params.status }}
+      <li class="nb-entry"{{ with $status }} data-status="{{ . }}"{{ end }}{{ with .Params.tags }} data-tags="{{ delimit . "," }}"{{ end }}>
+        <p class="nb-margin">
+          <span class="nb-no">No. {{ partial "entry-no.html" . }}</span>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+        </p>
+        <div class="nb-body">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="nb-excerpt">{{ (.Description | default .Summary) | plainify | truncate 150 }}</p>
+          <p class="nb-meta">
+            {{ if and $.stamps $status }}<span class="nb-stamp is-{{ $status }}">{{ $status | humanize }}</span>{{ end }}
+            {{ range first 1 (.GetTerms "categories") }}<span>{{ .LinkTitle }}</span>{{ end }}
+            <span>{{ .ReadingTime }} min read</span>
+            {{ if $.filter }}
+            {{ range .Params.tags }}<button type="button" class="nb-tag" data-tag-filter="{{ . }}" aria-pressed="false">#{{ . }}</button>{{ end }}
+            {{ else }}
+            {{ range .GetTerms "tags" }}<a class="nb-tag" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end }}
+            {{ end }}
+          </p>
+        </div>
+      </li>
+      {{ end }}
+    </ol>
+  </section>
+  {{ end }}
+</div>

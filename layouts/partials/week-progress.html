@@ -1,0 +1,4 @@
+{{/* "3 of 5 done" from the task-list checkboxes in a weekly plan. */}}
+{{ $all := len (findRE `<input[^>]*type="checkbox"` .Content) }}
+{{ $done := len (findRE `<input[^>]*checked` .Content) }}
+{{ if $all }}<span class="nb-progress">{{ $done }} of {{ $all }} done</span>{{ end }}

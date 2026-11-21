@@ -1,6 +1,6 @@
 ---
 title: "Posts"
-description: "Long-form blog posts and essays by Khalilullah Al Faath — reflections, tutorials, and research notes on computer science and life."
+description: "Essays and blog posts by Khalilullah Al Faath on computer science, faith, and life."
 ---
 
-My long-form writings. Reflections, tutorials, and research notes on computer science, faith, and life in general.
+Longer pieces: reflections, tutorials, and research notes on computer science, faith, and life.

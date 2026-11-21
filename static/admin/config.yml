@@ -67,9 +67,9 @@ collections:
           hint: "Write your article here",
         }
 
-  - name: "lab-notebook"
-    label: "Lab Notebook"
-    folder: "content/lab-notebook"
+  - name: "notebook"
+    label: "Notebook"
+    folder: "content/notebook"
     path: "{{slug}}"
     create: true
     fields:
@@ -104,7 +104,6 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Icon (emoji)", name: "icon", widget: "string", required: false }
       - {
           label: "Status",
           name: "status",
@@ -151,8 +150,8 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "til"
-    label: "TIL (Today I Learned)"
-    folder: "content/til"
+    label: "Back pages: Today I learned"
+    folder: "content/back-pages/til"
     path: "{{slug}}"
     create: true
     fields:
@@ -168,8 +167,8 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "reviews"
-    label: "Reviews"
-    folder: "content/reviews"
+    label: "Back pages: Reviews"
+    folder: "content/back-pages/reviews"
     path: "{{slug}}"
     create: true
     fields:
@@ -202,49 +201,32 @@ collections:
         }
       - { label: "Review", name: "body", widget: "markdown" }
 
-  - name: "journals-gratitudes"
-    label: "Journals - Gratitudes"
-    folder: "content/journals/gratitudes"
-    path: "{{slug}}"
+  - name: "weekly"
+    label: "Back pages: Weekly plans"
+    folder: "content/back-pages/weekly"
+    path: "{{year}}-{{month}}-{{day}}"
     create: true
+    sortable_fields: ["date"]
     fields:
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", hint: "e.g. Week of November 17, 2026" }
+      - { label: "Date (Monday of the week)", name: "date", widget: "datetime" }
+      - { label: "Last Modified", name: "lastmod", widget: "datetime", required: false }
       - {
-          label: "Description",
-          name: "description",
-          widget: "text",
-          required: false,
+          label: "Plan",
+          name: "body",
+          widget: "markdown",
+          hint: "One task per line: '- [ ] task'. Mark done with '- [x] task'.",
         }
-      - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "journals-logbooks"
-    label: "Journals - Log Books"
-    folder: "content/journals/logbooks"
-    path: "{{slug}}"
+  - name: "gratitude"
+    label: "Back pages: Gratitude"
+    folder: "content/back-pages/gratitude"
+    path: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - {
-          label: "Description",
-          name: "description",
-          widget: "text",
-          required: false,
-        }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "journals-reviews"
-    label: "Journals - Reviews"
-    folder: "content/journals/reviews"
-    path: "{{slug}}"
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - {
-          label: "Description",
-          name: "description",
-          widget: "text",
-          required: false,
-        }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "pages"
@@ -252,7 +234,7 @@ collections:
     files:
       - name: "reviews-index"
         label: "Reviews (page settings)"
-        file: "content/reviews/_index.md"
+        file: "content/back-pages/reviews/_index.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
@@ -263,7 +245,6 @@ collections:
               required: false,
               fields:
                 [
-                  { label: "Icon (emoji)", name: "icon", widget: "string" },
                   { label: "Label", name: "label", widget: "string" },
                   { label: "URL", name: "url", widget: "string" },
                 ],
@@ -272,7 +253,7 @@ collections:
 
       - name: "bookshelf"
         label: "Bookshelf"
-        file: "content/bookshelf.md"
+        file: "content/back-pages/bookshelf.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
@@ -282,7 +263,6 @@ collections:
               widget: "list",
               fields:
                 [
-                  { label: "Icon (emoji)", name: "icon", widget: "string" },
                   { label: "Title", name: "title", widget: "string" },
                   { label: "Author", name: "author", widget: "string" },
                   {
@@ -297,7 +277,7 @@ collections:
 
       - name: "fun-facts"
         label: "Fun Facts"
-        file: "content/fun-facts.md"
+        file: "content/back-pages/fun-facts.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
@@ -307,7 +287,6 @@ collections:
               widget: "list",
               fields:
                 [
-                  { label: "Icon (emoji)", name: "icon", widget: "string" },
                   { label: "Title", name: "title", widget: "string" },
                   {
                     label: "Type",
@@ -344,7 +323,7 @@ collections:
 
       - name: "uses"
         label: "Uses"
-        file: "content/uses.md"
+        file: "content/back-pages/uses.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
@@ -355,7 +334,6 @@ collections:
               widget: "list",
               fields:
                 [
-                  { label: "Icon (emoji)", name: "icon", widget: "string" },
                   { label: "Title", name: "title", widget: "string" },
                   {
                     label: "Items",
@@ -366,28 +344,6 @@ collections:
                         { label: "Title", name: "title", widget: "string" },
                         { label: "Description", name: "desc", widget: "string" },
                       ],
-                  },
-                ],
-            }
-
-      - name: "timeline"
-        label: "Timeline"
-        file: "content/timeline.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - {
-              label: "Items",
-              name: "items",
-              widget: "list",
-              fields:
-                [
-                  { label: "Date", name: "date", widget: "string" },
-                  { label: "Title", name: "title", widget: "string" },
-                  {
-                    label: "Description",
-                    name: "description",
-                    widget: "text",
                   },
                 ],
             }

@@ -1,0 +1,9 @@
+{{ define "main" }}
+<article class="single">
+  {{ partial "entry-head.html" . }}
+  {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" class="featured-image">{{ end }}
+  {{ partial "toc.html" . }}
+  <div class="content">{{ .Content }}</div>
+  <p class="nb-end">End of entry. <a href="{{ .Parent.RelPermalink }}">Back to {{ .Parent.Title }}</a></p>
+</article>
+{{ end }}

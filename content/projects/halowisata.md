@@ -1,7 +1,6 @@
 ---
 title: "HaloWisata"
 date: 2023-05-01T10:00:00+07:00
-icon: "🗺️"
 status: "completed"
 role: "Lead ML Engineer"
 period: "May 2023 – Jun 2023"

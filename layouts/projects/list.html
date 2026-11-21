@@ -1,122 +1,43 @@
 {{ define "main" }}
-<div class="projects-page">
-  <h1>{{ .Title }}</h1>
-  <p class="page-description">{{ .Content }}</p>
+<div class="nb-page">
+  <header class="nb-page-head">
+    <h1>{{ .Title }}</h1>
+    <div class="nb-page-desc">{{ .Content }}</div>
+  </header>
 
-  <div class="projects-toolbar">
-    <div class="review-filters">
-      <button class="review-filter-btn active" data-status-filter="all">All</button>
-      <button class="review-filter-btn" data-status-filter="active">Active</button>
-      <button class="review-filter-btn" data-status-filter="completed">Completed</button>
-      <button class="review-filter-btn" data-status-filter="archived">Archived</button>
-    </div>
-
-    <div class="sort-control">
-      <label for="project-sort">Sort by</label>
-      <select id="project-sort" class="sort-select">
-        <option value="newest">Newest first</option>
-        <option value="oldest">Oldest first</option>
-      </select>
-    </div>
+  <div class="nb-filters" role="group" aria-label="Filter by status">
+    <button class="nb-filter-btn active" data-status-filter="all" aria-pressed="true">All</button>
+    <button class="nb-filter-btn" data-status-filter="active" aria-pressed="false">Active</button>
+    <button class="nb-filter-btn" data-status-filter="completed" aria-pressed="false">Completed</button>
   </div>
 
-  <div class="projects-grid">
-    {{ range .Pages.ByDate.Reverse }}
-    <div class="project-card status-{{ .Params.status }}" data-status="{{ .Params.status }}" data-tech="{{ delimit .Params.tech "," }}" data-date="{{ .Date.Format "2006-01-02" }}">
-      <div class="project-header">
-        <span class="project-icon">{{ .Params.icon }}</span>
-        <span class="project-status">{{- if eq .Params.status "active" -}}
-            Active
-          {{- else if eq .Params.status "completed" -}}
-            Completed
-          {{- else if eq .Params.status "archived" -}}
-            Archived
-          {{- else -}}
-            {{ .Params.status }}
-          {{- end -}}</span>
-      </div>
-      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-      {{ if or .Params.role .Params.period }}
-      <p class="project-role">{{ .Params.role }}{{ if and .Params.role .Params.period }} · {{ end }}{{ .Params.period }}</p>
-      {{ end }}
-      <p class="project-description">{{ .Params.description }}</p>
-      {{ if .Params.tech }}
-      <div class="project-tech">
-        {{ range .Params.tech }}
-        <button type="button" class="tag tag-filter" data-tag-filter="{{ . }}">{{ . }}</button>
+  <div class="nb-index">
+    {{ range .Pages.ByDate.Reverse.GroupByDate "2006" }}
+    <section class="nb-year">
+      <h2 class="nb-year-num">{{ .Key }}</h2>
+      <ol class="nb-entries">
+        {{ range .Pages }}
+        <li class="nb-entry" data-status="{{ .Params.status }}">
+          <p class="nb-margin">
+            {{ with .Params.role }}<span class="nb-no">{{ . }}</span>{{ end }}
+            {{ with .Params.period }}<span>{{ . }}</span>{{ end }}
+          </p>
+          <div class="nb-body">
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p class="nb-excerpt">{{ .Params.description }}</p>
+            <p class="nb-meta">
+              {{ with .Params.status }}<span class="nb-stamp is-{{ . }}">{{ . | humanize }}</span>{{ end }}
+              {{ with .Params.tech }}<span>{{ delimit . ", " }}</span>{{ end }}
+              {{ range .Params.links }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ end }}
+            </p>
+          </div>
+        </li>
         {{ end }}
-      </div>
-      {{ end }}
-      {{ if .Params.links }}
-      <div class="project-links">
-        {{ range .Params.links }}
-        <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }} →</a>
-        {{ end }}
-      </div>
-      {{ end }}
-    </div>
+      </ol>
+    </section>
     {{ end }}
   </div>
-
-  <p class="no-results" style="display:none;">No projects match the selected filters.</p>
+  <p class="no-results" hidden>No projects with this status yet.</p>
 </div>
-
-<script>
-  (function () {
-    const statusButtons = document.querySelectorAll("[data-status-filter]");
-    const tagButtons = document.querySelectorAll("[data-tag-filter]");
-    const grid = document.querySelector(".projects-grid");
-    const cards = document.querySelectorAll(".project-card");
-    const noResults = document.querySelector(".no-results");
-    const sortSelect = document.getElementById("project-sort");
-    let activeStatus = "all";
-    let activeTag = null;
-
-    function applyFilters() {
-      let visibleCount = 0;
-      cards.forEach((card) => {
-        const statusMatch = activeStatus === "all" || card.dataset.status === activeStatus;
-        const techs = (card.dataset.tech || "").split(",");
-        const tagMatch = !activeTag || techs.includes(activeTag);
-        const visible = statusMatch && tagMatch;
-        card.style.display = visible ? "" : "none";
-        if (visible) visibleCount++;
-      });
-      if (noResults) noResults.style.display = visibleCount === 0 ? "" : "none";
-    }
-
-    statusButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        statusButtons.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        activeStatus = btn.dataset.statusFilter;
-        applyFilters();
-      });
-    });
-
-    tagButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const tag = btn.dataset.tagFilter;
-        if (activeTag === tag) {
-          activeTag = null;
-          tagButtons.forEach((b) => b.classList.remove("tag-active"));
-        } else {
-          activeTag = tag;
-          tagButtons.forEach((b) => b.classList.toggle("tag-active", b.dataset.tagFilter === tag));
-        }
-        applyFilters();
-      });
-    });
-
-    if (sortSelect) {
-      sortSelect.addEventListener("change", () => {
-        const sorted = Array.from(cards).sort((a, b) => {
-          const diff = new Date(a.dataset.date) - new Date(b.dataset.date);
-          return sortSelect.value === "newest" ? -diff : diff;
-        });
-        sorted.forEach((card) => grid.appendChild(card));
-      });
-    }
-  })();
-</script>
+{{ partial "status-filter.js.html" . }}
 {{ end }}

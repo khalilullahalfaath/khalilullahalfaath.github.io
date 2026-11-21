@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="nb-page">
+  {{ partial "page-head.html" (dict "title" .Title "desc" .Description) }}
+  {{ with .Pages.ByDate.Reverse }}
+  <div class="nb-index">
+    {{ range .GroupByDate "2006" }}
+    <section class="nb-year">
+      <h2 class="nb-year-num">{{ .Key }}</h2>
+      <ol class="nb-entries">
+        {{ range .Pages }}
+        <li class="nb-entry">
+          <p class="nb-margin">
+            <span class="nb-no">Week {{ div (add .Date.YearDay 6) 7 }}</span>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+          </p>
+          <div class="nb-body">
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p class="nb-meta">{{ partial "week-progress.html" . }}</p>
+          </div>
+        </li>
+        {{ end }}
+      </ol>
+    </section>
+    {{ end }}
+  </div>
+  {{ else }}
+  <p class="nb-end">No weekly plan yet. Add one from the CMS under Weekly plans.</p>
+  {{ end }}
+</div>
+{{ end }}

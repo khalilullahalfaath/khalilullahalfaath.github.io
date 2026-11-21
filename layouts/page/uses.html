@@ -1,21 +1,17 @@
 {{ define "main" }}
-<div class="uses-page">
-  <h1>{{ .Title }}</h1>
-  <p class="page-description">My current setup, tools, and software. Inspired by <a href="https://uses.tech" target="_blank" rel="noopener">uses.tech</a>.</p>
-
+<div class="nb-page">
+  {{ partial "page-head.html" (dict "title" .Title
+       "desc" ("My current setup, tools, and software. Inspired by [uses.tech](https://uses.tech)." | markdownify)
+       "note" (printf "Last updated %s." (.Lastmod.Format "January 2, 2006"))) }}
   {{ range .Params.sections }}
-  <div class="uses-section">
-    <h2>{{ .icon }} {{ .title }}</h2>
-    <ul class="uses-list">
-      {{ range .items }}
-      <li><strong>{{ .title }}:</strong> {{ .desc }}</li>
-      {{ end }}
-    </ul>
-  </div>
+  <section class="nb-section">
+    <h2>{{ .title }}</h2>
+    <dl class="nb-facts">
+      {{ range .items }}<div><dt>{{ .title }}</dt><dd>{{ .desc }}</dd></div>{{ end }}
+    </dl>
+  </section>
+  {{ else }}
+  <p class="nb-end">Nothing listed yet. This page will fill up as I write down the tools I actually use.</p>
   {{ end }}
-
-  <div class="uses-footer">
-    <p>This page is a living document. Last updated: <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "January 2, 2006" }}</time></p>
-  </div>
 </div>
 {{ end }}

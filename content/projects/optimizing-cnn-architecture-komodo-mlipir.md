@@ -1,7 +1,6 @@
 ---
 title: "Optimizing CNN Architecture using Komodo Mlipir Algorithm"
 date: 2023-08-01T10:00:00+07:00
-icon: "🎓"
 status: "completed"
 role: "AI Engineer & Researcher"
 period: "Aug 2023 – Jan 2024"

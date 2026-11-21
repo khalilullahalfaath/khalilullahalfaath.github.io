@@ -1,7 +1,6 @@
 ---
 title: "Improving a Machine Learning Approach for Early Diagnosis of Alzheimer's Disease"
 date: 2025-12-01T10:00:00+07:00
-icon: "🧬"
 status: "completed"
 role: "Researcher"
 period: "March 2026 - May 2026"

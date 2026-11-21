@@ -1,7 +1,6 @@
 ---
 title: "Waste Detection using Xception"
 date: 2023-03-01T10:00:00+07:00
-icon: "♻️"
 status: "completed"
 role: "AI Engineer"
 period: "June 2023"

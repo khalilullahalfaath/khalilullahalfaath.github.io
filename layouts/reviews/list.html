@@ -1,68 +1,46 @@
 {{ define "main" }}
-<div class="content-wrapper">
-  <h1>{{ .Title }}</h1>
-  <p class="page-description">{{ .Content }}</p>
+<div class="nb-page">
+  <header class="nb-page-head">
+    <h1>{{ .Title }}</h1>
+    <div class="nb-page-desc">{{ .Content }}</div>
+    {{ with .Params.external_reviews }}
+    <p class="nb-elsewhere-line">I review more often on
+      {{ range $i, $r := . }}{{ if $i }} and {{ end }}<a href="{{ $r.url }}" target="_blank" rel="noopener">{{ $r.label }}</a>{{ end }}.
+    </p>
+    {{ end }}
+  </header>
 
-  {{ if .Params.external_reviews }}
-  <div class="external-reviews">
-    <p class="external-reviews-label">I post book & movie reviews more actively here:</p>
-    <div class="external-reviews-links">
-      {{ range .Params.external_reviews }}
-      <a href="{{ .url }}" target="_blank" rel="noopener" class="external-review-link">
-        <span class="icon">{{ .icon }}</span>
-        <span>{{ .label }}</span>
-        <span class="arrow">↗</span>
-      </a>
-      {{ end }}
-    </div>
-  </div>
-  {{ end }}
-
-  <div class="review-filters">
-    <button class="review-filter-btn active" data-filter="all">All</button>
-    <button class="review-filter-btn" data-filter="book">📖 Books</button>
-    <button class="review-filter-btn" data-filter="movie">🎬 Movies</button>
-    <button class="review-filter-btn" data-filter="song">🎵 Songs</button>
+  <div class="nb-filters" role="group" aria-label="Filter by kind">
+    <button class="nb-filter-btn active" data-status-filter="all" aria-pressed="true">All</button>
+    <button class="nb-filter-btn" data-status-filter="book" aria-pressed="false">Books</button>
+    <button class="nb-filter-btn" data-status-filter="movie" aria-pressed="false">Movies</button>
+    <button class="nb-filter-btn" data-status-filter="song" aria-pressed="false">Songs</button>
   </div>
 
-  <div class="review-grid">
-    {{ range .Pages.ByLastmod.Reverse }}
-    <a href="{{ .Permalink }}" class="review-card" data-type="{{ .Params.mediatype }}">
-      <div class="review-card-header">
-        <span class="review-type-badge review-type-{{ .Params.mediatype }}">
-          {{- if eq .Params.mediatype "book" -}}📖 Book
-          {{- else if eq .Params.mediatype "movie" -}}🎬 Movie
-          {{- else if eq .Params.mediatype "song" -}}🎵 Song
-          {{- else -}}{{ .Params.mediatype }}
-          {{- end -}}
-        </span>
-        <span class="review-rating">
-          {{ $rating := .Params.rating | default 0 }}
-          {{ range seq 5 }}{{ if le . $rating }}★{{ else }}☆{{ end }}{{ end }}
-        </span>
-      </div>
-      <h3>{{ .Title }}</h3>
-      {{ if .Params.creator }}<p class="review-creator">{{ .Params.creator }}</p>{{ end }}
-      <p class="review-description">{{ .Params.description }}</p>
-    </a>
+  <div class="nb-index">
+    {{ range .Pages.ByDate.Reverse.GroupByDate "2006" }}
+    <section class="nb-year">
+      <h2 class="nb-year-num">{{ .Key }}</h2>
+      <ol class="nb-entries">
+        {{ range .Pages }}
+        <li class="nb-entry" data-status="{{ .Params.mediatype }}">
+          <p class="nb-margin">
+            <span class="nb-no">{{ .Params.mediatype | humanize }}</span>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+          </p>
+          <div class="nb-body">
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ with .Params.creator }}<p class="nb-creator">{{ . }}</p>{{ end }}
+            {{ with .Params.description }}<p class="nb-excerpt">{{ . }}</p>{{ end }}
+            {{ with .Params.rating }}<p class="nb-meta"><span class="nb-score" aria-label="Rated {{ . }} out of 5">{{ . }}<small>/5</small></span></p>{{ end }}
+          </div>
+        </li>
+        {{ end }}
+      </ol>
+    </section>
     {{ end }}
   </div>
+  <p class="no-results" hidden>Nothing reviewed in this category yet.</p>
 </div>
-
-<script>
-  (function () {
-    const buttons = document.querySelectorAll(".review-filter-btn");
-    const cards = document.querySelectorAll(".review-card");
-    buttons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        buttons.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        const filter = btn.dataset.filter;
-        cards.forEach((card) => {
-          card.style.display = filter === "all" || card.dataset.type === filter ? "" : "none";
-        });
-      });
-    });
-  })();
-</script>
+{{ partial "status-filter.js.html" . }}
 {{ end }}
