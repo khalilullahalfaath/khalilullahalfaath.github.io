@@ -5,6 +5,10 @@ status: "completed"
 role: "AI Engineer & Researcher"
 period: "Aug 2023 – Jan 2024"
 tech: ["CNN", "Metaheuristic Optimization", "Python", "MATLAB"]
+tags:
+  - metaheuristics
+  - deep-learning
+  - publication
 links:
   - label: "Read Paper"
     url: "https://dl.acm.org/doi/fullHtml/10.1145/3669754.3669809"

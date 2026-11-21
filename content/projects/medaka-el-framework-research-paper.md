@@ -5,6 +5,9 @@ status: "completed"
 role: "Researcher"
 period: "Nov 2025 - Feb 2026"
 tech: ["YOLOv8", "Ensemble Learning", "Computer Vision"]
+tags:
+  - computer-vision
+  - ensemble-learning
 links: []
 description: "Research paper on the effect of different ensemble methods to detect Medaka fish using the YOLOv8 model."
 ---

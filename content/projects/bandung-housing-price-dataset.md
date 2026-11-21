@@ -5,6 +5,9 @@ status: "completed"
 role: "Engineer"
 period: "March 2024"
 tech: ["Data Engineering", "Dataset"]
+tags:
+  - dataset
+  - data-engineering
 links:
   - label: "Kaggle"
     url: "https://www.kaggle.com/datasets/khaleeel347/harga-rumah-seluruh-kecamatan-di-kota-bandung"

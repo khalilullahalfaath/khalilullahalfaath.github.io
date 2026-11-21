@@ -5,11 +5,11 @@ lastmod: 2025-07-29T03:08:00.000+08:00
 draft: true
 description: Artikel ini adalah sebuah rangkuman diskusi saya dengan teman
   kuliah yang merupakan sesama fans RRQ yang kami lakukan melalui DM Instagram
+tags:
+  - esports
+  - bahasa-indonesia
 categories:
-  - Opinion
-  - Critics
-  - Reflection
-  - Bahasa Indonesia
+  - Essay
 ---
 Outline
 

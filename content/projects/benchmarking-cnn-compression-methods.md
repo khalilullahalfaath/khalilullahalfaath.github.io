@@ -5,6 +5,10 @@ status: "completed"
 role: "Researcher"
 period: "Nov 2025 - Feb 2026"
 tech: ["CNN Compression", "Deep Learning", "Medical Imaging"]
+tags:
+  - deep-learning
+  - model-compression
+  - medical-ai
 links:
   - label: "Colab Notebook"
     url: "https://colab.research.google.com/drive/1Hk-zs809x7SeIjSfJjm0nEQ7LDIyzsdp"

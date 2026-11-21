@@ -5,6 +5,10 @@ status: "completed"
 role: "Developer"
 period: "May 2026 - June 2026"
 tech: ["Streamlit", "Genetic Algorithm", "Folium", "OSRM", "Python"]
+tags:
+  - metaheuristics
+  - web-app
+  - coursework
 links:
   - label: "GitHub"
     url: "https://github.com/Rezahatmi06/TSP-Tempat-wisata-Jogja-dengan-Algoritma-Genetika"

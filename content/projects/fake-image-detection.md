@@ -5,6 +5,10 @@ status: "completed"
 role: "Researcher"
 period: "August 2025 – December 2025"
 tech: ["ResNet-50", "PyTorch", "Model Pruning", "Optuna", "CNN"]
+tags:
+  - computer-vision
+  - model-compression
+  - publication
 links:
   - label: "Read Paper"
     url: "https://doi.org/10.32664/icobits.v1.58"

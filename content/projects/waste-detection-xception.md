@@ -5,6 +5,10 @@ status: "completed"
 role: "AI Engineer"
 period: "June 2023"
 tech: ["Xception", "Computer Vision", "Transfer Learning"]
+tags:
+  - computer-vision
+  - transfer-learning
+  - coursework
 links:
   - label: "Report"
     url: "https://drive.google.com/file/d/1n2eXgH4NQWMBezqfA05ZIObu9lVywivy/view?usp=sharing"

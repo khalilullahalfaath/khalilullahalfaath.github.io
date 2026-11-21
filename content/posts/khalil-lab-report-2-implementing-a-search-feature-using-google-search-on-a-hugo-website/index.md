@@ -6,6 +6,10 @@ lastmod: 2025-07-31T23:49:00.000+08:00
 draft: false
 math: true
 description: This is a short tutorial on how I implemented the search button on this site
+tags:
+  - hugo
+  - web-dev
+  - this-site
 categories:
   - Report
 ---

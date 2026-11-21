@@ -17,7 +17,7 @@
       <h2 class="nb-year-num">{{ .Key }}</h2>
       <ol class="nb-entries">
         {{ range .Pages }}
-        <li class="nb-entry" data-status="{{ .Params.status }}">
+        <li class="nb-entry" data-status="{{ .Params.status }}"{{ with .Params.tags }} data-tags="{{ delimit . "," }}"{{ end }}>
           <p class="nb-margin">
             {{ with .Params.role }}<span class="nb-no">{{ . }}</span>{{ end }}
             {{ with .Params.period }}<span>{{ . }}</span>{{ end }}
@@ -28,6 +28,7 @@
             <p class="nb-meta">
               {{ with .Params.status }}<span class="nb-stamp is-{{ . }}">{{ . | humanize }}</span>{{ end }}
               {{ with .Params.tech }}<span>{{ delimit . ", " }}</span>{{ end }}
+              {{ range .Params.tags }}<button type="button" class="nb-tag" data-tag-filter="{{ . }}" aria-pressed="false">#{{ . }}</button>{{ end }}
               {{ range .Params.links }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ end }}
             </p>
           </div>
@@ -37,7 +38,7 @@
     </section>
     {{ end }}
   </div>
-  <p class="no-results" hidden>No projects with this status yet.</p>
+  <p class="no-results" hidden>No projects match these filters.</p>
 </div>
 {{ partial "status-filter.js.html" . }}
 {{ end }}

@@ -11,9 +11,11 @@ description: >
 
 
   I did not write this essay to be admired, nor to teach others how to live, but to remind myself. Of who I am, of who I must strive to be, and of the people whose virtues I hope to reflect.
+tags:
+  - philosophy
+  - family
 categories:
   - Essay
-  - Reflection
 mediumLink: ""
 ---
 # Book 1

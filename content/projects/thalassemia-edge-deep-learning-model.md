@@ -5,6 +5,11 @@ status: "active"
 role: "Researcher"
 period: "Jul 2026 - Now"
 tech: ["Python", "Flask", "Edge AI", "Computer Vision"]
+tags:
+  - computer-vision
+  - edge-ai
+  - thalassemia
+  - medical-ai
 links: []
 description: "Web app + Edge AI system to help hematologists detect Thalassemia from peripheral blood smear images."
 ---

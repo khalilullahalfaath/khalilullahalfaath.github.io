@@ -6,6 +6,9 @@ draft: false
 math: false
 description: Yesterday my friend asked me, “Mas, have you ever thought, what am
   I even studying Computer Science for?
+tags:
+  - computer-science
+  - career
 categories:
   - Reflection
 ---

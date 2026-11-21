@@ -5,6 +5,9 @@ status: "completed"
 role: "Lead AI Engineer & Researcher"
 period: "Oct 2024 – Dec 2024"
 tech: ["Feature Selection", "Metaheuristic Optimization", "Python"]
+tags:
+  - metaheuristics
+  - feature-selection
 links:
   - label: "GitHub"
     url: "https://github.com/khalilullahalfaath/KMA-Binary-Version"

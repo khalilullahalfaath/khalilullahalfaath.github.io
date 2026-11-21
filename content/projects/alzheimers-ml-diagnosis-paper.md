@@ -5,6 +5,10 @@ status: "completed"
 role: "Researcher"
 period: "March 2026 - May 2026"
 tech: ["Machine Learning", "Alzheimer's Diagnosis", "Data Science"]
+tags:
+  - machine-learning
+  - medical-ai
+  - coursework
 links:
   - label: "Colab Notebook"
     url: "https://colab.research.google.com/drive/10dNUbnEFAW3ViC3x_LR1S5we3sqIyrVW"

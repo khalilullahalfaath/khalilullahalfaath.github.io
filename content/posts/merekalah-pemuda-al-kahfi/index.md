@@ -7,10 +7,12 @@ math: false
 description: Ini adalah catatan kajian masyayikh timur tengah Syaikh Muhammad
   al-Hasyimi yang diselenggarakan di Masjid Pogung Dalangan, Sleman, DIY pada
   tanggal 5 September 2025
+tags:
+  - islam
+  - quran
+  - bahasa-indonesia
 categories:
-  - Refleksi
-  - Catatan Kajian
-  - Bahasa Indonesia
+  - Notes
 ---
 # Catatan Kajian: Merekalah Pemuda Al-Kahfi
 

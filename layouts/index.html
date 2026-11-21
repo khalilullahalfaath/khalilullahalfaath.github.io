@@ -20,7 +20,7 @@
       <h2 id="latest">Latest writing</h2>
       <a href="/posts/">All {{ len $posts }} entries</a>
     </div>
-    {{ partial "notebook-index.html" (dict "pages" (first 6 $posts.ByDate.Reverse)) }}
+    {{ partial "notebook-index.html" (dict "pages" (first 6 $posts.ByLastmod.Reverse) "lastmod" true) }}
   </section>
 
   {{ with where $lab "Params.status" "ongoing" }}

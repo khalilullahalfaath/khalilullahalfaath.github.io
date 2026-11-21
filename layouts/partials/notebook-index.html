@@ -1,17 +1,19 @@
 {{/* Year-grouped entry index with a notebook margin.
      Params: pages (required), stamps (bool: show lab status stamps),
-     filter (bool: tags become filter buttons; otherwise links to tag pages). */}}
+     filter (bool: tags become filter buttons; otherwise links to tag pages),
+     lastmod (bool: group and date entries by last update instead of publish date). */}}
 <div class="nb-index">
-  {{ range .pages.GroupByDate "2006" }}
+  {{ range cond (.lastmod | default false) (.pages.GroupByLastmod "2006") (.pages.GroupByDate "2006") }}
   <section class="nb-year">
     <h2 class="nb-year-num">{{ .Key }}</h2>
     <ol class="nb-entries">
       {{ range .Pages }}
-      {{ $status := .Params.status }}
+      {{ $status := .Params.status }}{{ if not $status }}{{ with .GetTerms "categories" }}{{ $status = (index . 0).LinkTitle | urlize }}{{ end }}{{ end }}
       <li class="nb-entry"{{ with $status }} data-status="{{ . }}"{{ end }}{{ with .Params.tags }} data-tags="{{ delimit . "," }}"{{ end }}>
         <p class="nb-margin">
           <span class="nb-no">No. {{ partial "entry-no.html" . }}</span>
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+          {{ $d := cond ($.lastmod | default false) .Lastmod .Date }}
+          <time datetime="{{ $d.Format "2006-01-02" }}"{{ if $.lastmod }} title="Updated"{{ end }}>{{ $d.Format "Jan 2" }}</time>
         </p>
         <div class="nb-body">
           <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>

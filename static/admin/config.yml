@@ -49,10 +49,22 @@ collections:
           required: false,
         }
       - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          field: { label: "Tag", name: "tag", widget: "string" },
+          required: false,
+          hint: "lowercase-with-dashes, e.g. computer-vision",
+        }
+      - {
           label: "Categories",
           name: "categories",
-          widget: "list",
-          field: { label: "Category", name: "category", widget: "string" },
+          widget: "select",
+          multiple: true,
+          min: 1,
+          max: 1,
+          options: ["Essay", "Reflection", "Report", "Tutorial", "Notes"],
+          hint: "Pick one: the kind of piece. Topics go in Tags.",
         }
       - {
           label: "Medium Link",
@@ -130,6 +142,14 @@ collections:
           widget: "list",
           field: { label: "Tech", name: "tech", widget: "string" },
           required: false,
+        }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          field: { label: "Tag", name: "tag", widget: "string" },
+          required: false,
+          hint: "lowercase-with-dashes, e.g. computer-vision",
         }
       - {
           label: "Links",

@@ -4,9 +4,11 @@ date: 2025-08-17T01:06:00.000+08:00
 lastmod: 2025-08-17T01:06:00.000+08:00
 draft: true
 math: false
+tags:
+  - islam
+  - bahasa-indonesia
 categories:
-  - Bahasa Indonesia
-  - Aqidah
+  - Notes
 ---
 Tujuan syariat yang Allah turunkan di bumi dari zaman nabi Adam hingga nabi Muhammad bertujuan untuk menjaga 5 hal:
 

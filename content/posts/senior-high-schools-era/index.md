@@ -5,6 +5,9 @@ lastmod: 2026-08-02T01:22:00.000+07:00
 draft: false
 math: false
 description: Watching Kafka's SMA era vts makes me wander ...
+tags:
+  - school
+  - memories
 categories:
   - Reflection
 ---

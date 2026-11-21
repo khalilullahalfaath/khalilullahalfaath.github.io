@@ -3,6 +3,10 @@ title: Why did I move from Duolingo as my main source platform for Learning a La
 date: 2025-07-29T02:58:00.000+08:00
 lastmod: 2025-07-29T02:58:00.000+08:00
 draft: true
+tags:
+  - language-learning
+categories:
+  - Essay
 ---
 \- Use duolingo
 

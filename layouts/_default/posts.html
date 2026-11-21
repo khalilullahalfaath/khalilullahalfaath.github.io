@@ -4,6 +4,14 @@
     <h1>Writing</h1>
     <div class="nb-page-desc">{{ .Content }}</div>
   </header>
-  {{ partial "notebook-index.html" (dict "pages" .Pages.ByDate.Reverse) }}
+  <div class="nb-filters" role="group" aria-label="Filter by category">
+    <button class="nb-filter-btn active" data-status-filter="all" aria-pressed="true">All</button>
+    {{ range site.Taxonomies.categories.Alphabetical }}
+    <button class="nb-filter-btn" data-status-filter="{{ .Page.LinkTitle | urlize }}" aria-pressed="false">{{ .Page.LinkTitle }}</button>
+    {{ end }}
+  </div>
+  {{ partial "notebook-index.html" (dict "pages" .Pages.ByLastmod.Reverse "lastmod" true "filter" true) }}
+  <p class="no-results" hidden>No entries match these filters.</p>
 </div>
+{{ partial "status-filter.js.html" . }}
 {{ end }}

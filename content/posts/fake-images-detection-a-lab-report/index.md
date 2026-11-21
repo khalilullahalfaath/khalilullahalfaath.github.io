@@ -10,6 +10,10 @@ description: >-
   report-like post? So welcome :D 
 
   In this long post, I am going to record my journey, my thought process, and my ups and downs while doing this project. I hope that those who read this post could gain some insights if they wanted to research this very same topic. 
+tags:
+  - computer-vision
+  - deep-learning
+  - research
 categories:
   - Report
 ---

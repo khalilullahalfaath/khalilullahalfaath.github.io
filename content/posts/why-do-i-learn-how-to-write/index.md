@@ -10,10 +10,11 @@ description: "I had always considered myself a good writer since I was a kid. I
   Indonesia to English would be seamless. But when I started preparing for the
   IELTS exam, especially learning how to write to meet its requirements, it was
   clear that I was not. "
+tags:
+  - writing
+  - ielts
 categories:
   - Essay
-  - Reflection
-  - Tutorials
 ---
 I began my journey of learning how to write specifically for the IELTS writing section in 2024. At first, I thought that maybe I should start by focusing on grammar, as I had never truly understood it. Even the basics felt shaky once I tried to recall them -- Blame Indonesia's national curriculum for this :D For example, when it came to tenses, I only knew the simple present, present continuous, and simple past. Realising this was, frankly, embarrassing. 
 

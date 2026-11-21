@@ -11,6 +11,10 @@ description: "On this very first blog, I talked about how I managed to build
   however, after implementation, I will create a separate report for that as a
   tutorial."
 image: ""
+tags:
+  - hugo
+  - web-dev
+  - this-site
 categories:
   - Report
 mediumLink: ""

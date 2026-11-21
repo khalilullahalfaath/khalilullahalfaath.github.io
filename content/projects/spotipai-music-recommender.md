@@ -5,6 +5,10 @@ status: "completed"
 role: "AI Engineer"
 period: "June 2026"
 tech: ["Streamlit", "Collaborative Filtering", "Content-Based Filtering", "Graph Neural Network"]
+tags:
+  - recommender-systems
+  - web-app
+  - coursework
 links:
   - label: "GitHub"
     url: "https://github.com/khalilullahalfaath/final-project-recommender-system"

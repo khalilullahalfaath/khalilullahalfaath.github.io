@@ -5,6 +5,9 @@ status: "completed"
 role: "Lead ML Engineer"
 period: "May 2023 – Jun 2023"
 tech: ["Machine Learning", "Recommendation System", "Mobile"]
+tags:
+  - recommender-systems
+  - mobile
 links:
   - label: "GitHub"
     url: "https://github.com/halowisata"

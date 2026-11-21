@@ -5,6 +5,9 @@ status: "completed"
 role: "Lead AI Engineer & Front-End Developer"
 period: "Jun 2024 – Jul 2024"
 tech: ["Streamlit", "NLP", "Summarization"]
+tags:
+  - nlp
+  - web-app
 links:
   - label: "Demo"
     url: "https://catatan-cerdas.streamlit.app"

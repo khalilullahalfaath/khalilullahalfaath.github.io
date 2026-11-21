@@ -4,9 +4,10 @@ date: 2025-09-15T19:42:00.000+07:00
 lastmod: 2025-09-15T19:42:00.000+07:00
 draft: true
 math: true
+tags:
+  - algorithms
+  - mathematics
 categories:
-  - Algorithm Analysis
-  - Discrete Mathematics
-  - English
+  - Tutorial
 ---
 Solving a recurrence relation can be hard to grasp at first. While some books explained it
