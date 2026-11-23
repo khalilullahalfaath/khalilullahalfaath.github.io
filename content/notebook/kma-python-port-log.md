@@ -1,6 +1,6 @@
 ---
 title: Porting the Komodo Mlipir Algorithm to Python
-date: 2024-03-25T10:00:00+07:00
+date: 2026-11-17T10:00:00+07:00
 lastmod: 2026-11-20T00:10:00+07:00
 status: ongoing
 tags:
