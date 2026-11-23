@@ -1,5 +1,8 @@
-{{- /* Lab-log headings like "July 27, 2026 — MVP Done" become a date stamp plus a title. */ -}}
-{{- $m := findRESubmatch `^((?:January|February|March|April|May|June|July|August|September|October|November|December)[^—]*?\d{4})(?:\s+—\s+(.+))?$` (.Text | plainify | htmlUnescape) 1 -}}
+{{- /* Lab-log headings like "July 27, 2026 — MVP Done" or "November 17, 2026: Setup"
+       become a date stamp plus a title. A bare date heading becomes a stamp alone.
+       Only the em dash separates date from title, because an en dash can sit inside
+       a date range ("August 1–2, 2026"). */ -}}
+{{- $m := findRESubmatch `^((?:January|February|March|April|May|June|July|August|September|October|November|December)[^—:]*?\d{4})(?:\s+—\s+|:\s+)?(.+)?$` (.Text | plainify | htmlUnescape) 1 -}}
 {{- with $m -}}
 {{- $date := index (index . 0) 1 -}}{{- $title := index (index . 0) 2 -}}
 <h{{ $.Level }} id="{{ $.Anchor }}" class="nb-dated{{ if not $title }} nb-date-only{{ end }}"><span class="nb-stamp-date">{{ $date }}</span>{{ with $title }} <span class="nb-dated-title">{{ . }}</span>{{ end }}</h{{ $.Level }}>
