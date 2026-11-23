@@ -2,14 +2,17 @@
 title: Porting the Komodo Mlipir Algorithm to Python
 date: 2026-11-17T10:00:00+07:00
 lastmod: 2026-11-20T00:10:00+07:00
-status: ongoing
+status: completed
 tags:
   - metaheuristics
   - python
   - research
   - software
-aliases: ["/lab-notebook/kma-python-port-log/"]
-description: A MATLAB metaheuristic was ported to Python, checked against the original on 23 benchmark functions, and reshaped into a subclassable core so the binary variants could stop copying it.
+aliases:
+  - /lab-notebook/kma-python-port-log/
+description: A MATLAB metaheuristic was ported to Python, checked against the
+  original on 23 benchmark functions, and reshaped into a subclassable core so
+  the binary variants could stop copying it.
 ---
 
 **Project:** Komodo Mlipir Algorithm, Python implementation
