@@ -127,6 +127,7 @@ aleeelblogs/
 │   ├── images/             # Images
 │   └── admin/              # Decap CMS
 ├── docs/
+│   ├── notebook-entry-style.md  # Rules for writing notebook entries
 │   └── superpowers/
 │       └── specs/          # Design specifications
 ├── hugo.yaml               # Hugo configuration
