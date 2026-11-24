@@ -17,8 +17,8 @@ Final year of my Master's in Computer Science at Universitas Gadjah Mada, expect
 
 ## Learning
 
-- Quantization and pruning, to make deep learning models small enough for edge devices
-- Studying with Alvar, a multi-agent AI tutor I built on Claude Code
+- Re-learning fundamental math concepts for deep learning, especially calculus, linear algebra, probability, and statistics 
+- Re-learning and practicing english, especially writing and speaking
 
 ## Writing
 
@@ -28,12 +28,9 @@ Essays go in [Writing](/posts/), experiment and study logs in the [Notebook](/no
 
 1. Finish my thesis and graduate in April 2027
 2. Publish my medical-imaging research
-3. Find my next role, starting December 2026
-4. Write and communicate better
-5. Keep learning and reflecting regularly
+3. Publish my side-projects and experiments in soft computing
+4. Find my next role, starting December 2026
+5. Write and communicate better
+6. Keep learning and reflecting regularly
 
-## Outside work
 
-- Gratitude journaling
-- Islamic studies
-- Keeping work, study, and my own well-being in balance
