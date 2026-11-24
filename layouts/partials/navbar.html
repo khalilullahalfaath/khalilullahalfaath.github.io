@@ -1,27 +1,43 @@
-{{ $here := partial "pillar.html" . }}
-{{ $tabs := slice
-  (dict "id" "writing" "label" "Writing" "url" "/posts/")
-  (dict "id" "notebook" "label" "Notebook" "url" "/notebook/")
-  (dict "id" "work" "label" "Work" "url" "/projects/")
-  (dict "id" "back" "label" "Back pages" "url" "/back-pages/")
-  (dict "id" "about" "label" "About" "url" "/about/") }}
+{{ $here := partial "pillar.html" . }} {{ $tabs := slice (dict "id" "writing"
+"label" "Writing" "url" "/posts/") (dict "id" "notebook" "label" "Notebook"
+"url" "/notebook/") (dict "id" "work" "label" "Work" "url" "/projects/") (dict
+"id" "back" "label" "Back pages" "url" "/back-pages/") (dict "id" "about"
+"label" "About" "url" "/about/") }}
 <nav class="navbar" aria-label="Main">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Khalil-lab</a>
+    <a class="navbar-brand" href="/">Kafkuy.</a>
 
     <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" />
 
     <div class="nav-menu">
       <div class="nav-tabs">
         {{ range $tabs }}
-        <a class="nav-link nav-tab tab-{{ .id }}" href="{{ .url }}"{{ if eq .id $here }} aria-current="page"{{ end }}>{{ .label }}</a>
+        <a
+          class="nav-link nav-tab tab-{{ .id }}"
+          href="{{ .url }}"
+          {{
+          if
+          eq
+          .id
+          $here
+          }}
+          aria-current="page"
+          {{
+          end
+          }}
+          >{{ .label }}</a
+        >
         {{ end }}
         <a class="nav-link nav-search" href="/search/">Search</a>
       </div>
     </div>
 
     <div class="nav-right">
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"></button>
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        aria-label="Toggle dark mode"
+      ></button>
       <label for="menu-toggle" class="hamburger" aria-label="Open menu">
         <span></span>
         <span></span>
