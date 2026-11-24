@@ -15,7 +15,8 @@
     (dict "l" "TIL" "u" "/back-pages/til/")
     (dict "l" "Fun facts" "u" "/back-pages/fun-facts/")
     (dict "l" "Bookshelf" "u" "/back-pages/bookshelf/")
-    (dict "l" "Uses" "u" "/back-pages/uses/") }}
+    (dict "l" "Uses" "u" "/back-pages/uses/")
+    (dict "l" "Changelog" "u" "/back-pages/changelog/") }}
 {{ end }}
 {{ if and $tabs (or (not .IsPage) (eq .Type "page")) }}
 <nav class="nb-section-tabs tabs-{{ $pillar }}" aria-label="{{ cond (eq $pillar "work") "Work" "Back pages" }} pages">

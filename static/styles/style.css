@@ -3489,7 +3489,7 @@ ol.nb-list li::marker { font-family: var(--font-ui); font-size: 14px; color: var
    Section divider tabs (Work, Back pages) and a shared sheet for Work pages
    ========================================================================== */
 .nb-section-tabs {
-  max-width: 736px;
+  max-width: 708px; /* same width as the sheet, so the first tab starts on the margin line */
   margin: var(--space-lg) auto 0;
   display: flex;
   gap: 4px;
@@ -3541,7 +3541,7 @@ ol.nb-list li::marker { font-family: var(--font-ui); font-size: 14px; color: var
 .owner-return { font-style: italic; color: var(--text-muted); font-size: 16px; margin: var(--space-sm) 0 0; }
 
 @media (max-width: 767px) {
-  .nb-section-tabs { margin-top: var(--space-md); padding: 0 var(--space-sm); }
+  .nb-section-tabs { margin-top: var(--space-md); padding: 0 var(--space-sm) 0 0; }
   .nb-section-tab-desc { display: none; }
   .nb-section-tabs a { padding: 8px 12px; }
   .cv { padding: var(--space-lg) var(--space-sm) var(--space-lg) 18px; }
@@ -3550,7 +3550,7 @@ ol.nb-list li::marker { font-family: var(--font-ui); font-size: 14px; color: var
   .owner h1 { font-size: 34px; }
   .owner-fields > div { grid-template-columns: 1fr; gap: 2px; }
 }
-.tabs-back a { padding-left: 13px; padding-right: 13px; }
+.tabs-back a { padding-left: 9px; padding-right: 9px; } /* nine tabs must fit the 708px sheet */
 @media (max-width: 767px) {
   /* fade the right edge so it is clear the tab row scrolls */
   .nb-section-tabs { mask-image: linear-gradient(to right, #000 85%, transparent); -webkit-mask-image: linear-gradient(to right, #000 85%, transparent); }

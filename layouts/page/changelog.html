@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{/* Single source: CHANGELOG.md at the repo root. Its H1 and intro paragraph are replaced by the page head. */}}
+{{ $md := os.ReadFile "CHANGELOG.md" | replaceRE `(?s)^.*?\n## ` "## " }}
+{{/* "## [1.0.0] - 2026-11-21" -> "## November 21, 2026: v1.0.0" so render-heading.html stamps the date. */}}
+{{ range findRESubmatch `(?m)^## \[([^\]]+)\] - (\d{4}-\d{2}-\d{2})\r?$` $md }}
+  {{ $md = replace $md (index . 0) (printf "## %s: v%s" ((time (index . 2)).Format "January 2, 2006") (index . 1)) }}
+{{ end }}
+<div class="nb-page">
+  {{ partial "page-head.html" (dict "title" .Title
+       "desc" ("How this site has changed, version by version. Versions before 1.0.0 were reconstructed from the commit history." | markdownify)) }}
+  <div class="content">{{ $md | markdownify }}</div>
+</div>
+{{ end }}
